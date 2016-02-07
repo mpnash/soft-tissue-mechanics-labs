@@ -71,7 +71,7 @@ equationsSetUserNumber = 1
 problemUserNumber = 1
 
 # Set all diganostic levels on for testing
-#iron.DiagnosticsSetOn(iron.DiagnosticTypes.All,[1,2,3,4,5],"Diagnostics",["DOMAIN_MAPPINGS_LOCAL_FROM_GLOBAL_CALCULATE"])
+#iron.DiagnosticsSetOn(iron.DiagnosticTypes.All,[1,2,3,4,5],"Diagnostics",["FINITE_ELASTICITY_GAUSS_CAUCHY_TENSOR"])
 
 numberOfLoadIncrements = 1
 numberGlobalXElements = 1
@@ -328,7 +328,7 @@ fields.ElementsExport("cube","FORTRAN")
 fields.Finalise()
 
 elementNumber = 1
-xiPosition = [0.5, 0.5, 0.5]
+xiPosition = [0., 0., 0.]
 deformationGradientTensor = equationsSet.TensorInterpolateXi(
     iron.EquationsSetTensorEvaluateTypes.DEFORMATION_GRADIENT,
     elementNumber, xiPosition,(3,3))
@@ -341,21 +341,31 @@ rightCauchyGreenDeformationTensor = equationsSet.TensorInterpolateXi(
 print("Right Cauchy-Green Deformation Tensor")
 print(rightCauchyGreenDeformationTensor)
 
+I1=numpy.trace(rightCauchyGreenDeformationTensor)
+I2=0.5*(numpy.trace(rightCauchyGreenDeformationTensor)**2.
+        -numpy.tensordot(rightCauchyGreenDeformationTensor,
+                rightCauchyGreenDeformationTensor))
+I3=numpy.linalg.det(rightCauchyGreenDeformationTensor)
+print("Invariants")
+print("I1={0}, I2={1}, I3={2}".format(I1,I2,I3))
+
 GreenLagrangeStrainTensor = equationsSet.TensorInterpolateXi(
     iron.EquationsSetTensorEvaluateTypes.GREEN_LAGRANGE_STRAIN,
     elementNumber, xiPosition,(3,3))
 print("Green-Lagrange Strain Tensor")
 print(GreenLagrangeStrainTensor)
 
-# Calculate Gauss point based strain field:
-equationsSet.DerivedVariableCalculate(iron.EquationsSetDerivedTypes.STRAIN)
-# Check strain at a Gauss point:
-elementNumber = 1
-gaussPointNumber = 1
-componentNumber = 1
-gaussPointStrain = strainField.ParameterSetGetGaussPoint(
-        iron.FieldVariableTypes.U, iron.FieldParameterSetTypes.VALUES,
-        gaussPointNumber, elementNumber, componentNumber)
-print(gaussPointStrain)
+CauchyStressTensor = equationsSet.TensorInterpolateXi(
+    iron.EquationsSetTensorEvaluateTypes.CAUCHY_STRESS,
+    elementNumber, xiPosition,(3,3))
+print("Cauchy Stress Tensor")
+print(CauchyStressTensor)
+
+secondPiolaStressTensor = equationsSet.TensorInterpolateXi(
+    iron.EquationsSetTensorEvaluateTypes.SECOND_PK_STRESS,
+    elementNumber, xiPosition,(3,3))
+print("Second Piola-Kirchhoff Stress Tensor")
+print(secondPiolaStressTensor)
+
 
 
