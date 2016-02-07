@@ -329,15 +329,23 @@ fields.Finalise()
 
 elementNumber = 1
 xiPosition = [0.5, 0.5, 0.5]
-calculatedStrain = equationsSet.StrainInterpolateXi(elementNumber, xiPosition)
-def matrixFromSymmetricComponents(components):
-    return numpy.array([
-        [components[0], components[1], components[2]],
-        [components[1], components[3], components[4]],
-        [components[2], components[4], components[5]],
-        ])
-calculatedStrainTensor = matrixFromSymmetricComponents(calculatedStrain)
-print(calculatedStrainTensor)
+deformationGradientTensor = equationsSet.TensorInterpolateXi(
+    iron.EquationsSetTensorEvaluateTypes.DEFORMATION_GRADIENT,
+    elementNumber, xiPosition,(3,3))
+print("Deformation Gradient Tensor")
+print(deformationGradientTensor)
+
+rightCauchyGreenDeformationTensor = equationsSet.TensorInterpolateXi(
+    iron.EquationsSetTensorEvaluateTypes.R_CAUCHY_GREEN_DEFORMATION,
+    elementNumber, xiPosition,(3,3))
+print("Right Cauchy-Green Deformation Tensor")
+print(rightCauchyGreenDeformationTensor)
+
+GreenLagrangeStrainTensor = equationsSet.TensorInterpolateXi(
+    iron.EquationsSetTensorEvaluateTypes.GREEN_LAGRANGE_STRAIN,
+    elementNumber, xiPosition,(3,3))
+print("Green-Lagrange Strain Tensor")
+print(GreenLagrangeStrainTensor)
 
 # Calculate Gauss point based strain field:
 equationsSet.DerivedVariableCalculate(iron.EquationsSetDerivedTypes.STRAIN)
