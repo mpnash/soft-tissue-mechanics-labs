@@ -1,5 +1,7 @@
-gfx read node "cube.part0.exnode";
-gfx read elem "cube.part0.exelem";
+$model = 1
+
+gfx read node "model${model}.part0.exnode";
+gfx read elem "model${model}.part0.exelem";
 
 # define deformed geometry and pressure
 gfx define field "deformed_geom" component Dependent.1 Dependent.2 Dependent.3
