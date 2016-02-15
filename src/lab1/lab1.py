@@ -67,8 +67,7 @@ geometricFieldUserNumber = 1
 fibreFieldUserNumber = 2
 materialFieldUserNumber = 3
 dependentFieldUserNumber = 4
-strainFieldUserNumber = 5
-equationsSetFieldUserNumber = 6
+equationsSetFieldUserNumber = 5
 equationsSetUserNumber = 1
 problemUserNumber = 1
 
@@ -451,27 +450,6 @@ if __name__ == "__main__":
         iron.FieldVariableTypes.U,iron.FieldParameterSetTypes.VALUES,1,1.0)
     materialField.ComponentValuesInitialiseDP(
         iron.FieldVariableTypes.U,iron.FieldParameterSetTypes.VALUES,2,0.2)
-
-    # Create a Guass point based field for calculated strain
-    strainField = iron.Field()
-    strainField.CreateStart(strainFieldUserNumber, region)
-    strainField.MeshDecompositionSet(decomposition)
-    strainField.TypeSet(iron.FieldTypes.GENERAL)
-    strainField.GeometricFieldSet(geometricField)
-    strainField.DependentTypeSet(iron.FieldDependentTypes.DEPENDENT)
-    strainField.VariableTypesSet([iron.FieldVariableTypes.U])
-    strainField.VariableLabelSet(iron.FieldVariableTypes.U, "Strain")
-    strainField.NumberOfComponentsSet(iron.FieldVariableTypes.U, 6)
-    for component in range(1, 7):
-        strainField.ComponentInterpolationSet(
-                iron.FieldVariableTypes.U, component,
-                iron.FieldInterpolationTypes.GAUSS_POINT_BASED)
-    strainField.CreateFinish()
-
-    equationsSet.DerivedCreateStart(strainFieldUserNumber, strainField)
-    equationsSet.DerivedVariableSet(iron.EquationsSetDerivedTypes.STRAIN,
-            iron.FieldVariableTypes.U)
-    equationsSet.DerivedCreateFinish()
 
     # Create equations
     equations = iron.Equations()
