@@ -81,8 +81,10 @@ numberGlobalZElements = 1
 InterpolationType = 1
 numberOfXi = 3
 
-def solve_model(model=1):
-    print("Solving model {0}".format(model))
+def solve_model(exportname, model=1, debug=False):
+    # Setting debug=False will prevent output of solver progress/results to the screen.
+    if debug:
+        print("Solving model {0}".format(model))
     # Initialise dependent field from undeformed geometry and displacement bcs and set hydrostatic pressure
     iron.Field.ParametersToFieldParametersComponentCopy(
         geometricField,iron.FieldVariableTypes.U,iron.FieldParameterSetTypes.VALUES,1,
@@ -116,7 +118,10 @@ def solve_model(model=1):
     linearSolver = iron.Solver()
     problem.SolversCreateStart()
     problem.SolverGet([iron.ControlLoopIdentifiers.NODE],1,nonLinearSolver)
-    nonLinearSolver.outputType = iron.SolverOutputTypes.PROGRESS
+    if debug:
+        nonLinearSolver.outputType = iron.SolverOutputTypes.PROGRESS
+    else:
+        nonLinearSolver.outputType = iron.SolverOutputTypes.NONE
     nonLinearSolver.NewtonJacobianCalculationTypeSet(
             iron.JacobianCalculationTypes.EQUATIONS)
     nonLinearSolver.NewtonLinearSolverGet(linearSolver)
@@ -254,41 +259,52 @@ def solve_model(model=1):
     # Export results
     fields = iron.Fields()
     fields.CreateRegion(region)
-    fields.NodesExport("model{0}".format(model),"FORTRAN")
-    fields.ElementsExport("model{0}".format(model),"FORTRAN")
+    fields.NodesExport(exportname,"FORTRAN")
+    fields.ElementsExport(exportname,"FORTRAN")
     fields.Finalise()
 
+    results = {}
     elementNumber = 1
     xiPosition = [0.5, 0.5, 0.5]
     F = equationsSet.TensorInterpolateXi(
         iron.EquationsSetTensorEvaluateTypes.DEFORMATION_GRADIENT,
         elementNumber, xiPosition,(3,3))
-    print("Deformation Gradient Tensor")
-    print(F)
+    results['Deformation Gradient Tensor'] = F
+    if debug:
+        print("Deformation Gradient Tensor")
+        print(F)
 
     C = equationsSet.TensorInterpolateXi(
         iron.EquationsSetTensorEvaluateTypes.R_CAUCHY_GREEN_DEFORMATION,
         elementNumber, xiPosition,(3,3))
-    print("Right Cauchy-Green Deformation Tensor")
-    print(C)
+    results['Right Cauchy-Green Deformation Tensor'] = C
+    if debug:
+        print("Right Cauchy-Green Deformation Tensor")
+        print(C)
 
     E = equationsSet.TensorInterpolateXi(
         iron.EquationsSetTensorEvaluateTypes.GREEN_LAGRANGE_STRAIN,
         elementNumber, xiPosition,(3,3))
-    print("Green-Lagrange Strain Tensor")
-    print(E)
+    results['Green-Lagrange Strain Tensor'] = E
+    if debug:
+        print("Green-Lagrange Strain Tensor")
+        print(E)
 
     I1=numpy.trace(C)
     I2=0.5*(numpy.trace(C)**2.-numpy.tensordot(C,C))
     I3=numpy.linalg.det(C)
-    print("Invariants")
-    print("I1={0}, I2={1}, I3={2}".format(I1,I2,I3))
+    results['Invariants'] = [I1, I2, I3]
+    if debug:
+        print("Invariants")
+        print("I1={0}, I2={1}, I3={2}".format(I1,I2,I3))
 
     TC = equationsSet.TensorInterpolateXi(
         iron.EquationsSetTensorEvaluateTypes.CAUCHY_STRESS,
         elementNumber, xiPosition,(3,3))
-    print("Cauchy Stress Tensor")
-    print(TC)
+    results['Cauchy Stress Tensor'] = TC
+    if debug:
+        print("Cauchy Stress Tensor")
+        print(TC)
 
     # Output of Second Piola-Kirchhoff Stress Tensor not implemented. It is
     # instead, calculated from TG=J*F^(-1)*TC*F^(-T), where T indicates the
@@ -299,8 +315,10 @@ def solve_model(model=1):
     J=1. #Assumes J=1
     TG = numpy.dot(numpy.linalg.inv(F),numpy.dot(
             TC,numpy.linalg.inv(numpy.matrix.transpose(F))))
-    print("Second Piola-Kirchhoff Stress Tensor")
-    print(TG)
+    results['Second Piola-Kirchhoff Stress Tensor'] = TG
+    if debug:
+        print("Second Piola-Kirchhoff Stress Tensor")
+        print(TG)
 
     # Note that the hydrostatic pressure value is different from the value quoted
     # in the original lab instructions. This is because the stress has been
@@ -308,10 +326,14 @@ def solve_model(model=1):
     p = dependentField.ParameterSetGetElement(
         iron.FieldVariableTypes.U,
         iron.FieldParameterSetTypes.VALUES,elementNumber,4)
-    print("Hydrostatic pressure")
-    print(p)
+    results['Hydrostatic pressure'] = p
+    if debug:
+        print("Hydrostatic pressure")
+        print(p)
     
     problem.Destroy()
+
+    return results
 
 
 if __name__ == "__main__":
@@ -458,9 +480,14 @@ if __name__ == "__main__":
     equations.outputType = iron.EquationsOutputTypes.NONE
     equationsSet.EquationsCreateFinish()
 
-    solve_model(model=1)
-    solve_model(model=2)
-    solve_model(model=3)
-    solve_model(model=4)
-    solve_model(model=5)
+    exportname = 'model1'
+    results = solve_model(exportname, model=1)
+    exportname = 'model2'
+    results = solve_model(exportname, model=2)
+    exportname = 'model3'
+    results = solve_model(exportname, model=3)
+    exportname = 'model4'
+    results = solve_model(exportname, model=4)
+    exportname = 'model5'
+    results = solve_model(exportname, model=5)
 
