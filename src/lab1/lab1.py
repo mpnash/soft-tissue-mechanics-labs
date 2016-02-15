@@ -63,11 +63,15 @@ pressureBasisUserNumber = 2
 generatedMeshUserNumber = 1
 meshUserNumber = 1
 decompositionUserNumber = 1
+
 geometricFieldUserNumber = 1
 fibreFieldUserNumber = 2
 materialFieldUserNumber = 3
 dependentFieldUserNumber = 4
 equationsSetFieldUserNumber = 5
+deformedFieldUserNumber = 7
+pressureFieldUserNumber = 8
+
 equationsSetUserNumber = 1
 problemUserNumber = 1
 
@@ -88,7 +92,7 @@ def solve_model(exportname, model=1, debug=False):
 
     # Get the number of computational nodes and this computational node number
     numberOfComputationalNodes = iron.ComputationalNumberOfNodesGet()
-    computationalNodeNumber = iron.ComputationalNodeNumberGet()
+    # computationalNodeNumber = iron.ComputationalNodeNumberGet()
 
     # Create a 3D rectangular cartesian coordinate system
     coordinateSystem = iron.CoordinateSystem()
@@ -180,6 +184,30 @@ def solve_model(exportname, model=1, debug=False):
     if InterpolationType == 4:
         fibreField.fieldScalingType = iron.FieldScalingTypes.ARITHMETIC_MEAN
     fibreField.CreateFinish()
+
+    # Create a deformed geometry field, as Cmgui/Zinc doesn't like displaying
+    # deformed fibres from the dependent field because it isn't a geometric field.
+    deformedField = iron.Field()
+    deformedField.CreateStart(deformedFieldUserNumber, region)
+    deformedField.MeshDecompositionSet(decomposition)
+    deformedField.TypeSet(iron.FieldTypes.GEOMETRIC)
+    deformedField.VariableLabelSet(iron.FieldVariableTypes.U, "DeformedGeometry")
+    for component in [1, 2, 3]:
+        deformedField.ComponentMeshComponentSet(
+                iron.FieldVariableTypes.U, component, 1)
+    if InterpolationType == 4:
+        deformedField.ScalingTypeSet(iron.FieldScalingTypes.ARITHMETIC_MEAN)
+    deformedField.CreateFinish()
+
+    pressureField = iron.Field()
+    pressureField.CreateStart(pressureFieldUserNumber, region)
+    pressureField.MeshDecompositionSet(decomposition)
+    pressureField.VariableLabelSet(iron.FieldVariableTypes.U, "Pressure")
+    pressureField.ComponentMeshComponentSet(
+            iron.FieldVariableTypes.U, 1, 1)
+    pressureField.ComponentInterpolationSet(iron.FieldVariableTypes.U, 1, iron.FieldInterpolationTypes.ELEMENT_BASED)
+    pressureField.NumberOfComponentsSet(iron.FieldVariableTypes.U, 1)
+    pressureField.CreateFinish()
 
     # Create the equations_set
     equationsSetField = iron.Field()
@@ -279,7 +307,7 @@ def solve_model(exportname, model=1, debug=False):
     problem.SolverGet([iron.ControlLoopIdentifiers.NODE],1,solver)
     solver.SolverEquationsGet(solverEquations)
     solverEquations.sparsityType = iron.SolverEquationsSparsityTypes.SPARSE
-    equationsSetIndex = solverEquations.EquationsSetAdd(equationsSet)
+    _ = solverEquations.EquationsSetAdd(equationsSet)
     problem.SolverEquationsCreateFinish()
 
     # Prescribe boundary conditions (absolute nodal parameters)
@@ -323,7 +351,6 @@ def solve_model(exportname, model=1, debug=False):
         boundaryConditions.AddNode(dependentField,iron.FieldVariableTypes.U,1,1,4,Y,iron.BoundaryConditionsTypes.FIXED,0.25)
         boundaryConditions.AddNode(dependentField,iron.FieldVariableTypes.U,1,1,7,Y,iron.BoundaryConditionsTypes.FIXED,0.25)
         boundaryConditions.AddNode(dependentField,iron.FieldVariableTypes.U,1,1,8,Y,iron.BoundaryConditionsTypes.FIXED,0.25)
-
 
         boundaryConditions.AddNode(dependentField,iron.FieldVariableTypes.U,1,1,1,Z,iron.BoundaryConditionsTypes.FIXED,0.0)
         boundaryConditions.AddNode(dependentField,iron.FieldVariableTypes.U,1,1,2,Z,iron.BoundaryConditionsTypes.FIXED,0.0)
@@ -399,6 +426,21 @@ def solve_model(exportname, model=1, debug=False):
     # Solve the problem
     problem.Solve()
 
+    # Copy deformed geometry into deformed field
+    for component in [1, 2, 3]:
+        dependentField.ParametersToFieldParametersComponentCopy(
+            iron.FieldVariableTypes.U,
+            iron.FieldParameterSetTypes.VALUES, component,
+            deformedField, iron.FieldVariableTypes.U,
+            iron.FieldParameterSetTypes.VALUES, component)
+
+    # Copy pressure into pressure field
+    dependentField.ParametersToFieldParametersComponentCopy(
+            iron.FieldVariableTypes.U,
+            iron.FieldParameterSetTypes.VALUES, 4,
+            pressureField, iron.FieldVariableTypes.U,
+            iron.FieldParameterSetTypes.VALUES, 1)
+
     # Export results
     fields = iron.Fields()
     fields.CreateRegion(region)
@@ -455,7 +497,7 @@ def solve_model(exportname, model=1, debug=False):
     #TG = equationsSet.TensorInterpolateXi(
     #    iron.EquationsSetTensorEvaluateTypes.SECOND_PK_STRESS,
     #    elementNumber, xiPosition,(3,3))
-    J=1. #Assumes J=1
+    #J=1. #Assumes J=1
     TG = numpy.dot(numpy.linalg.inv(F),numpy.dot(
             TC,numpy.linalg.inv(numpy.matrix.transpose(F))))
     results['Second Piola-Kirchhoff Stress Tensor'] = TG
