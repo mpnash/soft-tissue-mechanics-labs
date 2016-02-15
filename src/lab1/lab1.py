@@ -85,6 +85,149 @@ def solve_model(exportname, model=1, debug=False):
     # Setting debug=False will prevent output of solver progress/results to the screen.
     if debug:
         print("Solving model {0}".format(model))
+
+    # Get the number of computational nodes and this computational node number
+    numberOfComputationalNodes = iron.ComputationalNumberOfNodesGet()
+    computationalNodeNumber = iron.ComputationalNodeNumberGet()
+
+    # Create a 3D rectangular cartesian coordinate system
+    coordinateSystem = iron.CoordinateSystem()
+    coordinateSystem.CreateStart(coordinateSystemUserNumber)
+    coordinateSystem.DimensionSet(3)
+    coordinateSystem.CreateFinish()
+
+    # Create a region and assign the coordinate system to the region
+    region = iron.Region()
+    region.CreateStart(regionUserNumber,iron.WorldRegion)
+    region.LabelSet("Region")
+    region.coordinateSystem = coordinateSystem
+    region.CreateFinish()
+
+    # Define basis
+    basis = iron.Basis()
+    basis.CreateStart(basisUserNumber)
+    if InterpolationType in (1,2,3,4):
+        basis.type = iron.BasisTypes.LAGRANGE_HERMITE_TP
+    elif InterpolationType in (7,8,9):
+        basis.type = iron.BasisTypes.SIMPLEX
+    basis.numberOfXi = numberOfXi
+    basis.interpolationXi = (
+        [iron.BasisInterpolationSpecifications.LINEAR_LAGRANGE]*numberOfXi)
+    if(NumberOfGaussXi>0):
+        basis.quadratureNumberOfGaussXi = [NumberOfGaussXi]*numberOfXi
+    basis.CreateFinish()
+
+    if(UsePressureBasis):
+        # Define pressure basis
+        pressureBasis = iron.Basis()
+        pressureBasis.CreateStart(pressureBasisUserNumber)
+        if InterpolationType in (1,2,3,4):
+            pressureBasis.type = iron.BasisTypes.LAGRANGE_HERMITE_TP
+        elif InterpolationType in (7,8,9):
+            pressureBasis.type = iron.BasisTypes.SIMPLEX
+        pressureBasis.numberOfXi = numberOfXi
+        pressureBasis.interpolationXi = (
+            [iron.BasisInterpolationSpecifications.LINEAR_LAGRANGE]*numberOfXi)
+        if(NumberOfGaussXi>0):
+            pressureBasis.quadratureNumberOfGaussXi = [NumberOfGaussXi]*numberOfXi
+        pressureBasis.CreateFinish()
+
+    # Start the creation of a generated mesh in the region
+    generatedMesh = iron.GeneratedMesh()
+    generatedMesh.CreateStart(generatedMeshUserNumber,region)
+    generatedMesh.type = iron.GeneratedMeshTypes.REGULAR
+    if(UsePressureBasis):
+        generatedMesh.basis = [basis,pressureBasis]
+    else:
+        generatedMesh.basis = [basis]
+        generatedMesh.extent = [width,length,height]
+        generatedMesh.numberOfElements = (
+            [numberGlobalXElements,numberGlobalYElements,numberGlobalZElements])
+    # Finish the creation of a generated mesh in the region
+    mesh = iron.Mesh()
+    generatedMesh.CreateFinish(meshUserNumber,mesh)
+
+    # Create a decomposition for the mesh
+    decomposition = iron.Decomposition()
+    decomposition.CreateStart(decompositionUserNumber,mesh)
+    decomposition.type = iron.DecompositionTypes.CALCULATED
+    decomposition.numberOfDomains = numberOfComputationalNodes
+    decomposition.CreateFinish()
+
+    # Create a field for the geometry
+    geometricField = iron.Field()
+    geometricField.CreateStart(geometricFieldUserNumber,region)
+    geometricField.MeshDecompositionSet(decomposition)
+    geometricField.TypeSet(iron.FieldTypes.GEOMETRIC)
+    geometricField.VariableLabelSet(iron.FieldVariableTypes.U,"Geometry")
+    geometricField.ComponentMeshComponentSet(iron.FieldVariableTypes.U,1,1)
+    geometricField.ComponentMeshComponentSet(iron.FieldVariableTypes.U,2,1)
+    geometricField.ComponentMeshComponentSet(iron.FieldVariableTypes.U,3,1)
+    if InterpolationType == 4:
+        geometricField.fieldScalingType = iron.FieldScalingTypes.ARITHMETIC_MEAN
+    geometricField.CreateFinish()
+
+    # Update the geometric field parameters from generated mesh
+    generatedMesh.GeometricParametersCalculate(geometricField)
+
+    # Create a fibre field and attach it to the geometric field
+    fibreField = iron.Field()
+    fibreField.CreateStart(fibreFieldUserNumber,region)
+    fibreField.TypeSet(iron.FieldTypes.FIBRE)
+    fibreField.MeshDecompositionSet(decomposition)
+    fibreField.GeometricFieldSet(geometricField)
+    fibreField.VariableLabelSet(iron.FieldVariableTypes.U,"Fibre")
+    if InterpolationType == 4:
+        fibreField.fieldScalingType = iron.FieldScalingTypes.ARITHMETIC_MEAN
+    fibreField.CreateFinish()
+
+    # Create the equations_set
+    equationsSetField = iron.Field()
+    equationsSet = iron.EquationsSet()
+
+    problemSpecification = [iron.ProblemClasses.ELASTICITY,
+        iron.ProblemTypes.FINITE_ELASTICITY,
+        iron.EquationsSetSubtypes.MOONEY_RIVLIN]
+    equationsSet.CreateStart(equationsSetUserNumber,region,fibreField,problemSpecification,
+        equationsSetFieldUserNumber, equationsSetField)
+    equationsSet.CreateFinish()
+
+    # Create the dependent field
+    dependentField = iron.Field()
+    equationsSet.DependentCreateStart(dependentFieldUserNumber,dependentField)
+    dependentField.VariableLabelSet(iron.FieldVariableTypes.U,"Dependent")
+    dependentField.ComponentInterpolationSet(iron.FieldVariableTypes.U,4,iron.FieldInterpolationTypes.ELEMENT_BASED)
+    dependentField.ComponentInterpolationSet(iron.FieldVariableTypes.DELUDELN,4,iron.FieldInterpolationTypes.ELEMENT_BASED)
+    if(UsePressureBasis):
+        # Set the pressure to be nodally based and use the second mesh component
+        if InterpolationType == 4:
+            dependentField.ComponentInterpolationSet(iron.FieldVariableTypes.U,4,iron.FieldInterpolationTypes.NODE_BASED)
+            dependentField.ComponentInterpolationSet(iron.FieldVariableTypes.DELUDELN,4,iron.FieldInterpolationTypes.NODE_BASED)
+        dependentField.ComponentMeshComponentSet(iron.FieldVariableTypes.U,4,2)
+        dependentField.ComponentMeshComponentSet(iron.FieldVariableTypes.DELUDELN,4,2)
+    if InterpolationType == 4:
+        dependentField.fieldScalingType = iron.FieldScalingTypes.ARITHMETIC_MEAN
+    equationsSet.DependentCreateFinish()
+
+    # Create the material field
+    materialField = iron.Field()
+    equationsSet.MaterialsCreateStart(materialFieldUserNumber,materialField)
+    materialField.VariableLabelSet(iron.FieldVariableTypes.U,"Material")
+    equationsSet.MaterialsCreateFinish()
+
+    # Set Mooney-Rivlin constants c10 and c01 respectively.
+    materialField.ComponentValuesInitialiseDP(
+        iron.FieldVariableTypes.U,iron.FieldParameterSetTypes.VALUES,1,1.0)
+    materialField.ComponentValuesInitialiseDP(
+        iron.FieldVariableTypes.U,iron.FieldParameterSetTypes.VALUES,2,0.2)
+
+    # Create equations
+    equations = iron.Equations()
+    equationsSet.EquationsCreateStart(equations)
+    equations.sparsityType = iron.EquationsSparsityTypes.SPARSE
+    equations.outputType = iron.EquationsOutputTypes.NONE
+    equationsSet.EquationsCreateFinish()
+
     # Initialise dependent field from undeformed geometry and displacement bcs and set hydrostatic pressure
     iron.Field.ParametersToFieldParametersComponentCopy(
         geometricField,iron.FieldVariableTypes.U,iron.FieldParameterSetTypes.VALUES,1,
@@ -332,162 +475,22 @@ def solve_model(exportname, model=1, debug=False):
         print(p)
     
     problem.Destroy()
+    coordinateSystem.Destroy()
+    region.Destroy()
+    basis.Destroy()
 
     return results
 
 
 if __name__ == "__main__":
-
-    # Get the number of computational nodes and this computational node number
-    numberOfComputationalNodes = iron.ComputationalNumberOfNodesGet()
-    computationalNodeNumber = iron.ComputationalNodeNumberGet()
-
-    # Create a 3D rectangular cartesian coordinate system
-    coordinateSystem = iron.CoordinateSystem()
-    coordinateSystem.CreateStart(coordinateSystemUserNumber)
-    coordinateSystem.DimensionSet(3)
-    coordinateSystem.CreateFinish()
-
-    # Create a region and assign the coordinate system to the region
-    region = iron.Region()
-    region.CreateStart(regionUserNumber,iron.WorldRegion)
-    region.LabelSet("Region")
-    region.coordinateSystem = coordinateSystem
-    region.CreateFinish()
-
-    # Define basis
-    basis = iron.Basis()
-    basis.CreateStart(basisUserNumber)
-    if InterpolationType in (1,2,3,4):
-        basis.type = iron.BasisTypes.LAGRANGE_HERMITE_TP
-    elif InterpolationType in (7,8,9):
-        basis.type = iron.BasisTypes.SIMPLEX
-    basis.numberOfXi = numberOfXi
-    basis.interpolationXi = (
-        [iron.BasisInterpolationSpecifications.LINEAR_LAGRANGE]*numberOfXi)
-    if(NumberOfGaussXi>0):
-        basis.quadratureNumberOfGaussXi = [NumberOfGaussXi]*numberOfXi
-    basis.CreateFinish()
-
-    if(UsePressureBasis):
-        # Define pressure basis
-        pressureBasis = iron.Basis()
-        pressureBasis.CreateStart(pressureBasisUserNumber)
-        if InterpolationType in (1,2,3,4):
-            pressureBasis.type = iron.BasisTypes.LAGRANGE_HERMITE_TP
-        elif InterpolationType in (7,8,9):
-            pressureBasis.type = iron.BasisTypes.SIMPLEX
-        pressureBasis.numberOfXi = numberOfXi
-        pressureBasis.interpolationXi = (
-            [iron.BasisInterpolationSpecifications.LINEAR_LAGRANGE]*numberOfXi)
-        if(NumberOfGaussXi>0):
-            pressureBasis.quadratureNumberOfGaussXi = [NumberOfGaussXi]*numberOfXi
-        pressureBasis.CreateFinish()
-
-    # Start the creation of a generated mesh in the region
-    generatedMesh = iron.GeneratedMesh()
-    generatedMesh.CreateStart(generatedMeshUserNumber,region)
-    generatedMesh.type = iron.GeneratedMeshTypes.REGULAR
-    if(UsePressureBasis):
-        generatedMesh.basis = [basis,pressureBasis]
-    else:
-        generatedMesh.basis = [basis]
-        generatedMesh.extent = [width,length,height]
-        generatedMesh.numberOfElements = (
-            [numberGlobalXElements,numberGlobalYElements,numberGlobalZElements])
-    # Finish the creation of a generated mesh in the region
-    mesh = iron.Mesh()
-    generatedMesh.CreateFinish(meshUserNumber,mesh)
-
-    # Create a decomposition for the mesh
-    decomposition = iron.Decomposition()
-    decomposition.CreateStart(decompositionUserNumber,mesh)
-    decomposition.type = iron.DecompositionTypes.CALCULATED
-    decomposition.numberOfDomains = numberOfComputationalNodes
-    decomposition.CreateFinish()
-
-    # Create a field for the geometry
-    geometricField = iron.Field()
-    geometricField.CreateStart(geometricFieldUserNumber,region)
-    geometricField.MeshDecompositionSet(decomposition)
-    geometricField.TypeSet(iron.FieldTypes.GEOMETRIC)
-    geometricField.VariableLabelSet(iron.FieldVariableTypes.U,"Geometry")
-    geometricField.ComponentMeshComponentSet(iron.FieldVariableTypes.U,1,1)
-    geometricField.ComponentMeshComponentSet(iron.FieldVariableTypes.U,2,1)
-    geometricField.ComponentMeshComponentSet(iron.FieldVariableTypes.U,3,1)
-    if InterpolationType == 4:
-        geometricField.fieldScalingType = iron.FieldScalingTypes.ARITHMETIC_MEAN
-    geometricField.CreateFinish()
-
-    # Update the geometric field parameters from generated mesh
-    generatedMesh.GeometricParametersCalculate(geometricField)
-
-    # Create a fibre field and attach it to the geometric field
-    fibreField = iron.Field()
-    fibreField.CreateStart(fibreFieldUserNumber,region)
-    fibreField.TypeSet(iron.FieldTypes.FIBRE)
-    fibreField.MeshDecompositionSet(decomposition)
-    fibreField.GeometricFieldSet(geometricField)
-    fibreField.VariableLabelSet(iron.FieldVariableTypes.U,"Fibre")
-    if InterpolationType == 4:
-        fibreField.fieldScalingType = iron.FieldScalingTypes.ARITHMETIC_MEAN
-    fibreField.CreateFinish()
-
-    # Create the equations_set
-    equationsSetField = iron.Field()
-    equationsSet = iron.EquationsSet()
-
-    problemSpecification = [iron.ProblemClasses.ELASTICITY,
-        iron.ProblemTypes.FINITE_ELASTICITY,
-        iron.EquationsSetSubtypes.MOONEY_RIVLIN]
-    equationsSet.CreateStart(equationsSetUserNumber,region,fibreField,problemSpecification,
-        equationsSetFieldUserNumber, equationsSetField)
-    equationsSet.CreateFinish()
-
-    # Create the dependent field
-    dependentField = iron.Field()
-    equationsSet.DependentCreateStart(dependentFieldUserNumber,dependentField)
-    dependentField.VariableLabelSet(iron.FieldVariableTypes.U,"Dependent")
-    dependentField.ComponentInterpolationSet(iron.FieldVariableTypes.U,4,iron.FieldInterpolationTypes.ELEMENT_BASED)
-    dependentField.ComponentInterpolationSet(iron.FieldVariableTypes.DELUDELN,4,iron.FieldInterpolationTypes.ELEMENT_BASED)
-    if(UsePressureBasis):
-        # Set the pressure to be nodally based and use the second mesh component
-        if InterpolationType == 4:
-            dependentField.ComponentInterpolationSet(iron.FieldVariableTypes.U,4,iron.FieldInterpolationTypes.NODE_BASED)
-            dependentField.ComponentInterpolationSet(iron.FieldVariableTypes.DELUDELN,4,iron.FieldInterpolationTypes.NODE_BASED)
-        dependentField.ComponentMeshComponentSet(iron.FieldVariableTypes.U,4,2)
-        dependentField.ComponentMeshComponentSet(iron.FieldVariableTypes.DELUDELN,4,2)
-    if InterpolationType == 4:
-        dependentField.fieldScalingType = iron.FieldScalingTypes.ARITHMETIC_MEAN
-    equationsSet.DependentCreateFinish()
-
-    # Create the material field
-    materialField = iron.Field()
-    equationsSet.MaterialsCreateStart(materialFieldUserNumber,materialField)
-    materialField.VariableLabelSet(iron.FieldVariableTypes.U,"Material")
-    equationsSet.MaterialsCreateFinish()
-
-    # Set Mooney-Rivlin constants c10 and c01 respectively.
-    materialField.ComponentValuesInitialiseDP(
-        iron.FieldVariableTypes.U,iron.FieldParameterSetTypes.VALUES,1,1.0)
-    materialField.ComponentValuesInitialiseDP(
-        iron.FieldVariableTypes.U,iron.FieldParameterSetTypes.VALUES,2,0.2)
-
-    # Create equations
-    equations = iron.Equations()
-    equationsSet.EquationsCreateStart(equations)
-    equations.sparsityType = iron.EquationsSparsityTypes.SPARSE
-    equations.outputType = iron.EquationsOutputTypes.NONE
-    equationsSet.EquationsCreateFinish()
-
     exportname = 'model1'
-    results = solve_model(exportname, model=1)
+    results = solve_model(exportname, model=1, debug=True)
     exportname = 'model2'
-    results = solve_model(exportname, model=2)
+    results = solve_model(exportname, model=2, debug=True)
     exportname = 'model3'
-    results = solve_model(exportname, model=3)
+    results = solve_model(exportname, model=3, debug=True)
     exportname = 'model4'
-    results = solve_model(exportname, model=4)
+    results = solve_model(exportname, model=4, debug=True)
     exportname = 'model5'
-    results = solve_model(exportname, model=5)
+    results = solve_model(exportname, model=5, debug=True)
 
