@@ -433,13 +433,13 @@ def solve_model(exportname, model=1, debug=False):
         print("Invariants")
         print("I1={0}, I2={1}, I3={2}".format(I1,I2,I3))
 
-    TCmat = equationsSet.TensorInterpolateXi(
+    TCfib = equationsSet.TensorInterpolateXi(
         iron.EquationsSetTensorEvaluateTypes.CAUCHY_STRESS,
         elementNumber, xiPosition,(3,3))
-    results["Cauchy Stress Tensor (material coordinate system)"] = TCmat
+    results["Cauchy Stress Tensor (fibre coordinate system)"] = TCfib
     if debug:
-        print("Cauchy Stress Tensor (material coordinate system)")
-        print(TCmat)
+        print("Cauchy Stress Tensor (fibre coordinate system)")
+        print(TCfib)
 
     # Output of Second Piola-Kirchhoff Stress Tensor not implemented. It is
     # instead, calculated from TG=J*F^(-1)*TC*F^(-T), where T indicates the
@@ -448,18 +448,18 @@ def solve_model(exportname, model=1, debug=False):
     #    iron.EquationsSetTensorEvaluateTypes.SECOND_PK_STRESS,
     #    elementNumber, xiPosition,(3,3))
     #J=1. #Assumes J=1
-    TGmat = numpy.dot(numpy.linalg.inv(F),numpy.dot(
-            TCmat,numpy.linalg.inv(numpy.matrix.transpose(F))))
-    results["Second Piola-Kirchhoff Stress Tensor (material coordinate system)"] = TGmat
+    TGfib = numpy.dot(numpy.linalg.inv(F),numpy.dot(
+            TCfib,numpy.linalg.inv(numpy.matrix.transpose(F))))
+    results["Second Piola-Kirchhoff Stress Tensor (fibre coordinate system)"] = TGfib
     if debug:
-        print("Second Piola-Kirchhoff Stress Tensor (material coordinate system)")
-        print(TGmat)
+        print("Second Piola-Kirchhoff Stress Tensor (fibre coordinate system)")
+        print(TGfib)
 
     # Transform 
     Q = numpy.array([[numpy.cos(numpy.deg2rad(angle)), -numpy.sin(numpy.deg2rad(angle)), 0],
                      [numpy.sin(numpy.deg2rad(angle)), numpy.cos(numpy.deg2rad(angle)),  0],
                      [0               , 0               ,  1]])
-    TGref = numpy.dot(Q,numpy.dot(TGmat,numpy.matrix.transpose(Q)))
+    TGref = numpy.dot(Q,numpy.dot(TGfib,numpy.matrix.transpose(Q)))
     results["Second Piola-Kirchhoff Stress Tensor (reference coordinate system)"] = TGref
     if debug:
         print("Second Piola-Kirchhoff Stress Tensor (reference coordinate system)")
