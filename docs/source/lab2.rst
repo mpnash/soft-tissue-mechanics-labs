@@ -37,10 +37,10 @@ Isotropy versus anisotropy
       - I1=trace(**C**), I2, I3=det(**C**) (I2 not really needed)
       - **Green-Lagrange strain tensor with respect to reference coordinates (Eref)**
       - **Green-Lagrange strain tensor with respect to fibre coordinates (Efib)**
-      - **Second Piola-Kirchhoff tensor with respect to reference coordinates (Tref)** (they will calcualte this using the constitutive equation/hydrostatic pressure term)
+      - **Second Piola-Kirchhoff tensor with respect to reference coordinates (Tref)** (they will calculate this using the constitutive equation/hydrostatic pressure term)
       - **Second Piola-Kirchhoff tensor with respect to fibre coordinates (Tfib)**
-      - **Hydrostatic pressure** (p) (not really needed for lab 1 but best to show consistent output across labs where possible) 
-      - IGNORE Cauchy stress tensor ( :math:`\mathbf{\sigma}` )
+      - **Hydrostatic pressure** (p)
+      - IGNORE Cauchy stress tensor ( :math:`\mathbf{\sigma}` ) for simplify output pane
 
 
 
