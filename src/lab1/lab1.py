@@ -333,6 +333,8 @@ def solve_model(exportname, model=1, debug=False):
         boundaryConditions.AddNode(dependentField,iron.FieldVariableTypes.U,1,1,3,Z,iron.BoundaryConditionsTypes.FIXED,0.0)
         boundaryConditions.AddNode(dependentField,iron.FieldVariableTypes.U,1,1,4,Z,iron.BoundaryConditionsTypes.FIXED,0.0)
 
+        p = -2.*-0.1056E+01
+
     elif model == 2:
         boundaryConditions.AddNode(dependentField,iron.FieldVariableTypes.U,1,1,1,X,iron.BoundaryConditionsTypes.FIXED,0.0)
         boundaryConditions.AddNode(dependentField,iron.FieldVariableTypes.U,1,1,3,X,iron.BoundaryConditionsTypes.FIXED,0.0)
@@ -356,6 +358,8 @@ def solve_model(exportname, model=1, debug=False):
         boundaryConditions.AddNode(dependentField,iron.FieldVariableTypes.U,1,1,2,Z,iron.BoundaryConditionsTypes.FIXED,0.0)
         boundaryConditions.AddNode(dependentField,iron.FieldVariableTypes.U,1,1,3,Z,iron.BoundaryConditionsTypes.FIXED,0.0)
         boundaryConditions.AddNode(dependentField,iron.FieldVariableTypes.U,1,1,4,Z,iron.BoundaryConditionsTypes.FIXED,0.0)
+
+        p = -2.*-0.6656E+00
 
     elif model == 3:
         boundaryConditions.AddNode(dependentField,iron.FieldVariableTypes.U,1,1,1,X,iron.BoundaryConditionsTypes.FIXED,0.0)
@@ -381,6 +385,8 @@ def solve_model(exportname, model=1, debug=False):
         boundaryConditions.AddNode(dependentField,iron.FieldVariableTypes.U,1,1,7,Z,iron.BoundaryConditionsTypes.FIXED,0.0)
         boundaryConditions.AddNode(dependentField,iron.FieldVariableTypes.U,1,1,8,Z,iron.BoundaryConditionsTypes.FIXED,0.0)
 
+        p = -2.*-0.1450E+01
+
     elif model == 4:
         boundaryConditions.AddNode(dependentField,iron.FieldVariableTypes.U,1,1,1,X,iron.BoundaryConditionsTypes.FIXED,0.0)
         boundaryConditions.AddNode(dependentField,iron.FieldVariableTypes.U,1,1,3,X,iron.BoundaryConditionsTypes.FIXED,0.0)
@@ -396,6 +402,8 @@ def solve_model(exportname, model=1, debug=False):
         boundaryConditions.AddNode(dependentField,iron.FieldVariableTypes.U,1,1,3,Z,iron.BoundaryConditionsTypes.FIXED,0.0)
         boundaryConditions.AddNode(dependentField,iron.FieldVariableTypes.U,1,1,6,Z,iron.BoundaryConditionsTypes.FIXED,0.5)
         boundaryConditions.AddNode(dependentField,iron.FieldVariableTypes.U,1,1,8,Z,iron.BoundaryConditionsTypes.FIXED,0.5)
+
+        p = -2.*-0.1056E+01
 
     elif model == 5:
         boundaryConditions.AddNode(dependentField,iron.FieldVariableTypes.U,1,1,1,X,iron.BoundaryConditionsTypes.FIXED,0.0)
@@ -420,6 +428,8 @@ def solve_model(exportname, model=1, debug=False):
         boundaryConditions.AddNode(dependentField,iron.FieldVariableTypes.U,1,1,6,Z,iron.BoundaryConditionsTypes.FIXED,0.0)
         boundaryConditions.AddNode(dependentField,iron.FieldVariableTypes.U,1,1,7,Z,iron.BoundaryConditionsTypes.FIXED,0.0)
         boundaryConditions.AddNode(dependentField,iron.FieldVariableTypes.U,1,1,8,Z,iron.BoundaryConditionsTypes.FIXED,0.0)
+
+        p = -2.*-0.1000E+01
 
     solverEquations.BoundaryConditionsCreateFinish()
 
@@ -508,9 +518,9 @@ def solve_model(exportname, model=1, debug=False):
     # Note that the hydrostatic pressure value is different from the value quoted
     # in the original lab instructions. This is because the stress has been
     # evaluated using modified invariants (isochoric invariants)
-    p = dependentField.ParameterSetGetElement(
-        iron.FieldVariableTypes.U,
-        iron.FieldParameterSetTypes.VALUES,elementNumber,4)
+    #p = dependentField.ParameterSetGetElement(
+    #    iron.FieldVariableTypes.U,
+    #    iron.FieldParameterSetTypes.VALUES,elementNumber,4)
     results['Hydrostatic pressure'] = p
     if debug:
         print("Hydrostatic pressure")

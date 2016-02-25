@@ -243,10 +243,9 @@ def solve_model(exportname, model=1, debug=False):
     materialField.VariableLabelSet(iron.FieldVariableTypes.U,"Material")
     equationsSet.MaterialsCreateFinish()
 
-    print("Solving model {0}".format(model))
     # Set Costa constitutive relation parameters.
     # Q=[c_ff 2c_fs 2c_fn c_ss 2c_ns c_nn]' * [E_ff E_fs  E_fn  E_ss E_sn  E_nn].^2;
-    if model in [1, 4, 5]:
+    if model in [1, 3, 4]:
         c_1 = 0.0475
         c_ff = 15.25
         c_fs = 6.05
@@ -254,7 +253,7 @@ def solve_model(exportname, model=1, debug=False):
         c_ss = c_ff
         c_sn = c_fs
         c_nn = c_ff
-    elif model in [3, 6, 7]:
+    elif model in [2, 5, 6]:
         c_1 = 0.0475
         c_ff = 15.25
         c_fs = 6.95
@@ -271,13 +270,13 @@ def solve_model(exportname, model=1, debug=False):
     materialField.ComponentValuesInitialiseDP(iron.FieldVariableTypes.U,iron.FieldParameterSetTypes.VALUES,6,c_sn)
     materialField.ComponentValuesInitialiseDP(iron.FieldVariableTypes.U,iron.FieldParameterSetTypes.VALUES,7,c_nn)
 
-    if model in [1, 3]:
+    if model in [1, 2]:
         angle = 0.
-    elif model == 4:
+    elif model == 3:
         angle = 30.
-    elif model in [5, 6]:
+    elif model in [4, 5]:
         angle = 45.
-    elif model ==7:
+    elif model ==6:
         angle = 90.
 
     fibreField.ComponentValuesInitialiseDP(iron.FieldVariableTypes.U,iron.FieldParameterSetTypes.VALUES,1,angle)
@@ -469,7 +468,7 @@ def solve_model(exportname, model=1, debug=False):
     # Note that the hydrostatic pressure value is different from the value quoted
     # in the original lab instructions. This is because the stress has been
     # evaluated using modified invariants (isochoric invariants)
-    p = dependentField.ParameterSetGetElement(
+    p = -dependentField.ParameterSetGetElement(
         iron.FieldVariableTypes.U,
         iron.FieldParameterSetTypes.VALUES,elementNumber,4)
     results["Hydrostatic pressure"] = p
@@ -488,6 +487,8 @@ def solve_model(exportname, model=1, debug=False):
 if __name__ == "__main__":
     exportname = "model1"
     results = solve_model(exportname, model=1, debug=True)
+    exportname = "model2"
+    results = solve_model(exportname, model=2, debug=True)
     exportname = "model3"
     results = solve_model(exportname, model=3, debug=True)
     exportname = "model4"
@@ -496,6 +497,5 @@ if __name__ == "__main__":
     results = solve_model(exportname, model=5, debug=True)
     exportname = "model6"
     results = solve_model(exportname, model=6, debug=True)
-    exportname = "model7"
-    results = solve_model(exportname, model=7, debug=True)
+
 
