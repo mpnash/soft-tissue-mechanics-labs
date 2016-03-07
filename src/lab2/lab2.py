@@ -42,6 +42,7 @@
 #> Main script
 
 import numpy
+import math
 
 # Intialise OpenCMISS
 from opencmiss.iron import iron
@@ -271,13 +272,13 @@ def solve_model(exportname, model=1, debug=False):
     materialField.ComponentValuesInitialiseDP(iron.FieldVariableTypes.U,iron.FieldParameterSetTypes.VALUES,7,c_nn)
 
     if model in [1, 2]:
-        angle = 0.
+        angle = numpy.deg2rad(0.)
     elif model == 3:
-        angle = 30.
+        angle = numpy.deg2rad(30.)
     elif model in [4, 5]:
-        angle = 45.
+        angle = numpy.deg2rad(45.)
     elif model ==6:
-        angle = 90.
+        angle = numpy.deg2rad(90.)
 
     fibreField.ComponentValuesInitialiseDP(iron.FieldVariableTypes.U,iron.FieldParameterSetTypes.VALUES,1,angle)
 
@@ -398,24 +399,40 @@ def solve_model(exportname, model=1, debug=False):
     fields.ElementsExport(exportname,"FORTRAN")
     fields.Finalise()
 
+    Q = numpy.array([[numpy.cos(angle), -numpy.sin(angle),  0.],
+                     [numpy.sin(angle), numpy.cos(angle) ,  0.],
+                     [0.              , 0.               ,  1.]])
+
     results = {}
     elementNumber = 1
     xiPosition = [0.5, 0.5, 0.5]
-    F = equationsSet.TensorInterpolateXi(
-        iron.EquationsSetTensorEvaluateTypes.DEFORMATION_GRADIENT,
-        elementNumber, xiPosition,(3,3))
-    results["Deformation gradient tensor"] = F
+    # Note that there seems to be a bug with F in OpenCMISS when fibre angles are specified in x1-x2 plane
+    #F = equationsSet.TensorInterpolateXi(
+    #    iron.EquationsSetTensorEvaluateTypes.DEFORMATION_GRADIENT,
+    #    elementNumber, xiPosition,(3,3))
+    Ffib = numpy.array([[0.1250E+01, 0.        , 0.],
+                        [0.        , 0.1250E+01, 0.],
+                        [0.        , 0.        , 0.6400E+00]])
+    Fref = Ffib
+    results["Deformation gradient tensor (fibre coordinate system)"] = Ffib
+    results["Deformation gradient tensor (reference coordinate system)"] = Fref
     if debug:
-        print("Deformation gradient tensor")
-        print(F)
+        print("Deformation gradient tensor (fibre coordinate system)")
+        print(Ffib)
+        print("Deformation gradient tensor (reference coordinate system)")
+        print(Fref)
 
-    C = equationsSet.TensorInterpolateXi(
+    Cfib = equationsSet.TensorInterpolateXi(
         iron.EquationsSetTensorEvaluateTypes.R_CAUCHY_GREEN_DEFORMATION,
         elementNumber, xiPosition,(3,3))
-    results["Right Cauchy-Green deformation tensor"] = C
+    Cref=Cfib
+    results["Right Cauchy-Green deformation tensor (fibre coordinate system)"] = Cfib
+    results["Right Cauchy-Green deformation tensor (reference coordinate system)"] = Cref
     if debug:
-        print("Right Cauchy-Green deformation tensor")
-        print(C)
+        print("Right Cauchy-Green deformation tensor (fibre coordinate system)")
+        print(Cfib)
+        print("Right Cauchy-Green deformation tensor (reference coordinate system)")
+        print(Cref)
 
     Efib = equationsSet.TensorInterpolateXi(
         iron.EquationsSetTensorEvaluateTypes.GREEN_LAGRANGE_STRAIN,
@@ -425,31 +442,35 @@ def solve_model(exportname, model=1, debug=False):
         print("Green-Lagrange strain tensor (fibre coordinate system)")
         print(Efib)
 
-    Q = numpy.array([[numpy.cos(numpy.deg2rad(angle)), -numpy.sin(numpy.deg2rad(angle)), 0],
-                     [numpy.sin(numpy.deg2rad(angle)), numpy.cos(numpy.deg2rad(angle)),  0],
-                     [0               , 0               ,  1]])
     Eref = numpy.dot(Q,numpy.dot(Efib,numpy.matrix.transpose(Q)))
     results["Green-Lagrange strain tensor (reference coordinate system)"] = Eref
     if debug:
         print("Green-Lagrange strain tensor (reference coordinate system)")
         print(Eref)
 
-
-    I1=numpy.trace(C)
-    I2=0.5*(numpy.trace(C)**2.-numpy.tensordot(C,C))
-    I3=numpy.linalg.det(C)
-    results["Invariants"] = [I1, I2, I3]
+    I1=numpy.trace(Cfib)
+    I2=0.5*(numpy.trace(Cfib)**2.-numpy.tensordot(Cfib,Cfib))
+    I3=numpy.linalg.det(Cfib)
+    results["Invariants of Cfib (fibre coordinate system)"] = [I1, I2, I3]
     if debug:
-        print("Invariants")
+        print("Invariants of Cfib (fibre coordinate system)")
         print("I1={0}, I2={1}, I3={2}".format(I1,I2,I3))
 
-    TCfib = equationsSet.TensorInterpolateXi(
+    I1=numpy.trace(Cref)
+    I2=0.5*(numpy.trace(Cref)**2.-numpy.tensordot(Cref,Cref))
+    I3=numpy.linalg.det(Cref)
+    results["Invariants of Cref (reference coordinate system)"] = [I1, I2, I3]
+    if debug:
+        print("Invariants of Cref (reference coordinate system)")
+        print("I1={0}, I2={1}, I3={2}".format(I1,I2,I3))
+
+    TCref = equationsSet.TensorInterpolateXi(
         iron.EquationsSetTensorEvaluateTypes.CAUCHY_STRESS,
         elementNumber, xiPosition,(3,3))
-    results["Cauchy stress tensor (fibre coordinate system)"] = TCfib
+    results["Cauchy stress tensor (reference coordinate system)"] = TCref
     if debug:
-        print("Cauchy stress tensor (fibre coordinate system)")
-        print(TCfib)
+        print("Cauchy stress tensor (reference coordinate system)")
+        print(TCref)
 
     # Output of Second Piola-Kirchhoff Stress Tensor not implemented. It is
     # instead, calculated from TG=J*F^(-1)*TC*F^(-T), where T indicates the
@@ -458,18 +479,18 @@ def solve_model(exportname, model=1, debug=False):
     #    iron.EquationsSetTensorEvaluateTypes.SECOND_PK_STRESS,
     #    elementNumber, xiPosition,(3,3))
     #J=1. #Assumes J=1
-    TGfib = numpy.dot(numpy.linalg.inv(F),numpy.dot(
-            TCfib,numpy.linalg.inv(numpy.matrix.transpose(F))))
-    results["Second Piola-Kirchhoff stress tensor (fibre coordinate system)"] = TGfib
-    if debug:
-        print("Second Piola-Kirchhoff stress tensor (fibre coordinate system)")
-        print(TGfib)
-
-    TGref = numpy.dot(Q,numpy.dot(TGfib,numpy.matrix.transpose(Q)))
+    TGref = numpy.dot(numpy.linalg.inv(Fref),numpy.dot(
+            TCref,numpy.linalg.inv(numpy.matrix.transpose(Fref))))
     results["Second Piola-Kirchhoff stress tensor (reference coordinate system)"] = TGref
     if debug:
         print("Second Piola-Kirchhoff stress tensor (reference coordinate system)")
         print(TGref)
+
+    TGfib = numpy.dot(numpy.matrix.transpose(Q),numpy.dot(TGref,Q))
+    results["Second Piola-Kirchhoff stress tensor (fibre coordinate system)"] = TGfib
+    if debug:
+        print("Second Piola-Kirchhoff stress tensor (fibre coordinate system)")
+        print(TGfib)
 
     # Note that the hydrostatic pressure value is different from the value quoted
     # in the original lab instructions. This is because the stress has been
@@ -481,7 +502,7 @@ def solve_model(exportname, model=1, debug=False):
     if debug:
         print("Hydrostatic pressure")
         print(p)
-    
+
     problem.Destroy()
     coordinateSystem.Destroy()
     region.Destroy()
