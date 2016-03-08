@@ -11,7 +11,7 @@ Lab 1: Deformation and Stress
    :maxdepth: 2
 
 
-This lab aims to analyse large deformation kinematics with respect to material coordinates.
+.. This lab aims to analyse large deformation kinematics with respect to material coordinates.
 Before starting this lab, please read the :ref:`Using OpenCMISS <using-opencmiss>` section to familiarise yourself with the software used in this lab.
 
 |vspace|
@@ -102,8 +102,8 @@ Stress analysis
 
 |vspace|
 
-10. Using the values of the 2nd Piola Kirchhoff tensor components :math:`(\boldsymbol{T})` and your :math:`(\boldsymbol{F})` tensor from step 5, determine the Cauchy components of stress :math:`(\Sigma)` (Don't forget the Jacobian :math:`(J)`)
+10. Using the values of the 2nd Piola Kirchhoff tensor components :math:`(\boldsymbol{T})` and your :math:`(\boldsymbol{F})` tensor from step 5, determine the Cauchy components of stress :math:`(\Sigma)` (Don't forget the Jacobian :math:`(J)`).
 
 |vspace|
 
-11. Select View->Problem from the menu and repeat step 9 for the remaining models in the lab:
+11. Select View->Problem from the menu and repeat step 9 for the remaining models in the lab.
