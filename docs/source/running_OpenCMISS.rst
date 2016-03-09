@@ -11,10 +11,10 @@ This lab will make use of the `OpenCMISS <http://opencmiss.org/>`_ computational
 
 .. _starting-neon:
 
-=======================
-Starting OpenCMISS Neon
-=======================
-Neon can be run from the start menu. When the program starts, you will be prompted to select a lab as shown in the screenshot below.
+==================
+Starting OpenCMISS
+==================
+OpenCMISS can be run from the start menu. When the program starts, you will be prompted to select a lab as shown in the screenshot below.
 
 .. image:: images/selecting_a_lab.png
 
@@ -26,9 +26,9 @@ Once a lab has been selected and you have clicked "ok", a drop down menu will ap
 
 .. _running-models-in-Neon:
 
-================================
-Running models in OpenCMISS Neon
-================================
+===========================
+Running models in OpenCMISS
+===========================
 
 To run a model in a lab, select the model from the drop down menu described in the preivious section, and click "Run". If at any time, the run button is not visible, click View->Problem Editors->Problem Editor to make the button visible, as shown in the following screenshots.
 
