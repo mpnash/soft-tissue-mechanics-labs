@@ -48,9 +48,9 @@ source_suffix = '.rst'
 master_doc = 'index'
 
 # General information about the project.
-project = u'BIOMENG321-soft-tissue-mechanics-labs'
-copyright = u'2016, Martyn Nash, Hugh Sorby, Thiranja Prasad Babarenda Gamage'
-author = u'Martyn Nash, Hugh Sorby, Thiranja Prasad Babarenda Gamage'
+project = u'Soft-tissue-mechanics-lab'
+copyright = u'2016, Martyn Nash, Hugh Sorby, Thiranja Prasad Babarenda Gamage, Vicky Wang'
+author = u'Martyn Nash, Hugh Sorby, Thiranja Prasad Babarenda Gamage, Vicky Wang'
 
 # The version info for the project you're documenting, acts as replacement for
 # |version| and |release|, also used in various other places throughout the
