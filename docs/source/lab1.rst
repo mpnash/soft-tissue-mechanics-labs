@@ -28,11 +28,11 @@ Before starting this lab, please read the :ref:`Using OpenCMISS <using-opencmiss
 Solving mechanics models
 ========================
 
-1. Start Neon and load lab1 (described in the :ref:`Starting Neon <starting-neon>` section).
+1. Start OpenCMISS and load Lab1 (described in the :ref:`Starting OpenCMISS <starting-neon>` section).
 
 |vspace|
 
-2. Select "Model 1 (uniaxial extension of a unit cube)" from the drop down menu and click the "run" button (screenshots of this procedure are shown in the :ref:`Running models in Neon <running-models-in-Neon>` section).
+2. Select "Model 1 (uniaxial extension of a unit cube)" from the drop down menu and click the "run" button (screenshots of this procedure are shown in the :ref:`Running models in OpenCMISS <running-models-in-Neon>` section).
 
 |vspace|
 
