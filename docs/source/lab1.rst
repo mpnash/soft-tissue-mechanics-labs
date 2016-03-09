@@ -122,7 +122,7 @@ Section 2: Stress analysis
 
 |vspace|
 
-11. Select View->Problem from the menu and repeat step 9 for the remaining models in the lab.
+11. Select View->Problem from the menu and repeat step 10 for the remaining models in the lab.
 
 |vspace|
 
