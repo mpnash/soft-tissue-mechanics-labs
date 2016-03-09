@@ -47,23 +47,20 @@ Solving mechanics models
 Strain analysis
 ===============
 
-4. Write down the coordinate equations that describe this deformation in the form :math:`x=f(X)`, e.g:
+4. Write down the coordinate equations that describe this deformation in the form :math:`\boldsymbol{x}=f(\boldsymbol{X})`, i.e.:
 
   .. math::
 
-    x = 3X + 2Y + 4Z
+    x_1 &= aX_1 + bX_2 + cX_3\\
+    x_2 &= dX_1 + eX_2 + fX_3\\
+    x_3 &= gX_1 + hX_2 - iX_3
 
-    y = 5X - 4Y
+  where the constants a-i need to be identified from the undeformed and deformed coordinates of the model shown in the graphics window.
 
-    z = 2X + 3Y - 2Z
-
-  .. Note::
-
-      This is not the answer!
 
 |vspace|
 
-5. Determine the deformation gradient tensor :math:`(\boldsymbol{F}=dx/dX)`, and evaluate the determinant of :math:`\boldsymbol{F}` to see whether the deformation is incompressible (i.e. constant volume).
+5. Determine the deformation gradient tensor :math:`(\boldsymbol{F}=d\boldsymbol{x}/d\boldsymbol{X})`, and evaluate the determinant of :math:`\boldsymbol{F}` to see whether the deformation is incompressible (i.e. constant volume).
 
 |vspace|
 
@@ -92,7 +89,6 @@ Strain analysis
     - Model 5 (Extention and shear of a unit cube)
 
 |vspace|
-
 
 ===============
 Stress analysis
