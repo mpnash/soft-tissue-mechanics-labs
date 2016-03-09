@@ -14,7 +14,6 @@ Contents:
    introduction
    running_OpenCMISS
    lab1
-   lab2
 
 Indices and tables
 ==================
