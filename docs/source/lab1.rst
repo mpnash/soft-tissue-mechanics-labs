@@ -47,7 +47,7 @@ Solving mechanics models
       - the undeformed (reference) configuration of the unit cube is shown in red, and
       - the deformed (current) configuration is shown in green (x, y, z components of the deformed coordinates are shown at the corners of the model).
 
-  The model in the 3D graphics window can be rotated (click-drag-left-mouse button), translated (click-drag-middle-mouse button), or zoomed (click-drag-middle-mouse button).
+  The model in the 3D graphics window can be rotated (click-drag-left-mouse button), translated (click-drag-middle-mouse button), or zoomed (click-drag-right-mouse button).
 
 |vspace|
 
@@ -63,7 +63,7 @@ Section 1: Strain analysis
     x_2 &= dX_1 + eX_2 + fX_3\\
     x_3 &= gX_1 + hX_2 + iX_3
 
-  where the constants a-i need to be identified from the undeformed and deformed coordinates of the model shown in the graphics window.
+  where the constants :math:`a` to :math:`i` need to be identified from the undeformed and deformed coordinates of the model shown in the graphics window.
 
 
 |vspace|
