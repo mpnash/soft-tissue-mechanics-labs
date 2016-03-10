@@ -65,14 +65,17 @@ Section 1: Strain analysis
 
   where the constants a-i need to be identified from the undeformed and deformed coordinates of the model shown in the graphics window.
 
+|vspace|
+
+5. Determine the deformation gradient tensor :math:`(\boldsymbol{F}=d\boldsymbol{x}/d\boldsymbol{X})`.
 
 |vspace|
 
-5. Determine the deformation gradient tensor :math:`(\boldsymbol{F}=d\boldsymbol{x}/d\boldsymbol{X})`, and evaluate the determinant of :math:`\boldsymbol{F}` to see whether the material is incompressible (i.e. maintains constant volume).
+6. Evaluate the determinant of :math:`\boldsymbol{F}` to see whether the material is incompressible (i.e. maintains constant volume).
 
 |vspace|
 
-6. Determine:
+7. Determine:
 
   - right Cauchy-Green deformation tensor :math:`(\boldsymbol{C})`,
   - :math:`I_1=trace(\boldsymbol{C})`,
@@ -81,7 +84,7 @@ Section 1: Strain analysis
 
 |vspace|
 
-7. Check your answers to 5 and 6 against the simulation results.
+8. Check your answers to 5-7 against the simulation results.
 
   .. Note::
 
@@ -89,7 +92,7 @@ Section 1: Strain analysis
 
 |vspace|
 
-8. Select View->Problem from the menu and repeat steps 2-7 for the remaining models in the lab:
+9. Select View->Problem from the menu and repeat steps 2-8 for the remaining models in the lab:
 
     - Model 2 (Equibiaxial extension of a unit cube)
     - Model 3 (Simple shear of a unit cube)
@@ -98,6 +101,20 @@ Section 1: Strain analysis
 
 |vspace|
 
+Questions
+---------
+
+a. What do the off-diagonal components of :math:`\boldsymbol{F}` mean?
+
+|vspace|
+
+b. In model 4, why are :math:`F_{11}` and :math:`F_{33}` the same (what does it represent)? Why is :math:`F_{22}` less than 1.
+
+|vspace|
+
+c. In model 1, why are :math:`E_{22}` and :math:`E_{33}` negative?
+
+|vspace|
 
 .. note::
 
@@ -109,32 +126,36 @@ Section 1: Strain analysis
 
     - determine if a material is incompressible.
 
-
 ==========================
 Section 2: Stress analysis
 ==========================
 
-9. Select "Model 1 (uniaxial extension of a unit cube)" from the drop down menu and click the "run" button.
+1. Select "Model 1 (uniaxial extension of a unit cube)" from the drop down menu and click the "run" button.
 
 |vspace|
 
-10. Using the components of the 2nd Piola-Kirchhoff stress tensor :math:`(\boldsymbol{T})` and your :math:`(\boldsymbol{F})` from step 5, determine the Cauchy components of the stress tensor :math:`(\boldsymbol{\Sigma})` (Don't forget the Jacobian :math:`(J)`).
+2. Using the components of the 2nd Piola-Kirchhoff stress tensor :math:`(\boldsymbol{T})` and your deformation gradient tensor :math:`(\boldsymbol{F})` from step 5, determine the Cauchy components of the stress tensor :math:`(\boldsymbol{\Sigma})` (Don't forget the Jacobian :math:`(J)`).
 
 |vspace|
 
-11. Select View->Problem from the menu and repeat step 10 for the remaining models in the lab.
+3. Select View->Problem from the menu and repeat step 1-2 for the remaining models in the lab.
 
 |vspace|
 
-12. In model 1, why are :math:`\Sigma_{22}` and :math:`\Sigma_{33}` zero, and how do they relate to the deformation seen in the graphical window?
+Questions
+---------
+
+a. In model 1, why are :math:`\Sigma_{22}` and :math:`\Sigma_{33}` zero. How do they relate to the deformation seen in the graphical window?
 
 |vspace|
 
-13. In model 3, why is :math:`\Sigma_{33}` negative? 
+b. In model 3, why is :math:`\Sigma_{33}` negative? 
 
 |vspace|
 
-14. In model 3, why are the off-diagonal components of :math:`\boldsymbol{\Sigma}` nonzero? 
+c. In model 3, why are the off-diagonal components of :math:`\boldsymbol{\Sigma}` nonzero? 
+
+|vspace|
 
 .. note::
 
