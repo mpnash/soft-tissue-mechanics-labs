@@ -108,11 +108,11 @@ a. What do the off-diagonal components of :math:`\boldsymbol{F}` mean?
 
 |vspace|
 
-b. In model 4, why are :math:`F_{11}` and :math:`F_{33}` the same (what does it represent)? Why is :math:`F_{22}` less than 1.
+b. In model 1, why are :math:`E_{22}` and :math:`E_{33}` negative?
 
 |vspace|
 
-c. In model 1, why are :math:`E_{22}` and :math:`E_{33}` negative?
+c. In model 4, why are :math:`F_{11}` and :math:`F_{33}` the same (what does it represent)? Why is :math:`F_{22}` less than 1.
 
 |vspace|
 
