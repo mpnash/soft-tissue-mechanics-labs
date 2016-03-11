@@ -27,11 +27,11 @@ Once installed, OpenCMISS can be run from the start menu. When the program start
 
 .. image:: images/selecting_a_lab.png
 
-Once a lab has been selected and you have clicked "ok", a drop down menu will appear listing a series of models that will be analysed during the course of the lab.
+Select a lab and click ok. 
+
+Click View->Problem and a drop down menu will appear listing a series of models that will be analysed during the course of the lab.
 
 .. image:: images/model_drop_down_menu.png
-
-
 
 .. _running-models-in-OpenCMISS:
 
@@ -39,8 +39,13 @@ Once a lab has been selected and you have clicked "ok", a drop down menu will ap
 Running models in OpenCMISS
 ===========================
 
-To run a model in a lab, select the model from the drop down menu described in the preivious section, and click "Run". If at any time, the run button is not visible, click View->Problem Editors->Problem Editor to make the button visible, as shown in the following screenshots.
+Select a model from the drop down menu and click "Run". 
 
-.. image:: images/problem_editor.png
+.. note::
 
-.. image:: images/running_models.png
+    If at any time, the run button is not visible, click View->Problem Editors->Problem Editor to make the button visible, as shown in the following screenshots.
+
+      .. image:: images/problem_editor.png
+
+      .. image:: images/running_models.png
+
