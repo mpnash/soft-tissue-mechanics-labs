@@ -104,7 +104,7 @@ Section 1: Strain analysis
 Questions
 ---------
 
-After you have completed the above exercises, answer the followig questions: 
+After you have completed the above exercises, answer the following questions: 
 
 a. What do the off-diagonal components of :math:`\boldsymbol{F}` mean?
 
@@ -147,7 +147,7 @@ Section 2: Stress analysis
 Questions
 ---------
 
-After you have completed the above exercises, answer the followig questions: 
+After you have completed the above exercises, answer the following questions: 
 
 a. In model 1, why are :math:`\Sigma_{22}` and :math:`\Sigma_{33}` zero. How do they relate to the deformation seen in the graphical window?
 
