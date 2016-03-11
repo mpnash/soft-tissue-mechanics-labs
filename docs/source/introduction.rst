@@ -9,9 +9,9 @@ Welcome to the Soft tissue mechanics labs. These instructions will take you thro
 
 - :ref:`Lab 1: Deformation and stress in isotropic materials <lab1>` 
 
-.. - Lab 2: Anisotropy and fibre (material) coordinates
+- :ref:`Lab 2: Deformation and stress in anisotropic materials <lab2>`
 
-The labs make use of the OpenCMISS computational modelling software that will be outlined in the next section.
+These labs make use of the OpenCMISS computational modelling software that will be outlined in the next section.
 
 
 .. define stress tensors with respect to spatial and material coordinates.
