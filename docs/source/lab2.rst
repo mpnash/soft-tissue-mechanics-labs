@@ -31,7 +31,7 @@ Solving mechanics models
 
 |vspace|
 
-2. Select "Model 1 (Equibiaxial extension of unit cube)" from the drop down menu and click the "run" button (screenshots of this procedure are shown in the :ref:`Running models in OpenCMISS <running-models-in-OpenCMISS>` section).
+2. Select "Model 1 (Equibiaxial extension of unit cube, isotropic, 0 degree fibre rotation)" from the drop down menu and click the "run" button (screenshots of this procedure are shown in the :ref:`Running models in OpenCMISS <running-models-in-OpenCMISS>` section).
 
 |vspace|
 
@@ -67,9 +67,9 @@ Section 1: Strain analysis
 
 5. Write down:
 
-  - the deformation gradient tensor :math:`(\boldsymbol{F}=\frac{\partial\boldsymbol{x}}{\partial\boldsymbol{X}})`,
-  - the right Cauchy-Green deformation tensor :math:`(\boldsymbol{C})`, and
-  - Green-Lagrange strain tensor :math:`(\boldsymbol{E})` (label this :math:`\boldsymbol{E}_{ref}`).
+  - the deformation gradient tensor (:math:`\boldsymbol{F}=\frac{\partial\boldsymbol{x}}{\partial\boldsymbol{X}}`),
+  - the right Cauchy-Green deformation tensor (:math:`\boldsymbol{C}`), and
+  - Green-Lagrange strain tensor (:math:`\boldsymbol{E}`) (label this :math:`\boldsymbol{E}_{ref}`).
 
   .. Note::
 
@@ -77,7 +77,13 @@ Section 1: Strain analysis
 
 6. Check your answers to 4 and 5 against the simulation results.
 
-7. Analytically differentiate the Costa constitutive relation (shown below) with respect to the strain components :math:`(E_{ff})` and :math:`(E_{ss})`. Thus determine analytic expressions for the **distortional components** of the second Piola-Kirchhoff stress tensor.
+|vspace|
+
+==========================
+Section 2: Stress analysis
+==========================
+
+1. Analytically differentiate the Costa constitutive relation (shown below) with respect to the strain components :math:`E_{ff}` and :math:`E_{ss}`. Thus determine analytic expressions for the **distortional components** of the second Piola-Kirchhoff stress tensor.
 
   .. math::
 
@@ -102,14 +108,10 @@ Section 1: Strain analysis
 
 |vspace|
 
-==========================
-Section 2: Stress analysis
-==========================
+Isotropic material properties with fibre axes aligned with the reference axes
+-----------------------------------------------------------------------------
 
-Isotropic material properties
------------------------------
-
-1. The material parameters defined for model 1 are isotropic (equal in the 3 axial directions), i.e.
+2. The material parameters defined for model 1 are isotropic (equal in the 3 axial directions), i.e.
 
   .. math::
 
@@ -117,7 +119,7 @@ Isotropic material properties
     c_{ff} = c_{ss} = c_{nn} &= 15.25 \\
     c_{fs} = c_{fn} = c_{sn} &= 6.05
 
-  Substitute the Green-Lagrange strain components :math:`(\boldsymbol{E})` from Section 1 into your analytic expression from step 7 to determine values for the **distortional components** of the second Piola-Kirchhoff stress tensor. Verify that these distortional stresses are:
+  Substitute the Green-Lagrange strain components (:math:`\boldsymbol{E}`) from Section 1 into your analytic expression from step 1 to determine values for the **distortional components** of the second Piola-Kirchhoff stress tensor. Verify that these distortional stresses are:
 
   .. math::
 
@@ -127,7 +129,9 @@ Isotropic material properties
 
       - For this exercise :math:`Q=3.74`.
 
-2. Determine the total stresses: :math:`T^{ff}` and :math:`T^{ss}` using equation 38 in `Nash and Hunter (2000) <http://link.springer.com/article/10.1023%2FA%3A1011084330767>`_. This requires determining the value for the **hydrostatic pressure**, :math:`p`, which is provided from the simulation results.
+|vspace|
+
+3. Determine the total stresses: :math:`T^{ff}` and :math:`T^{ss}` using equation 38 in `Nash and Hunter (2000) <http://link.springer.com/article/10.1023%2FA%3A1011084330767>`_. This requires determining the value for the **hydrostatic pressure**, :math:`p`, which is provided from the simulation results.
 
   .. Note::
 
@@ -135,12 +139,16 @@ Isotropic material properties
 
       - It is easy to invert a diagonal tensor - check that :math:`C^{MN}C_{MN}=\boldsymbol{I}`.
 
-3. Check your answers to 2 against the simulation results.
+|vspace|
 
-Anisotropic material properties
--------------------------------
+4. Check your answers to 3 against the simulation results.
 
-4. Return to the model selection drop down menu by clicking Select View->Problem from the menu. Select and run model 2 (Equibiaxial extension of unit cube). This model and boundary conditions are similar to the previous model, except that the Costa relation parameters are now fully orthotropic:
+|vspace|
+
+Orthotropic material properties with fibre axes aligned with the reference axes
+-------------------------------------------------------------------------------
+
+5. Return to the model selection drop down menu by clicking Select View->Problem from the menu. Select and run model 2 (Equibiaxial extension of unit cube). This model and its boundary conditions are similar to the previous model, except that the Costa relation parameters are now fully orthotropic:
 
   .. math::
 
@@ -154,15 +162,116 @@ Anisotropic material properties
 
   Determine the distortional second Piola-Kirchhoff stress components :math:`T^{ff\_dist}` and :math:`T^{ss\_dist}`.
 
-5.  Determine the total stresses: :math:`T^{ff}` and :math:`T^{ss}`.
+|vspace|
 
-6. How have the total second Piola-Kirchhoff stress components changed compared with step 2. Why?
+6.  Determine the total stresses: :math:`T^{ff}` and :math:`T^{ss}`.
 
-7. Now consider a model similar to model 2 
+|vspace|
+
+7. How have the total second Piola-Kirchhoff stress components changed compared with step 3. Why?
+
+|vspace|
+
+
+Isotropic material properties with rotated fibre axes
+-----------------------------------------------------
+
+8. Return to the model selection drop down menu and select and run model 3 (Equibiaxial extension of unit cube, isotropic, 30 degree fibre rotation). This model is similar to the previous models, except that the fibre (material) axes are no longer aligned with the reference axes. They are now rotated anticlockwise by an angle of :math:`\theta=30` degrees from the :math:`x_{1}` axis (in the :math:`x_{1}`-:math:`x_{2}` plane). When visualising the model, the gold arrows in the graphics window indicate the direction of the fibre axis (along which the first material coordinate is defined), and the :math:`x_{1}`-:math:`x_{2}` plane indicates the orientation of the flat laminar sheet.
+
+|vspace|
+
+9. Determine the Green-Lagrange strain tensor components with respect to the fibre axes (:math:`\boldsymbol{E}_{fib}`) using the tensor transformation:
+
+  .. math::
+
+    \boldsymbol{E}_{fib} = \boldsymbol{Q}^{T} \boldsymbol{E}_{ref} \boldsymbol{Q}
+
+  where :math:`\boldsymbol{E}_{ref}` is the Green-Lagrange strain tensor with respect to the reference axes which were calculated in step 5 of section 1, and :math:`\boldsymbol{Q}` is the orthogonal rotation matrix:
+
+  .. math::
+
+      \boldsymbol{Q} = 
+      \begin{bmatrix}
+        \cos(\theta) & -\sin(\theta) & 0  \\
+        \sin(\theta) &  \cos(\theta) & 0  \\
+        0              &  0              & 1
+      \end{bmatrix}
+
+|vspace|
+
+10. Check your answers to 9 against the simulation results.
+
+|vspace|
+
+11. Explain similarities/differences between :math:`\boldsymbol{E}_{fib}` and :math:`\boldsymbol{E}_{ref}` for this model.
+
+|vspace|
+
+12. Substitute your fibre strains (:math:`\boldsymbol{E}_{fib}`) from step 9 and the isotropic Costa material constants from step 2 into your analytic stress expressions from step 1 to determine the total second Piola-Kirchhoff stress components with respect to the fibre (material) coordinates (:math:`\boldsymbol{T}_{fib}`). 
+
+|vspace|
+
+13. Transform the second Piola-Kirchhoff stress tensor (:math:`\boldsymbol{T}_{fib}`) from step 12  using:
+
+  .. math::
+
+    \boldsymbol{T}_{ref} = \boldsymbol{Q}^{T} \boldsymbol{T}_{fib} \boldsymbol{Q}
+
+  to determine the second Piola-Kirchhoff stress components with respect to the reference coordinate axes.
+
+|vspace|
+
+14. Check your answers to 13 against the simulation results.
+
+|vspace|
+
+15. Explain similarities/differences between :math:`\boldsymbol{T}_{fib}` and :math:`\boldsymbol{T}_{ref}` for this model.
+
+|vspace|
+
+16. What would you expect from the analysis in steps 8-15 if the fibre angle was changed from 30 to 45 degrees for this isotropic model?  What do you notice about the stress tensors :math:`\boldsymbol{T}_{fib}` and :math:`\boldsymbol{T}_{ref}` for this isotropic model subject to the equibiaxial deformation? Explain.
+
+  .. note::
+
+   You should not need to solve the model to answer this questions, but if you need the extra practice, apply steps 8-15 to model 4 (Equibiaxial extension of unit cube, isotropic, 45 degree fibre rotation).
+
+|vspace|
+
+Orthotropic material properties with rotated fibre axes
+-------------------------------------------------------
+
+17. Now run model 5. This is an othotropic similar to that described in step 5 above, except that the fibre angle is changed from 0 to 45 degrees with respect to the :math:`x_{1}`-axis (in the :math:`x_{1}`-:math:`x_{2}` plane). Repeat the analysis in steps 8-15.
+
+|vspace|
+
+18. How do the stress components of :math:`\boldsymbol{T}_{fib}` and :math:`\boldsymbol{T}_{ref}` compare to step 7.  Explain similarities and differences.
+
+|vspace|
+
+19. Now run model 6. This is an othotropic similar to that described in step 5 above, except that the fibre angle is changed from 0 to 90 degrees with respect to the :math:`x_{1}`-axis (in the :math:`x_{1}`-:math:`x_{2}` plane). Repeat the analysis in steps 8-15.
+
+|vspace|
+
+20. How do the stress components of :math:`\boldsymbol{T}_{fib}` and :math:`\boldsymbol{T}_{ref}` compare to step 7.  Explain similarities and differences.
+
+|vspace|
 
 Questions
 ---------
 
+After you have completed the above exercises, answer the following questions: 
 
+a. Will the invariants of :math:`\boldsymbol{C}` be different when calculated with respect to fibre or reference coordinates?
 
-Will the invariants be different between fibre and reference coordinates?
+|vspace|
+
+.. note::
+
+  By the end of this lab you should be able to:
+
+    - compare and contrast spatial versus material coordinates.
+
+    - analyse large deformation kinematics with respect to reference or material coordinates.
+
+    - define stress tensors with respect to spatial or material coordinates.
+
