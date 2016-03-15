@@ -45,7 +45,7 @@ Solving mechanics models
   The left side of the pane shows the stress and strain tensors associated with the simulation. The simulation results are shown in the 3D graphics window on the right side of the pane. In this graphical window:
 
       - the undeformed (reference) configuration of the unit cube is shown in red, and
-      - the deformed (current) configuration is shown in green (x, y, z components of the deformed coordinates are shown at the corners of the model).
+      - the deformed (current) configuration is shown in green (:math:`x_{1}`, :math:`x_{2}`, :math:`x_{3}` components of the deformed coordinates are shown at the corners of the model, (note that in the graphical window, these components are labelled x, y, and z, respectively).
 
   The model in the 3D graphics window can be rotated (click-drag-left-mouse button), translated (click-drag-middle-mouse button), or zoomed (click-drag-right-mouse button).
 
