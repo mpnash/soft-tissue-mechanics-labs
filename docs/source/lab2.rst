@@ -160,7 +160,7 @@ Section 2: Uniaxial extension of a unit cube
 
   .. Note::
 
-      This is the same deformation used in model 1 in Lab1, so you should not need to re-do these calculations.
+      This is the same deformation used in Model 1 in Lab1, so you should not need to re-do these calculations.
 
       For this model, the second Piola-Kirchhoff stress tensor with respect to both the reference and fibre axes is:
 
@@ -184,15 +184,7 @@ Isotropic material properties with rotated fibre axes
 
 |vspace|
 
-4. Determine the Green-Lagrange strain tensor components with respect to the fibre axes (:math:`\boldsymbol{E}_{fib}`) by selecting and using an appropriate tensor transformation from the two options listed below:
-
-  .. math::
-
-    \boldsymbol{E}_{fib} = \boldsymbol{Q}^{T} \boldsymbol{E}_{ref} \boldsymbol{Q}~(option~1)
-
-    \boldsymbol{E}_{fib} =  \boldsymbol{Q} \boldsymbol{E}_{ref} \boldsymbol{Q}^{T}~(option~2)
-
-  where :math:`\boldsymbol{E}_{ref}` is the Green-Lagrange strain tensor with respect to the reference axes that you derived in step 2, and :math:`\boldsymbol{Q}` is the orthogonal rotation matrix defined in step 7 of Section 1.
+4. Determine the Green-Lagrange strain tensor components with respect to the fibre axes (:math:`\boldsymbol{E}_{fib}`) using the approach in Step 7 of Section 2.
 
 |vspace|
 
@@ -200,15 +192,7 @@ Isotropic material properties with rotated fibre axes
 
 |vspace|
 
-6. Determine the second Piola-Kirchhoff stress components with respect to the reference coordinate axes (:math:`\boldsymbol{T}_{ref}`) by selecting and using an appropriate tensor transformation from the two options listed below:
-
-  .. math::
-
-    \boldsymbol{T}_{ref} = \boldsymbol{Q}^{T} \boldsymbol{T}_{fib} \boldsymbol{Q}~(option~1)
-
-    \boldsymbol{T}_{ref} =  \boldsymbol{Q} \boldsymbol{T}_{fib} \boldsymbol{Q}^{T}~(option~2)
-
-  where :math:`\boldsymbol{Q}` is the orthogonal rotation matrix defined in step 7 of Section 1. and :math:`\boldsymbol{T}_{fib}` is the second Piola-Kirchhoff stress tensor with respect to the fibre axes defined below:
+6. Determine the second Piola-Kirchhoff stress components with respect to the reference coordinate axes via the approach in Step 10 of Section 1, but using the following values for :math:`\boldsymbol{T}_{fib}` is the second Piola-Kirchhoff stress tensor with respect to the fibre axes:
 
   .. math::
 
@@ -226,11 +210,11 @@ Isotropic material properties with rotated fibre axes
 |vspace|
 
 
-8. What would you expect from the analysis in steps 7-13 if the fibre angle was changed from 30 degrees to 45 degrees or 90 degrees for this isotropic model?  What do you notice about the stress tensors :math:`\boldsymbol{T}_{fib}` and :math:`\boldsymbol{T}_{ref}` for this isotropic model subject to the uniaxial deformation? Explain.
+8. What would you expect from the analysis in steps 7-13 if the fibre angle was changed from 30 degrees to 45 degrees or 90 degrees for this model?  Explain the differences/similarities of the stress tensors :math:`\boldsymbol{T}_{fib}` and :math:`\boldsymbol{T}_{ref}` for this uniaxial deformation model.
 
   .. note::
 
-    You should not need to do any calculations to answer this questions, but if you need the extra practice, perform steps 4-7 with:
+    You should not need to do any calculations to answer this questions, but if you would like the extra practice, perform steps 4-7 using:
 
     :math:`\theta=45` degrees, where the second Piola-Kirchhoff stress tensor with respect to the fibre axes is:
 
@@ -257,10 +241,10 @@ Isotropic material properties with rotated fibre axes
 |vspace|
 
 ====================
-Section 3: Questions
+Section 4: Questions
 ====================
 
-After you have completed the above exercises in section 1 and section 2, answer the following questions: 
+After you have completed the above exercises in Section 2 and Section 3, consider the following questions: 
 
 a. How do changes in :math:`\boldsymbol{E}_{ref}` for different fibre angles (:math:`\theta`) in the biaxial deformation compare with the changes seen in the uniaxial deformation.
 
@@ -283,5 +267,5 @@ e. Will the invariants of :math:`\boldsymbol{C}` be different when calculated wi
     - analyse stress tensors with respect to spatial or material coordinates for isotropic materials.
 
 
-See this :ref:`link <lab2_section1_solutions>` and this :ref:`link <lab2_section2_solutions>` for the solutions to step 13 of Section 1 and step 8 of Section 2, respectively.
+Here are the :ref:`solutions to Step 13 of Section 2 <lab2_section1_solutions>` and :ref:`solutions to Step 8 of Section 3 <lab2_section2_solutions>`.
 
