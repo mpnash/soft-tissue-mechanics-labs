@@ -5,9 +5,9 @@
 
 .. _lab2:
 
-*****************************************************************
-Lab 2: Relating stress and strain in different coordinate systems
-*****************************************************************
+*****************************************************************************
+Lab 2: Transforming stresses and strains between different coordinate systems
+*****************************************************************************
 
 .. toctree::
    :maxdepth: 2
