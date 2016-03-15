@@ -12,7 +12,7 @@ Lab 2: Transforming stresses and strains between different coordinate systems
 .. toctree::
    :maxdepth: 2
 
-The objective of this lab is to transform stresses and strains between fibre and reference coordinates. The deformations that will be considered in this lab include equibiaxial and uniaxial extension of an isotropic material.
+The objective of this lab is to transform stresses and strains between fibre and reference coordinates. The deformations that will be considered in this lab include equibiaxial and uniaxial extension of an isotropic unit cube.
 
 Before starting this lab, please complete :ref:`Lab 1: Deformation and stress in isotropic materials <lab1>` to familiarise yourself with stress and strain analysis techniques that will be used in this lab.
 
