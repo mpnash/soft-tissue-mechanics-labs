@@ -14,10 +14,13 @@ Lab 2: Transforming stresses and strains between different coordinate systems
 
 The objective of this lab is to transform stresses and strains between fibre and reference coordinates. The deformations that will be considered in this lab include equibiaxial and uniaxial extension of an isotropic unit cube.
 
-Before starting this lab, please complete :ref:`Lab 1: Deformation and stress in isotropic materials <lab1>` to familiarise yourself with stress and strain analysis techniques that will be used in this lab.
+===========================================
+Section 1: Revision
+===========================================
+Before starting this lab, please be sure to have completed Section 2 of :ref:`Lab 1: Deformation and stress in isotropic materials <lab1>` to familiarise yourself with stress and strain analysis techniques that will be used in this lab.
 
 ===========================================
-Section 1: Biaxial extension of a unit cube
+Section 2: Biaxial extension of a unit cube
 ===========================================
 
 1. Start OpenCMISS and load Lab2 (described in the :ref:`Starting OpenCMISS <starting-OpenCMISS>` section).
@@ -38,7 +41,7 @@ Section 1: Biaxial extension of a unit cube
 
       - the undeformed (reference) configuration of the unit cube is shown in red, and
       - the deformed (current) configuration is shown in green (:math:`x_{1}`, :math:`x_{2}`, :math:`x_{3}` components of the deformed coordinates are shown at the corners of the model, (note that in the graphical window, these components are labelled x, y, and z, respectively).
-      - **ignore the gold arrows for now - important later.**
+      - ignore the gold arrows for now - these will be needed later.
 
   The model in the 3D graphics window can be rotated (click-drag-left-mouse button), translated (click-drag-middle-mouse button), or zoomed (click-drag-middle-mouse button).
 
@@ -49,9 +52,7 @@ Section 1: Biaxial extension of a unit cube
 
   .. math::
 
-    x_1 &= \frac{5}{4}X_1\\
-    x_2 &= \frac{5}{4}X_2\\
-    x_3 &= \frac{16}{25}X_3
+    x_1 &= \frac{5}{4}X_1 ~~~~ x_2 &= \frac{5}{4}X_2 ~~~~ x_3 &= \frac{16}{25}X_3
 
 |vspace|
 
@@ -63,27 +64,25 @@ Section 1: Biaxial extension of a unit cube
 
   .. Note::
 
-      This is the same deformation used in model 2 in Lab1, so you should not need to re-do these calculations.
+      This is the same deformation used in Model 2 of Lab1, so you should not need to re-do these calculations.
 
 |vspace|
 
 
-Isotropic material properties with rotated fibre axes
------------------------------------------------------
+Isotropic deformation with respect to rotated fibre axes
+--------------------------------------------------------
 
-6. Return to the model selection drop down menu and select and run model 3 (Equibiaxial extension of unit cube, isotropic, 30 degree fibre rotation). This model is similar to the previous models, except that the fibre (material) axes are no longer aligned with the reference axes. They are now rotated anticlockwise by an angle of :math:`\theta=30` degrees from the :math:`x_{1}` axis (in the :math:`x_{1}`-:math:`x_{2}` plane). When visualising the model, the gold arrows in the graphics window indicate the direction of the fibre axis (along which the first material coordinate is defined), and the :math:`x_{1}`-:math:`x_{2}` plane indicates the orientation of the flat laminar sheet.
+6. Return to the model selection drop down menu and select/run "Model 3 (Equibiaxial extension of unit cube, isotropic, 30 degree fibre rotation)". This model is similar to the previous models, except that the fibre (material) axes are no longer aligned with the reference (spatial) axes. For this model, the fibre axis is rotated anticlockwise by an angle of :math:`\theta=30` degrees from the :math:`x_{1}` axis (in the :math:`x_{1}`-:math:`x_{2}` plane). When visualising these models, the gold arrows in the graphics window indicate the direction of the fibre axis (along which the first material coordinate is defined), and the :math:`x_{1}`-:math:`x_{2}` plane indicates the orientation of the flat laminar sheet.
 
 |vspace|
 
-7. Determine the Green-Lagrange strain tensor components with respect to the fibre axes (:math:`\boldsymbol{E}_{fib}`) by selecting and using an appropriate tensor transformation from the two options listed below:
+7. Determine the Green-Lagrange strain tensor components with respect to the fibre axes (:math:`\boldsymbol{E}_{fib}`) via the appropriate tensor transformation from the two options listed below:
 
   .. math::
 
-    \boldsymbol{E}_{fib} = \boldsymbol{Q}^{T} \boldsymbol{E}_{ref} \boldsymbol{Q}~(option~1)
+    \boldsymbol{E}_{fib} = \boldsymbol{Q}^{T} \boldsymbol{E}_{ref} \boldsymbol{Q} ~~~~ \boldsymbol{E}_{fib} =  \boldsymbol{Q} \boldsymbol{E}_{ref} \boldsymbol{Q}^{T}
 
-    \boldsymbol{E}_{fib} =  \boldsymbol{Q} \boldsymbol{E}_{ref} \boldsymbol{Q}^{T}~(option~2)
-
-  where :math:`\boldsymbol{E}_{ref}` is the Green-Lagrange strain tensor with respect to the reference axes that is shown in the simulation results, and :math:`\boldsymbol{Q}` is the orthogonal rotation matrix:
+  where :math:`\boldsymbol{E}_{ref}` is the Green-Lagrange strain tensor with respect to the reference axes (that you have calculated above), and :math:`\boldsymbol{Q}` is the orthogonal rotation matrix:
 
   .. math::
 
@@ -104,15 +103,13 @@ Isotropic material properties with rotated fibre axes
 
 |vspace|
 
-10. Determine the second Piola-Kirchhoff stress components with respect to the reference coordinate axes (:math:`\boldsymbol{T}_{ref}`) by selecting and using an appropriate tensor transformation from the two options listed below:
+10. From the solution output, write down  :math:`\boldsymbol{T}_{fib}` (the second Piola-Kirchhoff stress tensor with respect to the fibre axes).  Use this to determine the second Piola-Kirchhoff stress components with respect to the reference coordinate axes (:math:`\boldsymbol{T}_{ref}`) via the appropriate tensor transformation from the two options listed below:
 
   .. math::
 
-    \boldsymbol{T}_{ref} = \boldsymbol{Q}^{T} \boldsymbol{T}_{fib} \boldsymbol{Q}~(option~1)
+    \boldsymbol{T}_{ref} = \boldsymbol{Q}^{T} \boldsymbol{T}_{fib} \boldsymbol{Q} ~~~~ \boldsymbol{T}_{ref} =  \boldsymbol{Q} \boldsymbol{T}_{fib} \boldsymbol{Q}^{T}
 
-    \boldsymbol{T}_{ref} =  \boldsymbol{Q} \boldsymbol{T}_{fib} \boldsymbol{Q}^{T}~(option~2)
-
-  where :math:`\boldsymbol{T}_{fib}` is the second Piola-Kirchhoff stress tensor with respect to the fibre axes that is shown in the simulation results, and :math:`\boldsymbol{Q}` is the orthogonal rotation matrix defined in step 7.
+  where :math:`\boldsymbol{Q}` is the orthogonal rotation matrix defined in step 7.
 
 |vspace|
 
@@ -124,16 +121,16 @@ Isotropic material properties with rotated fibre axes
 
 |vspace|
 
-13. What would you expect from the analysis in steps 7-12 if the fibre angle was changed from 30 degrees to 45 degrees or 90 degrees for this isotropic model?  What do you notice about the stress tensors :math:`\boldsymbol{T}_{fib}` and :math:`\boldsymbol{T}_{ref}` for this isotropic model subject to the equibiaxial deformation? Explain.
+13. What would you expect from the analysis in steps 7-12 if the fibre angle was changed from 30 degrees to 45 degrees, or to 90 degrees for this equibiaxial deformation model?  Explain the differences/similarities in the stress tensors :math:`\boldsymbol{T}_{fib}` and :math:`\boldsymbol{T}_{ref}` for this model?
 
   .. note::
 
-    You should not need to do any calculations to answer this questions, but if you need the extra practice, perform steps 7-12 with :math:`\theta=45` degrees, and/or :math:`\theta=90` degrees.
+    You should not need to do any calculations to answer this questions, but if you need the extra practice, perform steps 7-12 with :math:`\theta=45` degrees, and/or :math:`\theta=90` degrees by selecting the appropriate model from the "run" menu.
 
 |vspace|
 
 ============================================
-Section 2: Uniaxial extension of a unit cube
+Section 3: Uniaxial extension of a unit cube
 ============================================
 
 1. Consider the uniaxial deformation shown in the figure below, where the fibre (material) axes are aligned with the reference axes (:math:`\theta=0` degrees):
@@ -146,9 +143,7 @@ Section 2: Uniaxial extension of a unit cube
 
   .. math::
 
-    x_1 &= \frac{3}{2}X_1\\
-    x_2 &= \sqrt{\frac{2}{3}}X_2\\
-    x_3 &= \sqrt{\frac{2}{3}}X_3
+    x_1 &= \frac{3}{2}X_1 ~~~~ x_2 &= \sqrt{\frac{2}{3}}X_2 ~~~~ x_3 &= \sqrt{\frac{2}{3}}X_3
 
 |vspace|
 
@@ -160,7 +155,7 @@ Section 2: Uniaxial extension of a unit cube
 
   .. Note::
 
-      This is the same deformation used in model 1 in Lab1, so you should not need to re-do these calculations.
+      This is the same deformation used in Model 1 of Lab1, so you should not need to re-do these calculations.
 
       For this model, the second Piola-Kirchhoff stress tensor with respect to both the reference and fibre axes is:
 
