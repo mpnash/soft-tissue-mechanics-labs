@@ -107,7 +107,7 @@ Isotropic deformation with respect to rotated fibre axes
 
   .. math::
 
-    \boldsymbol{T}_{ref} = \boldsymbol{Q}^{T} \boldsymbol{T}_{fib} \boldsymbol{Q} ~~~~ \boldsymbol{T}_{ref} =  \boldsymbol{Q} \boldsymbol{T}_{fib} \boldsymbol{Q}^{T}
+    \boldsymbol{T}_{ref} =  \boldsymbol{Q} \boldsymbol{T}_{fib} \boldsymbol{Q}^{T} ~~~~ \boldsymbol{T}_{ref} = \boldsymbol{Q}^{T} \boldsymbol{T}_{fib} \boldsymbol{Q}
 
   where :math:`\boldsymbol{Q}` is the orthogonal rotation matrix defined in step 7.
 
@@ -121,7 +121,7 @@ Isotropic deformation with respect to rotated fibre axes
 
 |vspace|
 
-13. What would you expect from the analysis in steps 7-12 if the fibre angle was changed from 30 degrees to 45 degrees, or to 90 degrees for this equibiaxial deformation model?  Explain the differences/similarities in the stress tensors :math:`\boldsymbol{T}_{fib}` and :math:`\boldsymbol{T}_{ref}` for this model?
+13. What would you expect from the analysis in steps 7-12 if the fibre angle was changed from 30 degrees to 45 degrees, or to 90 degrees for this equibiaxial deformation model?  Explain the differences/similarities between the two strain, and (separately) between the two stress tensors for this model.
 
   .. note::
 
@@ -168,7 +168,7 @@ Section 3: Uniaxial extension of a unit cube
           0      & 0       & 0
         \end{bmatrix}
 
-      While the deformation in Model 1 of Lab1 is the same as that considered here (i.e. they both describe the same uniaxial deformation), the stress tensor is different because a different constitutive relation has been used to model the behaviour of the material.
+      While the deformation in Model 1 of Lab1 is the same as that considered here (i.e. they both describe the same uniaxial deformation), **the stress tensor is different** because Lab1 and Lab2 use different constitutive relations to represent the mechanical response of the material.
 
 |vspace|
 
@@ -251,7 +251,7 @@ c. How do changes in :math:`\boldsymbol{T}_{ref}` for different fibre angles (:m
 
 d. How do changes in :math:`\boldsymbol{T}_{fib}` for different fibre angles (:math:`\theta`) in the biaxial deformation compare with the changes seen in the uniaxial deformation.
 
-e. Will the invariants of :math:`\boldsymbol{C}` be different when calculated with respect to fibre or reference coordinates?
+e. Will the invariants of :math:`\boldsymbol{C}` be the same or different when calculated with respect to fibre or reference coordinates?
 
 |vspace|
 
