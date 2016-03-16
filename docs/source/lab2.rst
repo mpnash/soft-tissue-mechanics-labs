@@ -14,9 +14,9 @@ Lab 2: Transforming stresses and strains between different coordinate systems
 
 The objective of this lab is to transform stresses and strains between fibre and reference coordinates. The deformations that will be considered in this lab include equibiaxial and uniaxial extension of an isotropic unit cube.
 
-===========================================
+===================
 Section 1: Revision
-===========================================
+===================
 Before starting this lab, please be sure to have completed Section 2 of :ref:`Lab 1: Deformation and stress in isotropic materials <lab1>` to familiarise yourself with stress and strain analysis techniques that will be used in this lab.
 
 ===========================================
@@ -168,6 +168,8 @@ Section 3: Uniaxial extension of a unit cube
           0      & 0       & 0
         \end{bmatrix}
 
+      While the deformation in Model 1 of Lab1 is the same as that considered here (i.e. they both describe the same uniaxial deformation), the stress tensor is different because a different constitutive relation has been used to model the behaviour of the material.
+
 |vspace|
 
 Isotropic material properties with rotated fibre axes
@@ -187,7 +189,7 @@ Isotropic material properties with rotated fibre axes
 
 |vspace|
 
-6. Determine the second Piola-Kirchhoff stress components with respect to the reference coordinate axes via the approach in Step 10 of Section 1, but using the following values for :math:`\boldsymbol{T}_{fib}` is the second Piola-Kirchhoff stress tensor with respect to the fibre axes:
+6. Determine the second Piola-Kirchhoff stress components with respect to the reference coordinate axes via the approach in Step 10 of Section 1, but using the following values for :math:`\boldsymbol{T}_{fib}`:
 
   .. math::
 

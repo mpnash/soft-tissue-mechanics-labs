@@ -18,7 +18,8 @@ Change after 321 course finishes
 - In the problem view, replace the string "parameters" with "Model selection", and remove the text "boundary condition"
 - Move 3D model window to left of the simulation results pane, and the tensors etc to the right of the pane.
 - Allow the tensors etc  in the simulation results pane to be hidden.
-- Change axes in the 3D model window from x,y,z to x1,x2,x3 
+- Change axes in the 3D model window from x,y,z to x1,x2,x3.
+- Change model labels to include the type of constitutive relation.
 
 ======================
 Long term improvements

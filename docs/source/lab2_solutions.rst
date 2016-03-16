@@ -12,7 +12,7 @@ Lab 2: Solutions
 .. _lab2_section1_solutions:
 
 ===========================================
-Section 1: Biaxial extension of a unit cube
+Section 2: Biaxial extension of a unit cube
 ===========================================
 
 :math:`\theta=45` degrees:
@@ -86,7 +86,7 @@ Section 1: Biaxial extension of a unit cube
 .. _lab2_section2_solutions:
 
 ============================================
-Section 2: Uniaxial extension of a unit cube
+Section 3: Uniaxial extension of a unit cube
 ============================================
 
 :math:`\theta=0` degrees:
