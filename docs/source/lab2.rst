@@ -268,5 +268,5 @@ e. Will the invariants of :math:`\boldsymbol{C}` be the same or different when c
     - analyse stress tensors with respect to spatial or material coordinates for isotropic materials.
 
 
-Here are the :ref:`solutions to Step 8 of Section 2 <lab2_section3_solutions>` and :ref:`solutions to Step 13 of Section 3 <lab2_section2_solutions>`.
+Here are the :ref:`solutions to Step 8 of Section 2 <lab2_section2_solutions>` and :ref:`solutions to Step 13 of Section 3 <lab2_section3_solutions>`.
 
