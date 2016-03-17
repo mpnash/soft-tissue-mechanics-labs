@@ -15,7 +15,7 @@ Contents:
    running_OpenCMISS
    lab1
    lab2
-   improvements
+..   improvements
 
 Indices and tables
 ==================
