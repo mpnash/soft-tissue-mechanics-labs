@@ -44,9 +44,9 @@ Section 2: Uniaxial extension of a unit cube
 
 2. Write down:
 
-  - the deformation gradient tensor (:math:`\boldsymbol{F}=\frac{\partial\boldsymbol{x}}{\partial\boldsymbol{X}}`),
-  - the right Cauchy-Green deformation tensor (:math:`\boldsymbol{C}`), and
-  - Green-Lagrange strain tensor (:math:`\boldsymbol{E}`) (label this :math:`\boldsymbol{E}_{ref}`).
+  - the deformation gradient tensor, :math:`\boldsymbol{F}=\frac{\partial\boldsymbol{x}}{\partial\boldsymbol{X}}`
+  - the right Cauchy-Green deformation tensor, :math:`\boldsymbol{C}` and
+  - the Green-Lagrange strain tensor. Label this as :math:`\boldsymbol{E}_{ref}` (to indicate that it is defined with respect to the spatial reference coordinates).
 
   .. Note::
 
@@ -76,13 +76,13 @@ Isotropic material properties with rotated fibre axes
 
 |vspace|
 
-4. Determine the Green-Lagrange strain tensor components with respect to the fibre axes (:math:`\boldsymbol{E}_{fib}`) via the appropriate tensor transformation from the two options listed below:
+For the following exercises, you are asked to transform strain and stress tensors between the reference coordinates and the fibre (material) coordinate systems using the generalised rotational transform given by:
 
   .. math::
 
-    \boldsymbol{E}_{fib} = \boldsymbol{Q}^{T} \boldsymbol{E}_{ref} \boldsymbol{Q} ~~~~ \boldsymbol{E}_{fib} =  \boldsymbol{Q} \boldsymbol{E}_{ref} \boldsymbol{Q}^{T}
+    \boldsymbol{A}_{fib} = \boldsymbol{Q}^{T} \boldsymbol{A}_{ref} \boldsymbol{Q}
 
-  where :math:`\boldsymbol{E}_{ref}` is the Green-Lagrange strain tensor with respect to the reference axes (that you have calculated above), and :math:`\boldsymbol{Q}` is the orthogonal rotation matrix:
+  where :math:`\boldsymbol{A}_{ref}` and :math:`\boldsymbol{A}_{fib}` are the tensor quantities (strain or stress) defined with respect to the reference and fibre axes, respectively, and :math:`\boldsymbol{Q}` is the orthogonal rotation matrix:
 
   .. math::
 
@@ -92,6 +92,10 @@ Isotropic material properties with rotated fibre axes
         \sin(\theta) &  \cos(\theta) & 0  \\
         0              &  0              & 1
       \end{bmatrix}
+
+|vspace|
+
+4. Determine the Green-Lagrange strain tensor components with respect to the fibre axes (:math:`\boldsymbol{E}_{fib}`) via the appropriate tensor transformation (see Step 3).
 
 |vspace|
 
@@ -110,13 +114,7 @@ Isotropic material properties with rotated fibre axes
       0       & 0       & 0
     \end{bmatrix}
 
-  determine the second Piola-Kirchhoff stress components with respect to the reference coordinate axes (:math:`\boldsymbol{T}_{ref}`)  via the appropriate tensor transformation from the two options listed below:
-
-  .. math::
-
-    \boldsymbol{T}_{ref} =  \boldsymbol{Q} \boldsymbol{T}_{fib} \boldsymbol{Q}^{T} ~~~~ \boldsymbol{T}_{ref} = \boldsymbol{Q}^{T} \boldsymbol{T}_{fib} \boldsymbol{Q}
-
-  where :math:`\boldsymbol{Q}` is the orthogonal rotation matrix defined in step 4.
+  determine the second Piola-Kirchhoff stress components with respect to the reference coordinate axes (:math:`\boldsymbol{T}_{ref}`) via the appropriate tensor transformation (see Step 3).
 
 |vspace|
 
@@ -211,11 +209,11 @@ Isotropic deformation with respect to rotated fibre axes
 
 |vspace|
 
-7. Determine the Green-Lagrange strain tensor components with respect to the fibre axes (:math:`\boldsymbol{E}_{fib}`) using the approach in Step 4 of Section 2.
+7. Determine the Green-Lagrange strain tensor components with respect to the fibre axes (:math:`\boldsymbol{E}_{fib}`) using the approach in Section 2.
 
 |vspace|
 
-8. Check your answers to 7 against the simulation results.
+8. Check your answers to Step 7 against the simulation results.
 
 |vspace|
 
@@ -223,11 +221,11 @@ Isotropic deformation with respect to rotated fibre axes
 
 |vspace|
 
-10. From the solution output, write down  :math:`\boldsymbol{T}_{fib}` (the second Piola-Kirchhoff stress tensor with respect to the fibre axes). Use this to determine the second Piola-Kirchhoff stress components with respect to the reference coordinate axes (:math:`\boldsymbol{T}_{ref}`) via the approach in Step 6 of Section 2.
+10. From the solution output, write down  :math:`\boldsymbol{T}_{fib}` (the second Piola-Kirchhoff stress tensor with respect to the fibre axes). Use this to determine the second Piola-Kirchhoff stress components with respect to the reference coordinate axes (:math:`\boldsymbol{T}_{ref}`) via the approach Section 2.
 
 |vspace|
 
-11. Check your answers to 10 against the simulation results.
+11. Check your answers to Step 10 against the simulation results.
 
 |vspace|
 
@@ -270,5 +268,5 @@ e. Will the invariants of :math:`\boldsymbol{C}` be the same or different when c
     - analyse stress tensors with respect to spatial or material coordinates for isotropic materials.
 
 
-Here are the :ref:`solutions to Step 13 of Section 2 <lab2_section2_solutions>` and :ref:`solutions to Step 8 of Section 3 <lab2_section3_solutions>`.
+Here are the :ref:`solutions to Step 8 of Section 2 <lab2_section3_solutions>` and :ref:`solutions to Step 13 of Section 3 <lab2_section2_solutions>`.
 
