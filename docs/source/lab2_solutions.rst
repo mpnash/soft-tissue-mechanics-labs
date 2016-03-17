@@ -9,84 +9,10 @@
 Lab 2: Solutions
 ****************
 
-.. _lab2_section1_solutions:
-
-===========================================
-Section 2: Biaxial extension of a unit cube
-===========================================
-
-:math:`\theta=45` degrees:
-
-.. math::
-
-    \boldsymbol{E_{ref}} = 
-    \begin{bmatrix}
-      0.2812 & 0      & 0 \\
-      0      & 0.2812 & 0 \\
-      0      & 0      & -0.2952
-    \end{bmatrix}
-
-    \boldsymbol{E_{fib}} = 
-    \begin{bmatrix}
-      0.2812 & 0      & 0 \\
-      0      & 0.2812 & 0 \\
-      0      & 0      & -0.2952
-    \end{bmatrix}
-
-    \boldsymbol{T_{ref}} = 
-    \begin{bmatrix}
-      10.95  & 0       & 0 \\
-      0      & 0.10.95 & 0 \\
-      0      & 0       & 0
-    \end{bmatrix}
-
-    \boldsymbol{T_{fib}} = 
-    \begin{bmatrix}
-      10.95  & 0       & 0 \\
-      0      & 0.10.95 & 0 \\
-      0      & 0       & 0
-    \end{bmatrix}
-
-|vspace|
-
-:math:`\theta=90` degrees:
-
-.. math::
-
-    \boldsymbol{E_{ref}} = 
-    \begin{bmatrix}
-      0.2812 & 0      & 0 \\
-      0      & 0.2812 & 0 \\
-      0      & 0      & -0.2952
-    \end{bmatrix}
-
-    \boldsymbol{E_{fib}} = 
-    \begin{bmatrix}
-      0.2812 & 0      & 0 \\
-      0      & 0.2812 & 0 \\
-      0      & 0      & -0.2952
-    \end{bmatrix}
-
-    \boldsymbol{T_{ref}} = 
-    \begin{bmatrix}
-      10.95  & 0     & 0 \\
-      0      & 10.95 & 0 \\
-      0      & 0     & 0
-    \end{bmatrix}
-
-    \boldsymbol{T_{fib}} = 
-    \begin{bmatrix}
-      10.95  & 0     & 0 \\
-      0      & 10.95 & 0 \\
-      0      & 0     & 0
-    \end{bmatrix}
-
-|vspace|
-
 .. _lab2_section2_solutions:
 
 ============================================
-Section 3: Uniaxial extension of a unit cube
+Section 2: Uniaxial extension of a unit cube
 ============================================
 
 :math:`\theta=0` degrees:
@@ -224,6 +150,82 @@ Section 3: Uniaxial extension of a unit cube
     \end{bmatrix}
 
 |vspace|
+
+.. _lab2_section3_solutions:
+
+===========================================
+Section 3: Biaxial extension of a unit cube
+===========================================
+
+:math:`\theta=45` degrees:
+
+.. math::
+
+    \boldsymbol{E_{ref}} = 
+    \begin{bmatrix}
+      0.2812 & 0      & 0 \\
+      0      & 0.2812 & 0 \\
+      0      & 0      & -0.2952
+    \end{bmatrix}
+
+    \boldsymbol{E_{fib}} = 
+    \begin{bmatrix}
+      0.2812 & 0      & 0 \\
+      0      & 0.2812 & 0 \\
+      0      & 0      & -0.2952
+    \end{bmatrix}
+
+    \boldsymbol{T_{ref}} = 
+    \begin{bmatrix}
+      10.95  & 0       & 0 \\
+      0      & 0.10.95 & 0 \\
+      0      & 0       & 0
+    \end{bmatrix}
+
+    \boldsymbol{T_{fib}} = 
+    \begin{bmatrix}
+      10.95  & 0       & 0 \\
+      0      & 0.10.95 & 0 \\
+      0      & 0       & 0
+    \end{bmatrix}
+
+|vspace|
+
+:math:`\theta=90` degrees:
+
+.. math::
+
+    \boldsymbol{E_{ref}} = 
+    \begin{bmatrix}
+      0.2812 & 0      & 0 \\
+      0      & 0.2812 & 0 \\
+      0      & 0      & -0.2952
+    \end{bmatrix}
+
+    \boldsymbol{E_{fib}} = 
+    \begin{bmatrix}
+      0.2812 & 0      & 0 \\
+      0      & 0.2812 & 0 \\
+      0      & 0      & -0.2952
+    \end{bmatrix}
+
+    \boldsymbol{T_{ref}} = 
+    \begin{bmatrix}
+      10.95  & 0     & 0 \\
+      0      & 10.95 & 0 \\
+      0      & 0     & 0
+    \end{bmatrix}
+
+    \boldsymbol{T_{fib}} = 
+    \begin{bmatrix}
+      10.95  & 0     & 0 \\
+      0      & 10.95 & 0 \\
+      0      & 0     & 0
+    \end{bmatrix}
+
+|vspace|
+
+
 
 
 
