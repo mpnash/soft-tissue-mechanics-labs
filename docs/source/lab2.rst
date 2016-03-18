@@ -109,8 +109,8 @@ For the following exercises, you are asked to transform strain and stress tensor
 
     \boldsymbol{T_{fib}} = 
     \begin{bmatrix}
-      38.01   & -6.404  & 0 \\
-      -6.404  & 12.67   & 0 \\
+      330.345   & -190.725  & 0 \\
+      -190.725  & 110.115   & 0 \\
       0       & 0       & 0
     \end{bmatrix}
 
@@ -134,8 +134,8 @@ For the following exercises, you are asked to transform strain and stress tensor
 
         \boldsymbol{T_{fib}} = 
         \begin{bmatrix}
-          12.33   & -3.597  & 0 \\
-          -3.597  & 12.33   & 0 \\
+          220.2   & -220.2  & 0 \\
+          -220.2  & 220.2   & 0 \\
           0       & 0       & 0
         \end{bmatrix}
 

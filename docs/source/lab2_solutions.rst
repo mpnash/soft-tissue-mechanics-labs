@@ -55,15 +55,15 @@ Section 2: Uniaxial extension of a unit cube
 
     \boldsymbol{T_{ref}} = 
     \begin{bmatrix}
-      37.22  & 7.771  & 0 \\
-      7.771  & 13.46  & 0 \\
-      0      & 0      & 0
+      440.5  & 0       & 0 \\
+      0      & 0       & 0 \\
+      0      & 0       & 0
     \end{bmatrix}
 
     \boldsymbol{T_{fib}} = 
     \begin{bmatrix}
-      38.01   & -6.404  & 0 \\
-      -6.404  & 12.67   & 0 \\
+      330.345   & -190.725  & 0 \\
+      -190.725  & 110.115   & 0 \\
       0       & 0       & 0
     \end{bmatrix}
 
@@ -89,15 +89,15 @@ Section 2: Uniaxial extension of a unit cube
 
     \boldsymbol{T_{ref}} = 
     \begin{bmatrix}
-      15.92  & 0      & 0 \\
-      0      & 8.729  & 0 \\
-      0      & 0      & 0
+      440.5  & 0       & 0 \\
+      0      & 0       & 0 \\
+      0      & 0       & 0
     \end{bmatrix}
 
     \boldsymbol{T_{fib}} = 
     \begin{bmatrix}
-      12.33   & -3.597  & 0 \\
-      -3.597  & 12.33   & 0 \\
+      220.2   & -220.2  & 0 \\
+      -220.2  & 220.2   & 0 \\
       0       & 0       & 0
     \end{bmatrix}
 
