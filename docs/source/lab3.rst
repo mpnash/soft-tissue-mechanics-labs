@@ -12,11 +12,12 @@ Lab 3: Deformation and stress in anisotropic materials
 .. toctree::
    :maxdepth: 2
 
-The objective of this lab is to analyse large deformation kinematics and stress in anisotropic materials. The deformations you will be analysing include:
+The objective of this lab is to analyse large deformation kinematics and stress in anisotropic materials. 
 
-  - Model 2 (Equibiaxial extension of unit cube, orthotropic, 0 degree fibre rotation)
-  - Model 5 (Equibiaxial extension of unit cube, orthotropic, 45 degree fibre rotation)
-  - Model 6 (Equibiaxial extension of unit cube, orthotropic, 90 degree fibre rotation)
+.. The deformations you will be analysing include:
+..  - Model 2 (Equibiaxial extension of unit cube, orthotropic, 0 degree fibre rotation)
+..  - Model 5 (Equibiaxial extension of unit cube, orthotropic, 45 degree fibre rotation)
+..  - Model 6 (Equibiaxial extension of unit cube, orthotropic, 90 degree fibre rotation)
 
 ===================
 Section 1: Revision
@@ -52,7 +53,7 @@ Section 2: Deriving components of the stress tensor
 
 |vspace|
 
-2. Write down the expression for the total stresses: :math:`T^{ff}` and :math:`T^{ss}` (see `Nash and Hunter (2000) <http://link.springer.com/article/10.1023%2FA%3A1011084330767>`_.
+2. Write down the expression for the total stresses: :math:`T^{ff}` and :math:`T^{ss}` (see `Nash and Hunter (2000) <http://link.springer.com/article/10.1023%2FA%3A1011084330767>`_).
 
 |vspace|
 
