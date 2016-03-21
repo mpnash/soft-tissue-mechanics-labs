@@ -67,6 +67,8 @@ Section 2: Uniaxial extension of a unit cube
 
 |vspace|
 
+.. _tensor_transformations:
+
 Isotropic deformation with respect to rotated fibre axes
 --------------------------------------------------------
 
@@ -151,6 +153,8 @@ For the following exercises, you are asked to transform strain and stress tensor
         \end{bmatrix}
 
 |vspace|
+
+.. _isotropic_biaxial_extension_of_unit_cube:
 
 ===========================================
 Section 3: Biaxial extension of a unit cube

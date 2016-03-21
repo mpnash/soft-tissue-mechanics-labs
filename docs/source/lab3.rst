@@ -49,7 +49,7 @@ Section 2: Deriving components of the stress tensor
 
       - Note the similarity of terms and derivatives.
 
-      - No need to consider the shear terms, since there are no shear strains in the biaxial deformations considered in this lab.
+      - No need to consider the shear terms, since there are no shear strains in the biaxial deformations that will be considered in this lab.
 
 |vspace|
 
@@ -61,62 +61,19 @@ Section 2: Deriving components of the stress tensor
 Section 3: Biaxial extension of a unit cube
 ===========================================
 
-1. Start OpenCMISS and load Lab2 (described in the :ref:`Starting OpenCMISS <starting-OpenCMISS>` section).
-
-|vspace|
-
-2. Select "Model 1 (Equibiaxial extension of unit cube, isotropic, 0 degree fibre rotation)" from the drop down menu and click the "run" button (screenshots of this procedure are shown in the :ref:`Running models in OpenCMISS <running-models-in-OpenCMISS>` section).
-
-|vspace|
-
-3. After a short time, the model should have solved and the simulation results pane will open as shown in the screenshot below.
-
-  .. image:: images/lab2_model1.png
-
-  |vspace|
-
-  The left side of the pane shows the stress and strain tensors associated with the simulation in fibre and reference coordinates. The simulation results are shown in the 3D graphics window on the right side of the pane. In this graphical window:
-
-      - the undeformed (reference) configuration of the unit cube is shown in red, and
-      - the deformed (current) configuration is shown in green (:math:`x_{1}`, :math:`x_{2}`, :math:`x_{3}` components of the deformed coordinates are shown at the corners of the model - (note that in the graphical window, these components are labelled x, y, and z, respectively).
-      - ignore the gold arrows for now - these will be needed later.
-
-  The model in the 3D graphics window can be rotated (click-drag-left-mouse button), translated (click-drag-middle-mouse button), or zoomed (click-drag-middle-mouse button).
-
-|vspace|
-
-
-4. This equibiaxial deformation is incompressible (i.e. maintains constant volume) described by the equations:
-
-  .. math::
-
-    x_1 &= \frac{5}{4}X_1 ~~~~ x_2 &= \frac{5}{4}X_2 ~~~~ x_3 &= \frac{16}{25}X_3
-
-|vspace|
-
-5. Write down:
-
-  - the deformation gradient tensor (:math:`\boldsymbol{F}=\frac{\partial\boldsymbol{x}}{\partial\boldsymbol{X}}`),
-  - the right Cauchy-Green deformation tensor (:math:`\boldsymbol{C}`), and
-  - Green-Lagrange strain tensor (:math:`\boldsymbol{E}`) (label this :math:`\boldsymbol{E}_{ref}`).
-
-  .. Note::
-
-      This is the same deformation used in Model 2 of Lab1, so you should not need to re-do these calculations.
-
-|vspace|
+In this lab we will revisit the isotropic biaxial extension of a unit cube problem that was previously considered in :ref:`Section 3 of Lab2 <isotropic_biaxial_extension_of_unit_cube>`. Use the  Green-Lagrange strain tensor (:math:`\boldsymbol{E}`) that you previously from Step 5 of Section 3 in Lab 2 to answer the following questions.
 
 Isotropic material properties with fibre axes aligned with the reference axes
 -----------------------------------------------------------------------------
 
-6. The material parameters defined for Model 1 are isotropic (equal in all directions), i.e.
+1. The isotropic material parameters defined for the isotropic biaxial extension of a unit cube problem are defined below:
 
   .. math::
 
     c_{1} &= 0.0475 \\
     c_{ff} = c_{ss} = c_{nn} &= c_{fs} = c_{fn} = c_{sn} = 15.25 \\
 
-  Substitute the Green-Lagrange strain components (:math:`\boldsymbol{E}`) from Step 5 into your analytic expression from step 1 of Section 1 to determine values for the **distortional components** of the second Piola-Kirchhoff stress tensor. Verify that these distortional stresses are:
+  Substitute the Green-Lagrange strain components (:math:`\boldsymbol{E}`) into your analytic expression from step 1 of Section 1 of this lab to determine values for the **distortional components** of the second Piola-Kirchhoff stress tensor. Verify that these distortional stresses are:
 
   .. math::
 
@@ -128,7 +85,7 @@ Isotropic material properties with fibre axes aligned with the reference axes
 
 |vspace|
 
-7. Determine the total stresses: :math:`T^{ff}` and :math:`T^{ss}` using the equation you wrote down in Section 2. This requires determining the value for the **hydrostatic pressure**, :math:`p`, which is provided from the simulation results.
+2. Determine the total stresses: :math:`T^{ff}` and :math:`T^{ss}` using the equation you wrote down in Section 2. This requires determining the value for the **hydrostatic pressure**, :math:`p`, which is provided from the simulation results.
 
   .. Note::
 
@@ -138,14 +95,14 @@ Isotropic material properties with fibre axes aligned with the reference axes
 
 |vspace|
 
-8 Check your answers to 7 against the simulation results.
+3. Run Model 1 from Lab2 in OpenCMISS and check your answers to Step 2 against the simulation results (the procedure for running the simulation in OpenCMISS was outlined in :ref:`steps 1:3 of Section 3 of Lab2 <isotropic_biaxial_extension_of_unit_cube>`).
 
 |vspace|
 
 Orthotropic material properties with fibre axes aligned with the reference axes
 -------------------------------------------------------------------------------
 
-9. Return to the model selection drop down menu by clicking Select View->Problem from the menu. Select and run Model 2 (Equibiaxial extension of unit cube). This model and its boundary conditions are similar to the previous model, except that the Costa relation parameters are now fully orthotropic:
+4. Return to the model selection drop down menu by clicking Select View->Problem from the menu. Select and run Model 2 (Equibiaxial extension of unit cube, orthotropic, 0 degree fibre rotation). This model and its boundary conditions are similar to the previous model, except that the Costa relation parameters are now fully orthotropic:
 
   .. math::
 
@@ -161,76 +118,57 @@ Orthotropic material properties with fibre axes aligned with the reference axes
 
 |vspace|
 
-10.  Determine the total stresses: :math:`T^{ff}` and :math:`T^{ss}`.
+5.  Determine the total stresses: :math:`T^{ff}` and :math:`T^{ss}`.
 
 |vspace|
 
-11. How have the total second Piola-Kirchhoff stress components changed compared with step 7. Why?
+6. How have the total second Piola-Kirchhoff stress components changed compared with step 2. Why?
 
 |vspace|
 
-Isotropic material properties with rotated fibre axes
------------------------------------------------------
+Isotropic material properties with respect to rotated fibre axes
+----------------------------------------------------------------
 
-12. Return to the model selection drop down menu and select and run Model 3 (Equibiaxial extension of unit cube, isotropic, 30 degree fibre rotation). This model is similar to the previous models, except that the fibre (material) axes are no longer aligned with the reference axes. They are now rotated anticlockwise by an angle of :math:`\theta=30` degrees from the :math:`x_{1}` axis (in the :math:`x_{1}`-:math:`x_{2}` plane). When visualising the model, the gold arrows in the graphics window indicate the direction of the fibre axis (along which the first material coordinate is defined), and the :math:`x_{1}`-:math:`x_{2}` plane indicates the orientation of the flat laminar sheet.
-
-|vspace|
-
-  For the following exercises, you are asked to transform strain and stress tensors between the reference coordinates and the fibre (material) coordinate systems using the generalised rotational transform given by:
-
-  .. math::
-
-    \boldsymbol{A}_{fib} = \boldsymbol{Q}^{T} \boldsymbol{A}_{ref} \boldsymbol{Q}
-
-  where :math:`\boldsymbol{A}_{ref}` and :math:`\boldsymbol{A}_{fib}` are the tensor quantities (strain or stress) defined with respect to the reference and fibre axes, respectively, and :math:`\boldsymbol{Q}` is the orthogonal rotation matrix:
-
-  .. math::
-
-      \boldsymbol{Q} = 
-      \begin{bmatrix}
-        \cos(\theta) & -\sin(\theta) & 0  \\
-        \sin(\theta) &  \cos(\theta) & 0  \\
-        0              &  0              & 1
-      \end{bmatrix}
+7. Return to the model selection drop down menu and select and run Model 3 (Equibiaxial extension of unit cube, isotropic, 30 degree fibre rotation). This model is similar to the previous models, except that the fibre (material) axes are no longer aligned with the reference axes. They are now rotated anticlockwise by an angle of :math:`\theta=30` degrees from the :math:`x_{1}` axis (in the :math:`x_{1}`-:math:`x_{2}` plane).
 
 |vspace|
 
-13. Determine the Green-Lagrange strain tensor components with respect to the fibre axes (:math:`\boldsymbol{E}_{fib}`) via the appropriate tensor transformation outlined in step 12. Check your answers to against the simulation results.
+8. Determine the Green-Lagrange strain tensor components with respect to the fibre axes (:math:`\boldsymbol{E}_{fib}`) via the appropriate tensor transformation outlined in :ref:`step 3 of Section 2 of Lab2 <tensor_transformations>`. Check your answers against the simulation results.
 
 |vspace|
 
-14. Substitute your fibre strains (:math:`\boldsymbol{E}_{fib}`) from step 13 and the isotropic Costa material constants from step 6 into your analytic stress expressions from Section 1 to determine the total second Piola-Kirchhoff stress components with respect to the fibre (material) coordinates (:math:`\boldsymbol{T}_{fib}`).
+9. Substitute your fibre strains (:math:`\boldsymbol{E}_{fib}`) from step 8 and the isotropic Costa material constants from step 1 into your analytic stress expressions from Section 1 to determine the total second Piola-Kirchhoff stress components with respect to the fibre (material) coordinates (:math:`\boldsymbol{T}_{fib}`).
 
 |vspace|
 
-15. Determine the second Piola-Kirchhoff stress components with respect to the reference coordinate axes (:math:`\boldsymbol{T}_{ref}`) via the appropriate tensor transformation (outlined in step 12). Check your answers against the simulation results.
+10. Determine the second Piola-Kirchhoff stress components with respect to the reference coordinate axes (:math:`\boldsymbol{T}_{ref}`) via an appropriate tensor transformation. Check your answers against the simulation results.
 
 |vspace|
 
-16. Explain similarities/differences between :math:`\boldsymbol{T}_{fib}` and :math:`\boldsymbol{T}_{ref}` for this model. What would you expect from the analysis in steps 13-15 if the fibre angle was changed from 30 to 45 degrees for this isotropic model?  What do you notice about the stress tensors :math:`\boldsymbol{T}_{fib}` and :math:`\boldsymbol{T}_{ref}` for this isotropic model subject to the equibiaxial deformation? Explain.
+11. Explain similarities/differences between :math:`\boldsymbol{T}_{fib}` and :math:`\boldsymbol{T}_{ref}` for this model. What would you expect from the analysis in steps 8-10 if the fibre angle was changed from 30 to 45 degrees for this isotropic model?  What do you notice about the stress tensors :math:`\boldsymbol{T}_{fib}` and :math:`\boldsymbol{T}_{ref}` for this isotropic model subject to the equibiaxial deformation? Explain.
 
   .. note::
 
-   You have already answered this question in Section 3 of Lab2.
+   You have already answered this question in Step 13 of Section 3 in Lab2.
 
 |vspace|
 
-Orthotropic material properties with rotated fibre axes
--------------------------------------------------------
+Orthotropic material properties with respect to rotated fibre axes
+------------------------------------------------------------------
 
-17. Now run Model 5. This is an othotropic similar to that described in step 9 above, except that the fibre angle is changed from 0 to 45 degrees with respect to the :math:`x_{1}`-axis (in the :math:`x_{1}`-:math:`x_{2}` plane). Repeat the analysis in steps 13-15.
-
-|vspace|
-
-18. How do the stress components of :math:`\boldsymbol{T}_{fib}` and :math:`\boldsymbol{T}_{ref}` compare to step 7.  Explain similarities and differences.
+12. Now run Model 5. This is an othotropic similar to that described in step 4 above, except that the fibre angle is changed from 0 to 45 degrees with respect to the :math:`x_{1}`-axis (in the :math:`x_{1}`-:math:`x_{2}` plane). Repeat the analysis in steps 8-10.
 
 |vspace|
 
-19. Now run Model 6. This is an othotropic similar to that described in step 9 above, except that the fibre angle is changed from 0 to 90 degrees with respect to the :math:`x_{1}`-axis (in the :math:`x_{1}`-:math:`x_{2}` plane). Repeat the analysis in steps 13-15.
+13. How do the stress components of :math:`\boldsymbol{T}_{fib}` and :math:`\boldsymbol{T}_{ref}` compare to step 2.  Explain similarities and differences.
 
 |vspace|
 
-20. How do the stress components of :math:`\boldsymbol{T}_{fib}` and :math:`\boldsymbol{T}_{ref}` compare to step 7.  Explain similarities and differences.
+14. Now run Model 6. This is an othotropic similar to that described in step 4 above, except that the fibre angle is changed from 0 to 90 degrees with respect to the :math:`x_{1}`-axis (in the :math:`x_{1}`-:math:`x_{2}` plane). Repeat the analysis in steps 8-10.
+
+|vspace|
+
+15. How do the stress components of :math:`\boldsymbol{T}_{fib}` and :math:`\boldsymbol{T}_{ref}` compare to step 2.  Explain similarities and differences.
 
 |vspace|
 
