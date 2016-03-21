@@ -197,52 +197,40 @@ Isotropic material properties with rotated fibre axes
 
 13. Determine the Green-Lagrange strain tensor components with respect to the fibre axes (:math:`\boldsymbol{E}_{fib}`) via the appropriate tensor transformation outlined in step 12. Check your answers to against the simulation results.
 
-  .. Note::
-
-      This is the same deformation used in Section 2 of Lab2, so you should not need to re-do this calculation.
-
 |vspace|
 
 14. Substitute your fibre strains (:math:`\boldsymbol{E}_{fib}`) from step 13 and the isotropic Costa material constants from step 6 into your analytic stress expressions from Section 1 to determine the total second Piola-Kirchhoff stress components with respect to the fibre (material) coordinates (:math:`\boldsymbol{T}_{fib}`).
 
 |vspace|
 
-15. Determine the second Piola-Kirchhoff stress components with respect to the reference coordinate axes (:math:`\boldsymbol{T}_{ref}`) via the appropriate tensor transformation (outlined in step 12).
+15. Determine the second Piola-Kirchhoff stress components with respect to the reference coordinate axes (:math:`\boldsymbol{T}_{ref}`) via the appropriate tensor transformation (outlined in step 12). Check your answers against the simulation results.
 
 |vspace|
 
-16 Check your answers to 15 against the simulation results.
-
-|vspace|
-
-17. Explain similarities/differences between :math:`\boldsymbol{T}_{fib}` and :math:`\boldsymbol{T}_{ref}` for this model.
-
-|vspace|
-
-18. What would you expect from the analysis in steps 13-17 if the fibre angle was changed from 30 to 45 degrees for this isotropic model?  What do you notice about the stress tensors :math:`\boldsymbol{T}_{fib}` and :math:`\boldsymbol{T}_{ref}` for this isotropic model subject to the equibiaxial deformation? Explain.
+16. Explain similarities/differences between :math:`\boldsymbol{T}_{fib}` and :math:`\boldsymbol{T}_{ref}` for this model. What would you expect from the analysis in steps 13-15 if the fibre angle was changed from 30 to 45 degrees for this isotropic model?  What do you notice about the stress tensors :math:`\boldsymbol{T}_{fib}` and :math:`\boldsymbol{T}_{ref}` for this isotropic model subject to the equibiaxial deformation? Explain.
 
   .. note::
 
-   You should not need to solve the model to answer this questions, but if you need the extra practice, apply steps 13-17 to Model 4 (Equibiaxial extension of unit cube, isotropic, 45 degree fibre rotation).
+   You have already answered this question in Section 3 of Lab2.
 
 |vspace|
 
 Orthotropic material properties with rotated fibre axes
 -------------------------------------------------------
 
-19. Now run Model 5. This is an othotropic similar to that described in step 9 above, except that the fibre angle is changed from 0 to 45 degrees with respect to the :math:`x_{1}`-axis (in the :math:`x_{1}`-:math:`x_{2}` plane). Repeat the analysis in steps 13-17.
-
-|vspace|
-
-16. How do the stress components of :math:`\boldsymbol{T}_{fib}` and :math:`\boldsymbol{T}_{ref}` compare to step 7.  Explain similarities and differences.
-
-|vspace|
-
-17. Now run Model 6. This is an othotropic similar to that described in step 9 above, except that the fibre angle is changed from 0 to 90 degrees with respect to the :math:`x_{1}`-axis (in the :math:`x_{1}`-:math:`x_{2}` plane). Repeat the analysis in steps 13-17.
+17. Now run Model 5. This is an othotropic similar to that described in step 9 above, except that the fibre angle is changed from 0 to 45 degrees with respect to the :math:`x_{1}`-axis (in the :math:`x_{1}`-:math:`x_{2}` plane). Repeat the analysis in steps 13-15.
 
 |vspace|
 
 18. How do the stress components of :math:`\boldsymbol{T}_{fib}` and :math:`\boldsymbol{T}_{ref}` compare to step 7.  Explain similarities and differences.
+
+|vspace|
+
+19. Now run Model 6. This is an othotropic similar to that described in step 9 above, except that the fibre angle is changed from 0 to 90 degrees with respect to the :math:`x_{1}`-axis (in the :math:`x_{1}`-:math:`x_{2}` plane). Repeat the analysis in steps 13-15.
+
+|vspace|
+
+20. How do the stress components of :math:`\boldsymbol{T}_{fib}` and :math:`\boldsymbol{T}_{ref}` compare to step 7.  Explain similarities and differences.
 
 |vspace|
 
