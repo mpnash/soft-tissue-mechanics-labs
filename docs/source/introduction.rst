@@ -11,6 +11,8 @@ Welcome to the Soft tissue mechanics labs. These instructions will take you thro
 
 - :ref:`Lab 2: Transforming stresses and strains between different coordinate systems <lab2>`
 
+- :ref:`Lab 3: Deformation and stress in anisotropic materials <lab3>`
+
 These labs make use of the OpenCMISS computational modelling software that will be outlined in the next section.
 
 
