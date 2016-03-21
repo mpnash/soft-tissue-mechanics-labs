@@ -67,8 +67,8 @@ Section 2: Uniaxial extension of a unit cube
 
 |vspace|
 
-Isotropic material properties with rotated fibre axes
------------------------------------------------------
+Isotropic deformation with respect to rotated fibre axes
+--------------------------------------------------------
 
 3. Now consider the same deformation, except that the fibre (material) axes are no longer aligned with the reference axes. They are now rotated anticlockwise by an angle of :math:`\theta=30` degrees from the :math:`x_{1}` axis (in the :math:`x_{1}`-:math:`x_{2}` plane), as shown in the figure below.
 
