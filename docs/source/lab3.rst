@@ -150,11 +150,11 @@ Orthotropic material properties with fibre axes aligned with the reference axes
   .. math::
 
     c_{1} &= 0.0475 \\
-    c_{ff} &= 15.25
-    c_{ss} &= 6.8
+    c_{ff} &= 15.25 \\
+    c_{ss} &= 6.8 \\
     c_{nn} &= 8.9 \\
-    c_{fs} &= 6.95
-    c_{fn} $= 6.05
+    c_{fs} &= 6.95 \\
+    c_{fn} &= 6.05 \\
     c_{sn} &= 4.93
 
   Determine the distortional second Piola-Kirchhoff stress components :math:`T^{ff\_dist}` and :math:`T^{ss\_dist}`.
