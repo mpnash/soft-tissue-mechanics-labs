@@ -42,6 +42,10 @@ Lab 2
 
 - take the stress analysis out of lab 1 and make that the start of lab 2, as a warm exercise.
 
+- visualise stress and strains as coordinate system is rotated
+
+- add question regarding principal stress when coordinate system is rotated for uniaxial deformation
+
 - allow two independent models with the same boundary conditions to be solved and viewed simultaneously with a vertical split screen in the simulation results window. Make the model on the left and right side of the screen isotropic and anisotropic, respectively. Add a slider to change the fibre angle and dynamically update the simulation results to help highlight which deformation/stress tensors change and which do not. Link the cameras in the two graphical windows to simplify visualisation.
 
 ==============================
