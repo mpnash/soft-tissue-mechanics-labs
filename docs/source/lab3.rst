@@ -61,7 +61,7 @@ Section 2: Deriving components of the stress tensor
 Section 3: Biaxial extension of a unit cube
 ===========================================
 
-In this lab we will revisit the isotropic biaxial extension of a unit cube problem that was previously considered in :ref:`Section 3 of Lab2 <isotropic_biaxial_extension_of_unit_cube>`. Use the  Green-Lagrange strain tensor (:math:`\boldsymbol{E}`) that you previously from Step 5 of Section 3 in Lab 2 to answer the following questions.
+In this lab we will revisit the isotropic biaxial extension of a unit cube problem that was previously considered in :ref:`Section 3 of Lab2 <isotropic_biaxial_extension_of_unit_cube>`. Use the  Green-Lagrange strain tensor (:math:`\boldsymbol{E}`) that you previously derived in Step 5 of Section 3 in Lab 2 to answer the following questions.
 
 Isotropic material properties with fibre axes aligned with the reference axes
 -----------------------------------------------------------------------------
@@ -95,14 +95,23 @@ Isotropic material properties with fibre axes aligned with the reference axes
 
 |vspace|
 
-3. Run Model 1 from Lab2 in OpenCMISS and check your answers to Step 2 against the simulation results (the procedure for running the simulation in OpenCMISS was outlined in :ref:`steps 1:3 of Section 3 of Lab2 <isotropic_biaxial_extension_of_unit_cube>`).
+3. Run Model 1 (Equibiaxial extension of unit cube, isotropic, 0 degree fibre rotation) from Lab2 in OpenCMISS and check your answers to Step 2 against the simulation results (the procedure for running the simulation in OpenCMISS was outlined in :ref:`steps 1:3 of Section 3 of Lab2 <isotropic_biaxial_extension_of_unit_cube>`).
+
+|vspace|
+
+Isotropic material properties with respect to rotated fibre axes
+----------------------------------------------------------------
+
+4. In Section 3 of Lab 2 you investigated how rotating the fibre axes with respect to reference axes influenced the values of the stress and strain tensors for an isotropic material undergoing a equibiaxial deformation. Summarise your results i.e.:
+  - did the strain tensor change when the fibres were rotated? Why?
+  - did the stress tensor change when the fibres were rotated? Why?
 
 |vspace|
 
 Orthotropic material properties with fibre axes aligned with the reference axes
 -------------------------------------------------------------------------------
 
-4. Return to the model selection drop down menu by clicking Select View->Problem from the menu. Select and run Model 2 (Equibiaxial extension of unit cube, orthotropic, 0 degree fibre rotation). This model and its boundary conditions are similar to the previous model, except that the Costa relation parameters are now fully orthotropic:
+5. Now consider a model similar to the previous models where the fibres align with the reference axes, except that the Costa relation parameters are now fully orthotropic:
 
   .. math::
 
@@ -118,57 +127,54 @@ Orthotropic material properties with fibre axes aligned with the reference axes
 
 |vspace|
 
-5.  Determine the total stresses: :math:`T^{ff}` and :math:`T^{ss}`.
+6.  Determine the total stresses: :math:`T^{ff}` and :math:`T^{ss}`.
 
 |vspace|
 
-6. How have the total second Piola-Kirchhoff stress components changed compared with step 2. Why?
+7. Run Model 1 (Equibiaxial extension of unit cube, orthotropic, 0 degree fibre rotation) from Lab2 in OpenCMISS and check your answers against the simulation results.
 
 |vspace|
 
-Isotropic material properties with respect to rotated fibre axes
-----------------------------------------------------------------
-
-7. Return to the model selection drop down menu and select and run Model 3 (Equibiaxial extension of unit cube, isotropic, 30 degree fibre rotation). This model is similar to the previous models, except that the fibre (material) axes are no longer aligned with the reference axes. They are now rotated anticlockwise by an angle of :math:`\theta=30` degrees from the :math:`x_{1}` axis (in the :math:`x_{1}`-:math:`x_{2}` plane).
-
-|vspace|
-
-8. Determine the Green-Lagrange strain tensor components with respect to the fibre axes (:math:`\boldsymbol{E}_{fib}`) via the appropriate tensor transformation outlined in :ref:`step 3 of Section 2 of Lab2 <tensor_transformations>`. Check your answers against the simulation results.
-
-|vspace|
-
-9. Substitute your fibre strains (:math:`\boldsymbol{E}_{fib}`) from step 8 and the isotropic Costa material constants from step 1 into your analytic stress expressions from Section 1 to determine the total second Piola-Kirchhoff stress components with respect to the fibre (material) coordinates (:math:`\boldsymbol{T}_{fib}`).
-
-|vspace|
-
-10. Determine the second Piola-Kirchhoff stress components with respect to the reference coordinate axes (:math:`\boldsymbol{T}_{ref}`) via an appropriate tensor transformation. Check your answers against the simulation results.
-
-|vspace|
-
-11. Explain similarities/differences between :math:`\boldsymbol{T}_{fib}` and :math:`\boldsymbol{T}_{ref}` for this model. What would you expect from the analysis in steps 8-10 if the fibre angle was changed from 30 to 45 degrees for this isotropic model?  What do you notice about the stress tensors :math:`\boldsymbol{T}_{fib}` and :math:`\boldsymbol{T}_{ref}` for this isotropic model subject to the equibiaxial deformation? Explain.
-
-  .. note::
-
-   You have already answered this question in Step 13 of Section 3 in Lab2.
+8. How have the total second Piola-Kirchhoff stress components changed compared with step 2. Why?
 
 |vspace|
 
 Orthotropic material properties with respect to rotated fibre axes
 ------------------------------------------------------------------
 
-12. Now run Model 5. This is an othotropic similar to that described in step 4 above, except that the fibre angle is changed from 0 to 45 degrees with respect to the :math:`x_{1}`-axis (in the :math:`x_{1}`-:math:`x_{2}` plane). Repeat the analysis in steps 8-10.
+9. Now run Model 5 (Equibiaxial extension of unit cube, orthotropic, 45 degree fibre rotation). This is an othotropic material similar to that described in step 5 above, except that the fibre angle is changed from 0 to 45 degrees with respect to the :math:`x_{1}`-axis (in the :math:`x_{1}`-:math:`x_{2}` plane). 
 
 |vspace|
 
-13. How do the stress components of :math:`\boldsymbol{T}_{fib}` and :math:`\boldsymbol{T}_{ref}` compare to step 2.  Explain similarities and differences.
+10. Substitute the fibre strains (:math:`\boldsymbol{E}_{fib}`) from the simulation results and the othotropic Costa material constants from step 5 into your analytic stress expressions from Section 1 to determine the total second Piola Kirchhoff stress components with respect to the fibre (material) coordinates (:math:`\boldsymbol{T}_{fib}`).
 
 |vspace|
 
-14. Now run Model 6. This is an othotropic similar to that described in step 4 above, except that the fibre angle is changed from 0 to 90 degrees with respect to the :math:`x_{1}`-axis (in the :math:`x_{1}`-:math:`x_{2}` plane). Repeat the analysis in steps 8-10.
+11. Determine the second Piola-Kirchhoff stress components with respect to the reference coordinate axes (:math:`\boldsymbol{T}_{ref}`) via an appropriate tensor transformation outlined in :ref:`step 3 of Section 2 of Lab2 <tensor_transformations>`. Check your answers against the simulation results.
 
 |vspace|
 
-15. How do the stress components of :math:`\boldsymbol{T}_{fib}` and :math:`\boldsymbol{T}_{ref}` compare to step 2.  Explain similarities and differences.
+12. How do the stress components of :math:`\boldsymbol{T}_{fib}` and :math:`\boldsymbol{T}_{ref}` compare to step 2. Explain similarities and differences.
+
+|vspace|
+
+13. Now run Model 6 (Equibiaxial extension of unit cube, orthotropic, 90 degree fibre rotation), where the fibre angle has been rotated 90 degrees with respect to the :math:`x_{1}`-axis (in the :math:`x_{1}`-:math:`x_{2}` plane). Repeat the analysis in steps 10-11.
+
+|vspace|
+
+14. How do the stress components of :math:`\boldsymbol{T}_{fib}` and :math:`\boldsymbol{T}_{ref}` compare to step 2. Explain similarities and differences.
+
+|vspace|
+
+====================
+Section 4: Questions
+====================
+
+After you have completed the above exercises in Section 2 and Section 3, consider the following questions: 
+
+b. What do you notice about the strain tensors, :math:`\boldsymbol{T}_{fib}` and :math:`\boldsymbol{T}_{ref}`, in the above analysis for an isotropic or anisotropic material undergoing equibiaxial deformation?
+
+a. Under what deformations would you expect these strain tensors be different?
 
 |vspace|
 
