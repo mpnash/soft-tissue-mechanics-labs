@@ -28,7 +28,7 @@ Before starting this lab, please be sure to have completed :ref:`Lab 1: Deformat
 Section 2: Deriving components of the stress tensor
 ===================================================
 
-1. The Costa constitutive relation (shown below) will be used to describe the behaviour of the material considered in this lab. Analytically differentiate the Costa constitutive relation with respect to the strain components :math:`E_{ff}` and :math:`E_{ss}`. Thus determine analytic expressions for the **distortional components** of the second Piola-Kirchhoff stress tensor.
+1. The orthotropics exponential constitutive relation (shown below) will be used to describe the behaviour of the material considered in this lab. Analytically differentiate the constitutive relation with respect to the strain components :math:`E_{ff}` and :math:`E_{ss}`. Thus determine analytic expressions for the **distortional components** of the second Piola-Kirchhoff stress tensor.
 
   .. math::
 
@@ -68,7 +68,7 @@ Section 2: Deriving components of the stress tensor
 Section 3: Biaxial extension of a unit cube
 ===========================================
 
-In this lab we will revisit the isotropic biaxial extension of a unit cube problem that was previously considered in :ref:`Section 3 of Lab2 <isotropic_biaxial_extension_of_unit_cube>`. Use the  Green-Lagrange strain tensor (:math:`\boldsymbol{E}`) that you previously derived in Step 5 of Section 3 in Lab 2 to answer the following questions.
+In this lab, we will revisit the isotropic biaxial extension of a unit cube problem that was previously considered in :ref:`Section 3 of Lab2 <isotropic_biaxial_extension_of_unit_cube>`. Use the  Green-Lagrange strain tensor (:math:`\boldsymbol{E}`) that you previously derived in Step 5 of Section 3 in Lab 2 to answer the following questions.
 
 Isotropic material properties with fibre axes aligned with the reference axes
 -----------------------------------------------------------------------------
@@ -143,7 +143,7 @@ Orthotropic material properties with respect to rotated fibre axes
 
 |vspace|
 
-10. Substitute the fibre strains (:math:`\boldsymbol{E}_{fib}`) from the simulation results and the othotropic Costa material constants from step 5 into your analytic stress expressions from Section 1 to determine the total second Piola-Kirchhoff stress components with respect to the fibre (material) coordinates (:math:`\boldsymbol{T}_{fib}`).
+10. Substitute the fibre strains (:math:`\boldsymbol{E}_{fib}`) from the simulation results and the othotropic exponential material constants from step 5 into your analytic stress expressions from Section 1 to determine the total second Piola-Kirchhoff stress components with respect to the fibre (material) coordinates (:math:`\boldsymbol{T}_{fib}`).
 
 |vspace|
 
@@ -167,11 +167,11 @@ Orthotropic material properties with respect to rotated fibre axes
 Section 4: Questions
 ====================
 
-After you have completed the above exercises in Section 2 and Section 3, answer the following questions: 
+After you have completed the above exercises in Section 2 and Section 3, consider the following questions: 
 
-b. What do you notice about the strain tensors, :math:`\boldsymbol{T}_{fib}` and :math:`\boldsymbol{T}_{ref}`, in the above analysis for an isotropic or anisotropic material undergoing equibiaxial deformation? Why?
+a. What do you notice about the stress tensors, :math:`\boldsymbol{T}_{fib}` and :math:`\boldsymbol{T}_{ref}`, in the above analysis for an isotropic or anisotropic material undergoing equibiaxial deformation? Why?
 
-a. Under what deformations would you expect these strain tensors be different?
+b. Under what deformations would you expect these stress tensors be different?
 
 |vspace|
 
