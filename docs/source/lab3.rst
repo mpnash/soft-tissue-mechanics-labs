@@ -103,8 +103,8 @@ Isotropic material properties with respect to rotated fibre axes
 ----------------------------------------------------------------
 
 4. In Section 3 of Lab 2 you investigated how rotating the fibre axes with respect to reference axes influenced the values of the stress and strain tensors for an isotropic material undergoing a equibiaxial deformation. Summarise your results i.e.:
-  - did the strain tensor change when the fibres were rotated? Why?
-  - did the stress tensor change when the fibres were rotated? Why?
+  - did the strain tensor change when the fibre axis was rotated? Why?
+  - did the stress tensor change when the fibre axis was rotated? Why?
 
 |vspace|
 
