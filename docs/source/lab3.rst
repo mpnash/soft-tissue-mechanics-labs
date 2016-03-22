@@ -28,7 +28,7 @@ Before starting this lab, please be sure to have completed :ref:`Lab 1: Deformat
 Section 2: Deriving components of the stress tensor
 ===================================================
 
-1. The orthotropics exponential constitutive relation (shown below) will be used to describe the behaviour of the material considered in this lab. Analytically differentiate the constitutive relation with respect to the strain components :math:`E_{ff}` and :math:`E_{ss}`. Thus determine analytic expressions for the **distortional components** of the second Piola-Kirchhoff stress tensor.
+1. The orthotropic exponential constitutive relation (shown below) will be used to describe the behaviour of the material considered in this lab. Analytically differentiate the constitutive relation with respect to the strain components :math:`E_{ff}` and :math:`E_{ss}`. Thus determine analytic expressions for the **distortional components** of the second Piola-Kirchhoff stress tensor.
 
   .. math::
 
@@ -64,14 +64,14 @@ Section 2: Deriving components of the stress tensor
 
 |vspace|
 
-===========================================
-Section 3: Biaxial extension of a unit cube
-===========================================
+========================================
+Section 3: Isotropic material properties
+========================================
 
 In this lab, we will revisit the isotropic biaxial extension of a unit cube problem that was previously considered in :ref:`Section 3 of Lab2 <isotropic_biaxial_extension_of_unit_cube>`. Use the  Green-Lagrange strain tensor (:math:`\boldsymbol{E}`) that you previously derived in Step 5 of Section 3 in Lab 2 to answer the following questions.
 
-Isotropic material properties with fibre axes aligned with the reference axes
------------------------------------------------------------------------------
+Stresses with respect to the reference axes
+-------------------------------------------
 
 1. The isotropic material parameters defined for the isotropic biaxial extension of a unit cube problem are defined below:
 
@@ -96,8 +96,8 @@ Isotropic material properties with fibre axes aligned with the reference axes
 
 |vspace|
 
-Isotropic material properties with respect to rotated fibre axes
-----------------------------------------------------------------
+Stresses with respect to rotated (material-fibre) axes
+------------------------------------------------------
 
 4. In Section 3 of Lab 2, you investigated how rotating the fibre axes with respect to reference axes influenced the values of the stress and strain tensors for an isotropic material undergoing a equibiaxial deformation. Summarise your results i.e.:
   - did the strain tensor change when the fibre axis was rotated? Why?
@@ -105,8 +105,12 @@ Isotropic material properties with respect to rotated fibre axes
 
 |vspace|
 
-Orthotropic material properties with fibre axes aligned with the reference axes
--------------------------------------------------------------------------------
+========================================================
+Section 4: Anisotropic (orthotropic) material properties
+========================================================
+
+Stresses with respect to the reference axes
+-------------------------------------------
 
 5. Now consider a similar model where the fibres align with the reference axes, except that now the Costa relation parameters are fully orthotropic:
 
@@ -136,8 +140,8 @@ Orthotropic material properties with fibre axes aligned with the reference axes
 
 |vspace|
 
-Orthotropic material properties with respect to rotated fibre axes
-------------------------------------------------------------------
+Stresses with respect to rotated (material-fibre) axes
+------------------------------------------------------
 
 9. Now run Model 5 (Equibiaxial extension of unit cube, orthotropic, 45 degree fibre rotation). This is an othotropic material similar to that described in step 5 above, except that the fibre angle is changed from 0 to 45 degrees with respect to the :math:`x_{1}`-axis (in the :math:`x_{1}`-:math:`x_{2}` plane). 
 
@@ -164,7 +168,7 @@ Orthotropic material properties with respect to rotated fibre axes
 |vspace|
 
 ====================
-Section 4: Questions
+Section 5: Questions
 ====================
 
 After you have completed the above exercises in Section 2 and Section 3, consider the following questions: 
