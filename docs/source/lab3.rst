@@ -102,7 +102,7 @@ Isotropic material properties with fibre axes aligned with the reference axes
 Isotropic material properties with respect to rotated fibre axes
 ----------------------------------------------------------------
 
-4. In Section 3 of Lab 2 you investigated how rotating the fibre axes with respect to reference axes influenced the values of the stress and strain tensors for an isotropic material undergoing a equibiaxial deformation. Summarise your results i.e.:
+4. In Section 3 of Lab 2, you investigated how rotating the fibre axes with respect to reference axes influenced the values of the stress and strain tensors for an isotropic material undergoing a equibiaxial deformation. Summarise your results i.e.:
   - did the strain tensor change when the fibre axis was rotated? Why?
   - did the stress tensor change when the fibre axis was rotated? Why?
 
@@ -111,7 +111,7 @@ Isotropic material properties with respect to rotated fibre axes
 Orthotropic material properties with fibre axes aligned with the reference axes
 -------------------------------------------------------------------------------
 
-5. Now consider a model similar to the previous models where the fibres align with the reference axes, except that the Costa relation parameters are now fully orthotropic:
+5. Now consider a similar model where the fibres align with the reference axes, except that now the Costa relation parameters are fully orthotropic:
 
   .. math::
 
@@ -146,7 +146,7 @@ Orthotropic material properties with respect to rotated fibre axes
 
 |vspace|
 
-10. Substitute the fibre strains (:math:`\boldsymbol{E}_{fib}`) from the simulation results and the othotropic Costa material constants from step 5 into your analytic stress expressions from Section 1 to determine the total second Piola Kirchhoff stress components with respect to the fibre (material) coordinates (:math:`\boldsymbol{T}_{fib}`).
+10. Substitute the fibre strains (:math:`\boldsymbol{E}_{fib}`) from the simulation results and the othotropic Costa material constants from step 5 into your analytic stress expressions from Section 1 to determine the total second Piola-Kirchhoff stress components with respect to the fibre (material) coordinates (:math:`\boldsymbol{T}_{fib}`).
 
 |vspace|
 
@@ -170,7 +170,7 @@ Orthotropic material properties with respect to rotated fibre axes
 Section 4: Questions
 ====================
 
-After you have completed the above exercises in Section 2 and Section 3, consider the following questions: 
+After you have completed the above exercises in Section 2 and Section 3, answer the following questions: 
 
 b. What do you notice about the strain tensors, :math:`\boldsymbol{T}_{fib}` and :math:`\boldsymbol{T}_{ref}`, in the above analysis for an isotropic or anisotropic material undergoing equibiaxial deformation?
 
