@@ -172,7 +172,7 @@ Section 4: Questions
 
 After you have completed the above exercises in Section 2 and Section 3, answer the following questions: 
 
-b. What do you notice about the strain tensors, :math:`\boldsymbol{T}_{fib}` and :math:`\boldsymbol{T}_{ref}`, in the above analysis for an isotropic or anisotropic material undergoing equibiaxial deformation?
+b. What do you notice about the strain tensors, :math:`\boldsymbol{T}_{fib}` and :math:`\boldsymbol{T}_{ref}`, in the above analysis for an isotropic or anisotropic material undergoing equibiaxial deformation? Why?
 
 a. Under what deformations would you expect these strain tensors be different?
 
