@@ -38,12 +38,12 @@ Section 2: Deriving components of the stress tensor
 
   .. math::
 
-    Q = & c_{ff}E^{2}_{ff} + \\
-        & c_{ss}E^{2}_{ss} + \\ 
+    Q = & c_{ff}E^{2}_{ff} +
+        & c_{ss}E^{2}_{ss} + 
         & c_{nn}E^{2}_{nn} + \\
-        & 2c_{fs}(\frac{1}{2}(E_{fs}+E_{sf}))^{2} + \\
-        & 2c_{fn}(\frac{1}{2}(E_{fn}+E_{fn}))^{2} + \\ 
-        & 2c_{ns}(\frac{1}{2}(E_{ns}+E_{ns}))^{2}
+        & 2c_{fs}(\frac{1}{2}(E_{fs}+E_{sf}))^{2} + 
+        & 2c_{fn}(\frac{1}{2}(E_{fn}+E_{nf}))^{2} + 
+        & 2c_{ns}(\frac{1}{2}(E_{ns}+E_{sn}))^{2}
 
   .. Note::
 
@@ -53,7 +53,14 @@ Section 2: Deriving components of the stress tensor
 
 |vspace|
 
-2. Write down the expression for the total stresses: :math:`T^{ff}` and :math:`T^{ss}` (see `Nash and Hunter (2000) <http://link.springer.com/article/10.1023%2FA%3A1011084330767>`_).
+2. Write down the expression for the total stresses: :math:`T^{ff}` and :math:`T^{ss}` (see Eqn 38 of `Nash and Hunter (2007) <https://canvas.auckland.ac.nz/courses/14750/files/27954/download?wrap=1`_), or Eqn 15 of `Nash and Hunter (2000) <http://link.springer.com/article/10.1023%2FA%3A1011084330767>`_).
+
+  .. Note::
+
+      - :math:`C^{MN}` is not the same as :math:`C_{MN}`. They are inversely related: :math:`C^{MN}=\{C_{MN}\}^{-1}`.
+
+      - It is easy to invert a diagonal tensor - check that :math:`C^{MN}C_{MN}=\boldsymbol{I}`.
+
 
 |vspace|
 
@@ -70,28 +77,18 @@ Isotropic material properties with fibre axes aligned with the reference axes
 
   .. math::
 
-    c_{1} &= 0.0475 \\
+    c_{1} &= 0.0475~kPa \\
     c_{ff} = c_{ss} = c_{nn} &= c_{fs} = c_{fn} = c_{sn} = 15.25 \\
 
   Substitute the Green-Lagrange strain components (:math:`\boldsymbol{E}`) into your analytic expression from step 1 of Section 1 of this lab to determine values for the **distortional components** of the second Piola-Kirchhoff stress tensor. Verify that these distortional stresses are:
 
   .. math::
 
-    T^{ff\_dist} = T^{ss\_dist} = 8.590~kPa
-
-  .. Note::
-
-      - For this exercise :math:`Q=3.74`.
+    T^{ff\_dist} = T^{ss\_dist} = 8.590~kPa ~~~~ (note Q=3.74)
 
 |vspace|
 
 2. Determine the total stresses: :math:`T^{ff}` and :math:`T^{ss}` using the equation you wrote down in Section 2. This requires determining the value for the **hydrostatic pressure**, :math:`p`, which is provided from the simulation results.
-
-  .. Note::
-
-      - :math:`C^{MN}` is not the same as :math:`C_{MN}`. They are inversely related: :math:`C^{MN}=\{C_{MN}\}^{-1}`.
-
-      - It is easy to invert a diagonal tensor - check that :math:`C^{MN}C_{MN}=\boldsymbol{I}`.
 
 |vspace|
 
@@ -115,12 +112,12 @@ Orthotropic material properties with fibre axes aligned with the reference axes
 
   .. math::
 
-    c_{1} &= 0.0475 \\
-    c_{ff} &= 15.25 \\
-    c_{ss} &= 6.8 \\
+    c_{1} &= 0.0475~kPa 
+    c_{ff} &= 15.25 ~~~~
+    c_{ss} &= 6.8 ~~~~
     c_{nn} &= 8.9 \\
-    c_{fs} &= 6.95 \\
-    c_{fn} &= 6.05 \\
+    c_{fs} &= 6.95 ~~~~
+    c_{fn} &= 6.05 ~~~~
     c_{sn} &= 4.93
 
   Determine the distortional second Piola-Kirchhoff stress components :math:`T^{ff\_dist}` and :math:`T^{ss\_dist}`.
@@ -185,5 +182,4 @@ a. Under what deformations would you expect these strain tensors be different?
     - derive components of the second Piola-Kirchhoff stress tensor.
 
     - evaluate the second Piola-Kirchhoff stress tensor with respect to spatial or material coordinates.
-
 
