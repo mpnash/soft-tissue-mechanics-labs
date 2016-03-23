@@ -5,9 +5,9 @@
 
 .. _lab1:
 
-****************************************************
-Lab 1: Deformation and stress in isotropic materials
-****************************************************
+****************************************************************
+Lab 1: Analysing deformation and stresses in isotropic materials
+****************************************************************
 
 .. toctree::
    :maxdepth: 2

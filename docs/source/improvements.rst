@@ -20,6 +20,7 @@ Change after 321 course finishes
 - Allow the tensors etc  in the simulation results pane to be hidden.
 - Change axes in the 3D model window from x,y,z to x1,x2,x3.
 - Change model labels to include the type of constitutive relation.
+- Remove the type of material from the model labels ie remove the word isotropic or orthotropic, as we can ask the students to figure this out based on the values of the stress tensor.
 
 ======================
 Long term improvements

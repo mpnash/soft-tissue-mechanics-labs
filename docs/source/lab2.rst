@@ -3,11 +3,11 @@
 
    \vspace{5mm}
 
-.. _lab2:
+.. _lab2a:
 
-*****************************************************************************
-Lab 2: Transforming stresses and strains between different coordinate systems
-*****************************************************************************
+******************************************************************************
+Lab 2b: Transforming stresses and strains between different coordinate systems
+******************************************************************************
 
 .. toctree::
    :maxdepth: 2
