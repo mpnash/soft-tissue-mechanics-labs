@@ -28,7 +28,7 @@ Before starting this lab, please read the :ref:`Using OpenCMISS <using-opencmiss
 Solving mechanics models
 ========================
 
-1. Start OpenCMISS and load Lab1 (described in the :ref:`Starting OpenCMISS <starting-OpenCMISS>` section).
+1. Start OpenCMISS and load Lab 1 (described in the :ref:`Starting OpenCMISS <starting-OpenCMISS>` section).
 
 |vspace|
 

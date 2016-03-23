@@ -50,7 +50,7 @@ Section 2: Uniaxial extension of a unit cube
 
   .. Note::
 
-      This is the same deformation used in Model 1 in Lab1, so you should not need to re-do these calculations.
+      This is the same deformation used in Model 1 in Lab 1, so you should not need to re-do these calculations.
 
       For this model, the second Piola-Kirchhoff stress tensor with respect to both the reference and fibre axes is:
 
@@ -63,7 +63,7 @@ Section 2: Uniaxial extension of a unit cube
           0      & 0       & 0
         \end{bmatrix}
 
-      While the deformation in Model 1 of Lab1 is the same as that considered here (i.e. they both describe the same uniaxial deformation), **the stress tensor is different** because Lab1 and Lab2 use different constitutive relations to represent the mechanical response of the material.
+      While the deformation in Model 1 of Lab 1 is the same as that considered here (i.e. they both describe the same uniaxial deformation), **the stress tensor is different** because Lab 1 and Lab 2 use different constitutive relations to represent the mechanical response of the material.
 
 |vspace|
 
@@ -160,7 +160,7 @@ For the following exercises, you are asked to transform strain and stress tensor
 Section 3: Biaxial extension of a unit cube
 ===========================================
 
-1. Start OpenCMISS and load Lab2 (described in the :ref:`Starting OpenCMISS <starting-OpenCMISS>` section).
+1. Start OpenCMISS and load Lab 2 (described in the :ref:`Starting OpenCMISS <starting-OpenCMISS>` section).
 
 |vspace|
 
@@ -201,7 +201,7 @@ Section 3: Biaxial extension of a unit cube
 
   .. Note::
 
-      This is the same deformation used in Model 2 of Lab1, so you should not need to re-do these calculations.
+      This is the same deformation used in Model 2 of Lab 1, so you should not need to re-do these calculations.
 
 |vspace|
 
@@ -272,5 +272,5 @@ e. Will the invariants of :math:`\boldsymbol{C}` be the same or different when c
     - analyse stress tensors with respect to spatial or material coordinates for isotropic materials.
 
 
-Here are the :ref:`solutions to Step 8 of Section 2 <lab2_section2_solutions>` and :ref:`solutions to Step 13 of Section 3 <lab2_section3_solutions>`.
+Here are the :ref:`solutions to Step 8 of Section 2 <lab2a_section2_solutions>` and :ref:`solutions to Step 13 of Section 3 <lab2a_section3_solutions>`.
 

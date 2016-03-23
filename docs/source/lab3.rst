@@ -21,7 +21,7 @@ Before starting this lab, please be sure to have completed :ref:`Lab 1: Analysin
 
 .. to familiarise yourself with stress and strain analysis techniques and the transformation of these quantities between fibre and reference coordinates, which will be used in this lab.
 
-In Section 3 of Lab 2a, you investigated how rotating the fibre axes with respect to reference axes influenced the values of the stress and strain tensors for an isotropic material undergoing a equibiaxial deformation. Summarise your results i.e.:
+In :ref:`Section 3 of Lab 2a <isotropic_biaxial_extension_of_unit_cube>`, you investigated how rotating the fibre axes with respect to reference axes influenced the values of the stress and strain tensors for an isotropic material undergoing a equibiaxial deformation. Summarise your results i.e.:
 
   - did the strain tensor change when the fibre axis was rotated? Why?
   - did the stress tensor change when the fibre axis was rotated? Why?
@@ -73,7 +73,7 @@ Section 3: Analysing stresses in a material undergoing biaxial deformation
 Stresses with respect to the reference axes
 -------------------------------------------
 
-3. Run Model 1 in OpenCMISS (the procedure for running the simulation in OpenCMISS was outlined in :ref:`steps 1:3 of Section 3 of Lab2a <isotropic_biaxial_extension_of_unit_cube>`).
+3. Run Model 1 in OpenCMISS (the procedure for running the simulation in OpenCMISS was outlined in :ref:`steps 1:3 of Section 3 of Lab 2a <isotropic_biaxial_extension_of_unit_cube>`).
 
 4. The material constants for this model are defined below:
 
@@ -102,7 +102,7 @@ Stresses with respect to the reference axes
 
   .. math::
 
-    c_{1} &= 0.0475~kPa 
+    c_{1} &= 0.0475~kPa\\
     c_{ff} &= 15.25 ~~~~
     c_{ss} &= 6.8 ~~~~
     c_{nn} &= 8.9 \\
@@ -133,7 +133,7 @@ Stresses with respect to rotated (material-fibre) axes
 
 |vspace|
 
-12. Determine the second Piola-Kirchhoff stress components with respect to the reference coordinate axes (:math:`\boldsymbol{T}_{ref}`) via an appropriate tensor transformation outlined in :ref:`Step 3 of Section 2 of Lab2 <tensor_transformations>`. Check your answers against the simulation results.
+12. Determine the second Piola-Kirchhoff stress components with respect to the reference coordinate axes (:math:`\boldsymbol{T}_{ref}`) via an appropriate tensor transformation outlined in :ref:`Step 3 of Section 2 of Lab 2a <tensor_transformations>`. Check your answers against the simulation results.
 
 |vspace|
 

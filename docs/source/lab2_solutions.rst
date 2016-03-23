@@ -3,13 +3,13 @@
 
    \vspace{5mm}
 
-.. _lab2_solutions:
+.. _lab2a_solutions:
 
-****************
-Lab 2: Solutions
-****************
+*****************
+Lab 2a: Solutions
+*****************
 
-.. _lab2_section2_solutions:
+.. _lab2a_section2_solutions:
 
 ============================================
 Section 2: Uniaxial extension of a unit cube
@@ -137,7 +137,7 @@ Section 2: Uniaxial extension of a unit cube
 
 |vspace|
 
-.. _lab2_section3_solutions:
+.. _lab2a_section3_solutions:
 
 ===========================================
 Section 3: Biaxial extension of a unit cube
