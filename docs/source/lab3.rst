@@ -47,10 +47,12 @@ Section 2: Deriving components of the stress tensor
           2c_{fn}(\frac{1}{2}(E_{fn}+E_{nf}))^{2} + 
           2c_{ns}(\frac{1}{2}(E_{ns}+E_{sn}))^{2}
 
-  Differentiate this strain energy density function with respect to the Green-Lagrange strain components (:math:`E_{\alpha \beta}`), and thus derive analytic expressions for the **distortional components of the second Piola-Kirchhoff stress tensor**.
+  Differentiate this strain energy density function with respect to the Green-Lagrange strain components (:math:`E_{\alpha \beta}`), and thus derive generalised analytic expressions for the **distortional components of the second Piola-Kirchhoff stress tensor** in terms of the strain components and the material constants: :math:`c_1, c_{ff}, c_{ss}, c_{nn}, c_{fs}, c_{fn}, c_{ns}`.
 
   .. Note::
 
+      - At this stage, do not substitute any values for the strain components nor constants.
+      
       - Recognising the similarity of terms should simplify this task.
       
       - Don't forget the chain rule when differentiating the exponential.
@@ -75,7 +77,7 @@ Section 3: Analysing stresses during equi-biaxial deformation
 Stresses with respect to the reference axes
 -------------------------------------------
 
-3. Using OpenCMISS, load Lab 2 and run Model 1 (the procedure for running this simulation in OpenCMISS is outlined in :ref:`steps 1-3 in Section 3 of Lab 2a <isotropic_biaxial_extension_of_unit_cube>`).
+3. Using OpenCMISS, load Lab 2 and run Model 1. (The procedure for running this simulation in OpenCMISS is outlined in :ref:`steps 1-3 in Section 3 of Lab 2a <isotropic_biaxial_extension_of_unit_cube>`).
 
 4. The Model 1 simulation uses the above constitutive equation with the following material constants:
 
@@ -143,7 +145,7 @@ Stresses with respect to rotated material-fibre axes
 
 |vspace|
 
-14. Now run Model 6, where the fibre angle has been rotated :math:`\theta=90` degrees with respect to the :math:`X_{1}`-axis (in the :math:`X_{1}`-:math:`X_{2}` plane). Repeat the analyses in Steps 11-12.
+14. Now run Model 6, for which the material-fibre axis is oriented at :math:`\theta=90` degrees with respect to the :math:`X_{1}`-axis (in the :math:`X_{1}`-:math:`X_{2}` plane). Repeat the analyses in Steps 11-12.
 
 |vspace|
 
@@ -172,4 +174,6 @@ c. For what types of deformations would you expect the stress tensors to be diff
     - derive expressions for the components of the second Piola-Kirchhoff stress tensor.
 
     - evaluate components of the second Piola-Kirchhoff stress tensor with respect to spatial or material-fibre coordinates.
+    
+    - infer the material symmetry of a material described by a specific constitutive equation and a particular set of material constants by analysing the stress components.
 
