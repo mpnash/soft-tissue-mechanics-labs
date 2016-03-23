@@ -47,7 +47,7 @@ Section 2: Deriving components of the stress tensor
           2c_{fn}(\frac{1}{2}(E_{fn}+E_{nf}))^{2} + 
           2c_{ns}(\frac{1}{2}(E_{ns}+E_{sn}))^{2}
 
-Differentiate this strain energy density function with respect to the Green-Lagrange strain components :math:`\(E_{\alpha \beta}\)`, and thus derive analytic expressions for the **distortional components of the second Piola-Kirchhoff stress tensor**.
+Differentiate this strain energy density function with respect to the Green-Lagrange strain components (:math:`E_{\alpha \beta}`), and thus derive analytic expressions for the **distortional components of the second Piola-Kirchhoff stress tensor**.
 
   .. Note::
 
@@ -151,17 +151,17 @@ Stresses with respect to rotated material-fibre axes
 
 |vspace|
 
-.. ====================
-.. Section 4: Questions
-.. ====================
+====================
+Section 4: Questions
+====================
 
-.. After you have completed the exercises above, consider the following questions: 
+After you have completed the exercises above, consider the following questions: 
 
-.. a. What do you notice about the stress tensors, :math:`\boldsymbol{T}_{fib}` and :math:`\boldsymbol{T}_{ref}`, from the above analyses for isotropic (Model 1) and anisotropic (Models 2,5,6) materials subject to equi-biaxial deformations? Why?
+a. What do you notice about the stress tensors, :math:`\boldsymbol{T}_{fib}` and :math:`\boldsymbol{T}_{ref}`, from the above analyses for isotropic (Model 1) and anisotropic (Models 2,5,6) materials subject to equi-biaxial deformations? Why?
 
-.. b. What would you expect if you compared the maximum principal stresses for each of the anisotropic cases (Models 2,5,6)?
+b. What would you expect if you compared the maximum principal stresses for each of the anisotropic cases (Models 2,5,6)?
 
-.. c. For what types of deformations would you expect the stress tensors be different?
+c. For what types of deformations would you expect the stress tensors to be different?
 
 |vspace|
 
