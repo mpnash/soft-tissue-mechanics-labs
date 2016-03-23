@@ -6,7 +6,7 @@
 .. _lab2a:
 
 ******************************************************************************
-Lab 2b: Transforming stresses and strains between different coordinate systems
+Lab 2a: Transforming stresses and strains between different coordinate systems
 ******************************************************************************
 
 .. toctree::
