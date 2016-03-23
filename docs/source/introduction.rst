@@ -5,7 +5,7 @@ Introduction
    :maxdepth: 2
 
 
-Welcome to the Soft tissue mechanics labs. These instructions will take you through the following topics that are covered during these labs:
+Welcome to the soft tissue mechanics labs, which will take you through the following topics:
 
 - :ref:`Lab 1: Analysing deformation and stresses in isotropic materials <lab1>` 
 
@@ -15,5 +15,3 @@ Welcome to the Soft tissue mechanics labs. These instructions will take you thro
 
 These labs make use of the OpenCMISS computational modelling software that will be outlined in the next section.
 
-
-.. define stress tensors with respect to spatial and material coordinates.
