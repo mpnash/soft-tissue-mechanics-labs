@@ -12,7 +12,7 @@ Lab 2b: Analysing stresses in anisotropic materials
 .. toctree::
    :maxdepth: 2
 
-The objective of this lab is to learn how to analyse constitutive equations and stresses defined with respect to a material coordinate system within an anisotropic object.
+The objective of this lab is to learn how to analyse anisotropic constitutive equations and stresses defined with respect to a material coordinate system.
 
 ===================
 Section 1: Revision
@@ -47,7 +47,7 @@ Section 2: Deriving components of the stress tensor
           2c_{fn}(\frac{1}{2}(E_{fn}+E_{nf}))^{2} + 
           2c_{ns}(\frac{1}{2}(E_{ns}+E_{sn}))^{2}
 
-Differentiate this strain energy density function with respect to the Green-Lagrange strain components (:math:`E_{\alpha \beta}`), and thus derive analytic expressions for the **distortional components of the second Piola-Kirchhoff stress tensor**.
+  Differentiate this strain energy density function with respect to the Green-Lagrange strain components (:math:`E_{\alpha \beta}`), and thus derive analytic expressions for the **distortional components of the second Piola-Kirchhoff stress tensor**.
 
   .. Note::
 
@@ -100,7 +100,7 @@ Stresses with respect to the reference axes
 
 |vspace|
 
-7. Now run Model 2, which is similar to Model 1 except that the material constants are now:
+7. Now run Model 2, which is similar to Model 1 except that the material constants are set to:
 
   .. math::
 
@@ -112,42 +112,42 @@ Stresses with respect to the reference axes
     c_{fn} &= 6.05 ~~~~
     c_{ns} &= 4.93
 
-  Calculate the distortional second Piola-Kirchhoff stress tensor components: :math:`T_{ref}^{ff\_dist}` and :math:`T_{ref}^{ss\_dist}`
+  Re-use your analytic expressions from Step 1 above to calculate, for this new model, the distortional second Piola-Kirchhoff stress tensor components: :math:`T_{ref}^{ff\_dist}` and :math:`T_{ref}^{ss\_dist}`
 
 |vspace|
 
-8.  Calculate the total stress components: :math:`T_{ref}^{ff}` and :math:`T_{ref}^{ss}` (use the hydrostatic pressure value, :math:`p`, from the simulation results). Check your answers against the simulation results.
+8.  Re-use your analytic expressions from Step 2 above to calculate, for this new model, the total stress components: :math:`T_{ref}^{ff}` and :math:`T_{ref}^{ss}` (use the hydrostatic pressure value, :math:`p`, from the simulation results). Check your answers against the simulation results.
 
 |vspace|
 
-9. How have the total second Piola-Kirchhoff stress components changed in comparison to Step 5. Why? What can you infer about the material symmetry of this model?
+9. Explain the similarities and differences in the total second Piola-Kirchhoff stress components from Steps 5 and 8.  What can you infer about the material symmetry of this model?
 
 |vspace|
 
 Stresses with respect to rotated material-fibre axes
 ----------------------------------------------------
 
-10. Now run Model 5, which uses the same (anisotropic) material constants as in Step 7 above. In this simulation, the material-fibre axis is oriented at 45 degrees with respect to the :math:`X_{1}`-axis (in the :math:`X_{1}`-:math:`X_{2}` plane). 
+10. Now run Model 5, which uses the same (anisotropic) material constants as in Step 7 above. In this simulation, the material-fibre axis is oriented at :math:`\theta=45` degrees with respect to the :math:`X_{1}`-axis (in the :math:`X_{1}`-:math:`X_{2}` plane). 
 
 |vspace|
 
-11. Substitute the fibre strain components (:math:`\boldsymbol{E}_{fib}`) from the simulation results, and the material constants from Step 7, into your expressions from Section 2 to determine the components of the total second Piola-Kirchhoff stress tensor with respect to the material-fibre coordinates (:math:`\boldsymbol{T}_{fib}`) (use the hydrostatic pressure, :math:`p`, from the simulation results).
+11. Substitute the fibre strain components (:math:`\boldsymbol{E}_{fib}`) from the simulation results, and the material constants from Step 7, into your expressions from Section 2 to determine the components of the total second Piola-Kirchhoff stress tensor with respect to the material-fibre coordinates, :math:`\boldsymbol{T}_{fib}` (use the hydrostatic pressure, :math:`p`, from the simulation results).
 
 |vspace|
 
-12. Determine the second Piola-Kirchhoff stress components with respect to the reference coordinate axes (:math:`\boldsymbol{T}_{ref}`) via an appropriate tensor transformation outlined in :ref:`Step 3 of Section 2 of Lab 2a <tensor_transformations>`. Check your answers against the simulation results.
+12. Determine the second Piola-Kirchhoff stress components with respect to the reference coordinate axes (:math:`\boldsymbol{T}_{ref}`) via an appropriate tensor transformation (see :ref:`Step 3 of Section 2 of Lab 2a <tensor_transformations>`). Check your answers against the simulation results.
 
 |vspace|
 
-13. How do the stress components of :math:`\boldsymbol{T}_{fib}` and :math:`\boldsymbol{T}_{ref}` for this model compare to the components of :math:`\boldsymbol{T}_{ref}` for the previous model in Step 5 above. Explain the similarities and differences.
+13. How do the stress components of :math:`\boldsymbol{T}_{fib}` and :math:`\boldsymbol{T}_{ref}` for this model compare to the components of :math:`\boldsymbol{T}_{ref}` for the previous model in Step 5 above? Explain the similarities and differences.
 
 |vspace|
 
-14. Now run Model 6, where the fibre angle has been rotated 90 degrees with respect to the :math:`X_{1}`-axis (in the :math:`X_{1}`-:math:`X_{2}` plane). Repeat the analyses in Steps 11-12.
+14. Now run Model 6, where the fibre angle has been rotated :math:`\theta=90` degrees with respect to the :math:`X_{1}`-axis (in the :math:`X_{1}`-:math:`X_{2}` plane). Repeat the analyses in Steps 11-12.
 
 |vspace|
 
-15. How do the stress components of :math:`\boldsymbol{T}_{fib}` and :math:`\boldsymbol{T}_{ref}` for this model compare to the components of :math:`\boldsymbol{T}_{ref}` for the previous model in Step 5 above. Explain the similarities and differences.
+15. How do the stress components of :math:`\boldsymbol{T}_{fib}` and :math:`\boldsymbol{T}_{ref}` for this model compare to the components of :math:`\boldsymbol{T}_{ref}` for the previous model in Step 5 above? Explain the similarities and differences.
 
 |vspace|
 
@@ -157,7 +157,7 @@ Section 4: Questions
 
 After you have completed the exercises above, consider the following questions: 
 
-a. What do you notice about the stress tensors, :math:`\boldsymbol{T}_{fib}` and :math:`\boldsymbol{T}_{ref}`, from the above analyses for isotropic (Model 1) and anisotropic (Models 2,5,6) materials subject to equi-biaxial deformations? Why?
+a. What do you notice about the stress tensors, :math:`\boldsymbol{T}_{fib}` and :math:`\boldsymbol{T}_{ref}`, from the above analyses for the isotropic (Model 1) and anisotropic (Models 2,5,6) materials subject to equi-biaxial deformations? Why?
 
 b. What would you expect if you compared the maximum principal stresses for each of the anisotropic cases (Models 2,5,6)?
 
@@ -169,7 +169,7 @@ c. For what types of deformations would you expect the stress tensors to be diff
 
   By completing this lab, you should be able to:
 
-    - derive components of the second Piola-Kirchhoff stress tensor.
+    - derive expressions for the components of the second Piola-Kirchhoff stress tensor.
 
     - evaluate components of the second Piola-Kirchhoff stress tensor with respect to spatial or material-fibre coordinates.
 
