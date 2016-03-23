@@ -12,7 +12,7 @@ Lab 2a: Transforming stresses and strains between different coordinate systems
 .. toctree::
    :maxdepth: 2
 
-The objective of this lab is to transform stresses and strains between fibre and reference coordinates. The deformations that will be considered in this lab include uniaxial and equibiaxial extension of an isotropic unit cube.
+The objective of this lab is to transform stresses and strains between fibre and reference coordinates. The deformations that will be considered in this lab include uniaxial and equi-biaxial extension of an isotropic unit cube.
 
 ===================
 Section 1: Revision
@@ -156,15 +156,15 @@ For the following exercises, you are asked to transform strain and stress tensor
 
 .. _isotropic_biaxial_extension_of_unit_cube:
 
-===========================================
-Section 3: Biaxial extension of a unit cube
-===========================================
+================================================
+Section 3: Equi-biaxial extension of a unit cube
+================================================
 
 1. Start OpenCMISS and load Lab 2 (described in the :ref:`Starting OpenCMISS <starting-OpenCMISS>` section).
 
 |vspace|
 
-2. Select "Model 1 (Equibiaxial extension of unit cube, isotropic, 0 degree fibre rotation)" from the drop down menu and click the "run" button (screenshots of this procedure are shown in the :ref:`Running models in OpenCMISS <running-models-in-OpenCMISS>` section).
+2. Select "Model 1 (Equi-biaxial extension of unit cube, isotropic, 0 degree fibre rotation)" from the drop down menu and click the "run" button (screenshots of this procedure are shown in the :ref:`Running models in OpenCMISS <running-models-in-OpenCMISS>` section).
 
 |vspace|
 
@@ -185,7 +185,7 @@ Section 3: Biaxial extension of a unit cube
 |vspace|
 
 
-4. This equibiaxial deformation is incompressible (i.e. maintains constant volume) described by the equations:
+4. This equi-biaxial deformation is incompressible (i.e. maintains constant volume) described by the equations:
 
   .. math::
 
@@ -209,7 +209,7 @@ Section 3: Biaxial extension of a unit cube
 Isotropic deformation with respect to rotated fibre axes
 --------------------------------------------------------
 
-6. Return to the model selection drop down menu and select/run "Model 3 (Equibiaxial extension of unit cube, isotropic, 30 degree fibre rotation)". This model is similar to the previous models, except that the fibre (material) axes are no longer aligned with the reference (spatial) axes. For this model, the fibre axis is rotated anticlockwise by an angle of :math:`\theta=30` degrees from the :math:`x_{1}` axis (in the :math:`x_{1}`-:math:`x_{2}` plane). When visualising these models, the gold arrows in the graphics window indicate the direction of the fibre axis (along which the first material coordinate is defined), and the :math:`x_{1}`-:math:`x_{2}` plane indicates the orientation of the flat laminar sheet.
+6. Return to the model selection drop down menu and select/run "Model 3 (Equi-biaxial extension of unit cube, isotropic, 30 degree fibre rotation)". This model is similar to the previous models, except that the fibre (material) axes are no longer aligned with the reference (spatial) axes. For this model, the fibre axis is rotated anticlockwise by an angle of :math:`\theta=30` degrees from the :math:`x_{1}` axis (in the :math:`x_{1}`-:math:`x_{2}` plane). When visualising these models, the gold arrows in the graphics window indicate the direction of the fibre axis (along which the first material coordinate is defined), and the :math:`x_{1}`-:math:`x_{2}` plane indicates the orientation of the flat laminar sheet.
 
 |vspace|
 
@@ -237,7 +237,7 @@ Isotropic deformation with respect to rotated fibre axes
 
 |vspace|
 
-13. What would you expect from the analysis in steps 7-12 if the fibre angle was changed from 30 degrees to 45 degrees, or to 90 degrees for this equibiaxial deformation model?  Explain the differences/similarities between the two strain, and (separately) between the two stress tensors for this model.
+13. What would you expect from the analysis in steps 7-12 if the fibre angle was changed from 30 degrees to 45 degrees, or to 90 degrees for this equi-biaxial deformation model?  Explain the differences/similarities between the two strain, and (separately) between the two stress tensors for this model.
 
   .. note::
 
@@ -251,13 +251,13 @@ Section 4: Questions
 
 After you have completed the above exercises in Section 2 and Section 3, consider the following questions: 
 
-a. How do changes in :math:`\boldsymbol{E}_{ref}` for different fibre angles (:math:`\theta`) in the biaxial deformation compare with the changes seen in the uniaxial deformation.
+a. How do changes in :math:`\boldsymbol{E}_{ref}` for different fibre angles (:math:`\theta`) in the equi-biaxial deformation compare with the changes seen in the uniaxial deformation.
 
-b. How do changes in :math:`\boldsymbol{E}_{fib}` for different fibre angles (:math:`\theta`) in the biaxial deformation compare with the changes seen in the uniaxial deformation.
+b. How do changes in :math:`\boldsymbol{E}_{fib}` for different fibre angles (:math:`\theta`) in the equi-biaxial deformation compare with the changes seen in the uniaxial deformation.
 
-c. How do changes in :math:`\boldsymbol{T}_{ref}` for different fibre angles (:math:`\theta`) in the biaxial deformation compare with the changes seen in the uniaxial deformation.
+c. How do changes in :math:`\boldsymbol{T}_{ref}` for different fibre angles (:math:`\theta`) in the equi-biaxial deformation compare with the changes seen in the uniaxial deformation.
 
-d. How do changes in :math:`\boldsymbol{T}_{fib}` for different fibre angles (:math:`\theta`) in the biaxial deformation compare with the changes seen in the uniaxial deformation.
+d. How do changes in :math:`\boldsymbol{T}_{fib}` for different fibre angles (:math:`\theta`) in the equi-biaxial deformation compare with the changes seen in the uniaxial deformation.
 
 e. Will the invariants of :math:`\boldsymbol{C}` be the same or different when calculated with respect to fibre or reference coordinates?
 
