@@ -98,7 +98,7 @@ Stresses with respect to the reference axes
 
 |vspace|
 
-7. Now, run Model 2. This model is similar to model 1, except that the exponential material constants are now:
+7. Now, run Model 2. This model is similar to Model 1, except that the exponential material constants are now:
 
   .. math::
 
