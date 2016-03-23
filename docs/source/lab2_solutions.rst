@@ -139,9 +139,9 @@ Section 2: Uniaxial extension of a unit cube
 
 .. _lab2a_section3_solutions:
 
-===========================================
-Section 3: Biaxial extension of a unit cube
-===========================================
+================================================
+Section 3: Equi-biaxial extension of a unit cube
+================================================
 
 :math:`\theta=45` degrees:
 
