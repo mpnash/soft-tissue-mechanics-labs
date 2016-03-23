@@ -72,7 +72,7 @@ Section 2: Uniaxial extension of a unit cube
 Isotropic deformation with respect to rotated fibre axes
 --------------------------------------------------------
 
-3. Now consider the same deformation, except that the fibre (material) axes are no longer aligned with the reference axes. They are now rotated anticlockwise by an angle of :math:`\theta=30` degrees from the :math:`x_{1}` axis (in the :math:`x_{1}`-:math:`x_{2}` plane), as shown in the figure below.
+3. Now consider the same deformation, except that the fibre (material) axes are no longer aligned with the reference axes. They are now rotated anticlockwise by an angle of :math:`\theta=30` degrees from the :math:`X_{1}` axis (in the :math:`X_{1}`-:math:`X_{2}` plane), as shown in the figure below.
 
   .. image:: images/uniaxial_30_degrees_fibres.png
 
@@ -205,11 +205,10 @@ Section 3: Equi-biaxial extension of a unit cube
 
 |vspace|
 
-
 Isotropic deformation with respect to rotated fibre axes
 --------------------------------------------------------
 
-6. Return to the model selection drop down menu and select/run "Model 3 (Equi-biaxial extension of unit cube, isotropic, 30 degree fibre rotation)". This model is similar to the previous models, except that the fibre (material) axes are no longer aligned with the reference (spatial) axes. For this model, the fibre axis is rotated anticlockwise by an angle of :math:`\theta=30` degrees from the :math:`x_{1}` axis (in the :math:`x_{1}`-:math:`x_{2}` plane). When visualising these models, the gold arrows in the graphics window indicate the direction of the fibre axis (along which the first material coordinate is defined), and the :math:`x_{1}`-:math:`x_{2}` plane indicates the orientation of the flat laminar sheet.
+6. Return to the model selection drop down menu and select/run "Model 3 (Equi-biaxial extension of unit cube, isotropic, 30 degree fibre rotation)". This model is similar to the previous models, except that the fibre (material) axes are no longer aligned with the reference (spatial) axes. For this model, the fibre axis is rotated anticlockwise by an angle of :math:`\theta=30` degrees from the :math:`X_{1}` axis (in the :math:`X_{1}`-:math:`X_{2}` plane). When visualising these models, the gold arrows in the graphics window indicate the direction of the fibre axis (along which the first material coordinate is defined), and the :math:`X_{1}`-:math:`X_{2}` plane indicates the orientation of the flat laminar sheet.
 
 |vspace|
 
@@ -249,7 +248,7 @@ Isotropic deformation with respect to rotated fibre axes
 Section 4: Questions
 ====================
 
-After you have completed the above exercises in Section 2 and Section 3, consider the following questions: 
+After you have completed the exercises above, consider the following questions: 
 
 a. How do changes in :math:`\boldsymbol{E}_{ref}` for different fibre angles (:math:`\theta`) in the equi-biaxial deformation compare with the changes seen in the uniaxial deformation.
 
@@ -265,7 +264,7 @@ e. Will the invariants of :math:`\boldsymbol{C}` be the same or different when c
 
 .. note::
 
-  By the end of this lab you should be able to:
+  By completing this lab, you should be able to:
 
     - analyse large deformation kinematics with respect to reference or material coordinates for isotropic materials.
 
