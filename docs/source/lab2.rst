@@ -78,7 +78,7 @@ Isotropic deformation with respect to rotated fibre axes
 
 |vspace|
 
-For the following exercises, you are asked to transform strain and stress tensors between the reference coordinates and the fibre (material) coordinate systems using the generalised rotational transform given by:
+  For the following exercises, you are asked to transform strain and stress tensors between the reference coordinates and the fibre (material) coordinate systems using the generalised rotational transform given by:
 
   .. math::
 
@@ -124,7 +124,7 @@ For the following exercises, you are asked to transform strain and stress tensor
 
 |vspace|
 
-8. What would you expect from the analysis in steps 4-7 if the fibre angle was changed from 30 degrees to 45 degrees or 90 degrees for this model?  Explain the differences/similarities of the stress tensors :math:`\boldsymbol{T}_{fib}` and :math:`\boldsymbol{T}_{ref}` for this uniaxial deformation model.
+8. What would you expect from the analysis in steps 4-7 if the fibre angle was changed from :math:`\theta=30` degrees to :math:`\theta=45` degrees, or to :math:`\theta=90` degrees for this model?  Explain the differences/similarities of the stress tensors :math:`\boldsymbol{T}_{fib}` and :math:`\boldsymbol{T}_{ref}` for this uniaxial deformation model.
 
   .. note::
 
@@ -160,15 +160,15 @@ For the following exercises, you are asked to transform strain and stress tensor
 Section 3: Equi-biaxial extension of a unit cube
 ================================================
 
-1. Start OpenCMISS and load Lab 2 (described in the :ref:`Starting OpenCMISS <starting-OpenCMISS>` section).
+9. Start OpenCMISS and load Lab 2 (described in the :ref:`Starting OpenCMISS <starting-OpenCMISS>` section).
 
 |vspace|
 
-2. Select "Model 1 (Equi-biaxial extension of unit cube, isotropic, 0 degree fibre rotation)" from the drop down menu and click the "run" button (screenshots of this procedure are shown in the :ref:`Running models in OpenCMISS <running-models-in-OpenCMISS>` section).
+10. Select "Model 1 (Equi-biaxial extension of unit cube, isotropic, 0 degree fibre rotation)" from the drop down menu and click the "run" button (screenshots of this procedure are shown in the :ref:`Running models in OpenCMISS <running-models-in-OpenCMISS>` section).
 
 |vspace|
 
-3. After a short time, the model should have solved and the simulation results pane will open as shown in the screenshot below.
+11. After a short time, the model should have solved and the simulation results pane will open as shown in the screenshot below.
 
   .. image:: images/lab2_model1.png
 
@@ -185,7 +185,7 @@ Section 3: Equi-biaxial extension of a unit cube
 |vspace|
 
 
-4. This equi-biaxial deformation is incompressible (i.e. maintains constant volume) described by the equations:
+12. This equi-biaxial deformation is incompressible (i.e. maintains constant volume) described by the equations:
 
   .. math::
 
@@ -193,7 +193,7 @@ Section 3: Equi-biaxial extension of a unit cube
 
 |vspace|
 
-5. Write down:
+13. Write down:
 
   - the deformation gradient tensor (:math:`\boldsymbol{F}=\frac{\partial\boldsymbol{x}}{\partial\boldsymbol{X}}`),
   - the right Cauchy-Green deformation tensor (:math:`\boldsymbol{C}`), and
@@ -208,39 +208,39 @@ Section 3: Equi-biaxial extension of a unit cube
 Isotropic deformation with respect to rotated fibre axes
 --------------------------------------------------------
 
-6. Return to the model selection drop down menu and select/run "Model 3 (Equi-biaxial extension of unit cube, isotropic, 30 degree fibre rotation)". This model is similar to the previous models, except that the fibre (material) axes are no longer aligned with the reference (spatial) axes. For this model, the fibre axis is rotated anticlockwise by an angle of :math:`\theta=30` degrees from the :math:`X_{1}` axis (in the :math:`X_{1}`-:math:`X_{2}` plane). When visualising these models, the gold arrows in the graphics window indicate the direction of the fibre axis (along which the first material coordinate is defined), and the :math:`X_{1}`-:math:`X_{2}` plane indicates the orientation of the flat laminar sheet.
+14. Return to the model selection drop down menu and select/run "Model 3 (Equi-biaxial extension of unit cube, isotropic, 30 degree fibre rotation)". This model is similar to the previous models, except that the fibre (material) axes are no longer aligned with the reference (spatial) axes. For this model, the fibre axis is rotated anticlockwise by an angle of :math:`\theta=30` degrees from the :math:`X_{1}` axis (in the :math:`X_{1}`-:math:`X_{2}` plane). When visualising these models, the gold arrows in the graphics window indicate the direction of the fibre axis (along which the first material coordinate is defined), and the :math:`X_{1}`-:math:`X_{2}` plane indicates the orientation of the flat laminar sheet.
 
 |vspace|
 
-7. Determine the Green-Lagrange strain tensor components with respect to the fibre axes (:math:`\boldsymbol{E}_{fib}`) using the approach in Section 2.
+15. Determine the Green-Lagrange strain tensor components with respect to the fibre axes (:math:`\boldsymbol{E}_{fib}`) using the approach in Section 2.
 
 |vspace|
 
-8. Check your answers to Step 7 against the simulation results.
+16. Check your answers to Step 15 against the simulation results.
 
 |vspace|
 
-9. Explain similarities/differences between :math:`\boldsymbol{E}_{fib}` and :math:`\boldsymbol{E}_{ref}` for this model.
+17. Explain similarities/differences between :math:`\boldsymbol{E}_{fib}` and :math:`\boldsymbol{E}_{ref}` for this model.
 
 |vspace|
 
-10. From the solution output, write down  :math:`\boldsymbol{T}_{fib}` (the second Piola-Kirchhoff stress tensor with respect to the fibre axes). Use this to determine the second Piola-Kirchhoff stress components with respect to the reference coordinate axes (:math:`\boldsymbol{T}_{ref}`) via the approach Section 2.
+18. From the solution output, write down  :math:`\boldsymbol{T}_{fib}` (the second Piola-Kirchhoff stress tensor with respect to the fibre axes). Use this to determine the second Piola-Kirchhoff stress components with respect to the reference coordinate axes (:math:`\boldsymbol{T}_{ref}`) via the approach Section 2.
 
 |vspace|
 
-11. Check your answers to Step 10 against the simulation results.
+19. Check your answers to Step 18 against the simulation results.
 
 |vspace|
 
-12. Explain similarities/differences between :math:`\boldsymbol{T}_{fib}` and :math:`\boldsymbol{T}_{ref}` for this model.
+20. Explain similarities/differences between :math:`\boldsymbol{T}_{fib}` and :math:`\boldsymbol{T}_{ref}` for this model.
 
 |vspace|
 
-13. What would you expect from the analysis in steps 7-12 if the fibre angle was changed from 30 degrees to 45 degrees, or to 90 degrees for this equi-biaxial deformation model?  Explain the differences/similarities between the two strain, and (separately) between the two stress tensors for this model.
+21. What would you expect from the analysis in steps 15-20 if the fibre angle was changed from :math:`\theta=30` degrees to :math:`\theta=45` degrees, or to :math:`\theta=90` degrees for this equi-biaxial deformation model?  Explain the differences/similarities between the two strain, and (separately) between the two stress tensors for this model.
 
   .. note::
 
-    You should not need to do any calculations to answer this questions, but if you need the extra practice, perform steps 7-12 with :math:`\theta=45` degrees by selecting the Model 4 from the "run" menu.
+    You should not need to do any calculations to answer this questions, but if you need the extra practice, perform steps 15-20 with :math:`\theta=45` degrees by selecting the Model 4 from the "run" menu.
 
 |vspace|
 
@@ -271,5 +271,4 @@ e. Will the invariants of :math:`\boldsymbol{C}` be the same or different when c
     - analyse stress tensors with respect to spatial or material coordinates for isotropic materials.
 
 
-Here are the :ref:`solutions to Step 8 of Section 2 <lab2a_section2_solutions>` and :ref:`solutions to Step 13 of Section 3 <lab2a_section3_solutions>`.
-
+Here are the :ref:`solutions to Step 8 of Section 2 <lab2a_section2_solutions>` and :ref:`solutions to Step 21 of Section 3 <lab2a_section3_solutions>`.
