@@ -41,7 +41,7 @@ Lab 1
 Lab 2
 -----
 
-- take the stress analysis out of lab 1 and make that the start of lab 2, as a warm exercise.
+- take the stress analysis out of lab 1 and make that the start of lab 2, as a warm up exercise.
 
 - visualise stress and strains as coordinate system is rotated
 
