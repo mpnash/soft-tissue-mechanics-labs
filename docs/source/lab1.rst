@@ -5,14 +5,14 @@
 
 .. _lab1:
 
-****************************************************************
-Lab 1: Analysing deformation and stresses in isotropic materials
-****************************************************************
+***************************************************
+Lab 1: Analysing deformation in isotropic materials
+***************************************************
 
 .. toctree::
    :maxdepth: 2
 
-The objective of this lab is to analyse large deformation kinematics and stress with respect to reference coordinates in isotropic materials. The deformations you will be analysing include:
+The objective of this lab is to analyse large deformation kinematics with respect to reference coordinates in isotropic materials. The deformations you will be analysing include:
 
   - Model 1 (Uniaxial extension of a unit cube)
   - Model 2 (Equibiaxial extension of a unit cube)
@@ -51,9 +51,9 @@ Solving mechanics models
 
 |vspace|
 
-==========================
-Section 1: Strain analysis
-==========================
+===============
+Strain analysis
+===============
 
 4. Write down the coordinate equations that describe this deformation in the form :math:`\boldsymbol{x}=f(\boldsymbol{X})`, i.e.:
 
@@ -127,45 +127,4 @@ c. In model 4, why are :math:`F_{11}` and :math:`F_{33}` the same (what does it 
     - relate the components of the deformation gradient tensor to the underlying deformation.
 
     - determine if a material is incompressible.
-
-==========================
-Section 2: Stress analysis
-==========================
-
-1. Select "Model 1 (uniaxial extension of a unit cube)" from the drop down menu and click the "run" button.
-
-|vspace|
-
-2. Using the components of the 2nd Piola-Kirchhoff stress tensor :math:`(\boldsymbol{T})` and your deformation gradient tensor :math:`(\boldsymbol{F})` from step 5, determine the Cauchy components of the stress tensor :math:`(\boldsymbol{\Sigma})` (Don't forget the Jacobian :math:`(J)`).
-
-|vspace|
-
-3. Select View->Problem from the menu and repeat step 1-2 for the remaining models in the lab.
-
-|vspace|
-
-Questions
----------
-
-After you have completed the above exercises, answer the following questions: 
-
-a. In model 1, why are :math:`\Sigma_{22}` and :math:`\Sigma_{33}` zero. How do they relate to the deformation seen in the graphical window?
-
-|vspace|
-
-b. In model 3, why is :math:`\Sigma_{33}` negative? 
-
-|vspace|
-
-c. In model 3, why are the off-diagonal components of :math:`\boldsymbol{\Sigma}` nonzero? 
-
-|vspace|
-
-.. note::
-
-  By the end of section 2 you should be able to:
-
-    - derive the Cauchy stress tensor from the second Piola-Kirchhoff stress tensor.
-
-    - relate the components of the Cauchy stress tensor to the underlying deformation.
 

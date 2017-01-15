@@ -14,7 +14,8 @@ Contents:
    introduction
    running_OpenCMISS
    lab1
-   lab2
+   lab2a
+   lab2b
    lab3
 ..   improvements
 

@@ -3,10 +3,10 @@
 
    \vspace{5mm}
 
-.. _lab2b:
+.. _lab3:
 
 ***************************************************
-Lab 2b: Analysing stresses in anisotropic materials
+Lab 3: Analysing stresses in anisotropic materials
 ***************************************************
 
 .. toctree::
@@ -17,14 +17,16 @@ The objective of this lab is to learn how to analyse anisotropic constitutive eq
 ===================
 Section 1: Revision
 ===================
-Before starting this lab, please be sure to have completed :ref:`Lab 1: Analysing deformation and stresses in isotropic materials <lab1>` and :ref:`Lab 2a: Transforming stresses and strains between different coordinate systems <lab2a>`.
+Before starting this lab, please be sure to have completed:
+  1. :ref:`Lab 1: Analysing deformation in isotropic materials <lab1>`,
+  2. :ref:`Lab 2a: Transforming stresses from 2nd Piola-Kirchhoff to Cauchy <lab2a>` and
+  3. :ref:`Lab 2b: Transforming stresses between different coordinate systems <lab2b>`.
 
-:ref:`Lab 2a<lab2a>` demonstrates how rotating the material-fibre axis with respect to the reference axes influences the components of the strain and stress tensors.  For the model in :ref:`Section 3 of Lab 2a <isotropic_biaxial_extension_of_unit_cube>`, which considers an **isotropic cube subject to equi-biaxial deformation**, remind yourself:
+:ref:`Lab 2b<lab2b>` demonstrated how rotating the material-fibre axis with respect to the reference axes influences the components of the stress tensor.  For the model in :ref:`Section 3 of Lab 2b <isotropic_biaxial_extension_of_unit_cube>`, which considers an **isotropic cube subject to equi-biaxial deformation**, remind yourself:
 
-  - what happened to the components of the strain tensor as the material-fibre axis was rotated? Why?
   - what happened to the components of the stress tensor as the material-fibre axis was rotated? Why?
   
-All of the analyses in the present lab will be based on the equi-biaxial deformation described in :ref:`Section 3 of Lab 2a <isotropic_biaxial_extension_of_unit_cube>`.
+All of the analyses in the present lab will be based on the equi-biaxial deformation described in :ref:`Section 3 of Lab 2b <isotropic_biaxial_extension_of_unit_cube>`.
 
 ===================================================
 Section 2: Deriving components of the stress tensor
