@@ -5,31 +5,30 @@
 
 .. _lab3:
 
-***************************************************
+**************************************************
 Lab 3: Analysing stresses in anisotropic materials
-***************************************************
+**************************************************
 
 .. toctree::
    :maxdepth: 2
 
 The objective of this lab is to learn how to analyse anisotropic constitutive equations and stresses defined with respect to a material coordinate system.
 
-===================
-Section 1: Revision
-===================
+========
+Revision
+========
 Before starting this lab, please be sure to have completed:
-  1. :ref:`Lab 1: Analysing deformation in isotropic materials <lab1>`,
-  2. :ref:`Lab 2a: Transforming stresses from 2nd Piola-Kirchhoff to Cauchy <lab2a>` and
-  3. :ref:`Lab 2b: Transforming stresses between different coordinate systems <lab2b>`.
+  1. :ref:`Lab 1: Analysing deformation in isotropic materials <lab1>`, and
+  2. :ref:`Lab 2: Stress transformations <lab2>`.
 
-:ref:`Lab 2b<lab2b>` demonstrated how rotating the material-fibre axis with respect to the reference axes influences the components of the stress tensor.  For the model in :ref:`Section 3 of Lab 2b <isotropic_biaxial_extension_of_unit_cube>`, which considers an **isotropic cube subject to equi-biaxial deformation**, remind yourself:
+Section 2 of :ref:`Lab 2<lab2>` demonstrated how rotating the material-fibre axis with respect to the reference axes influences the components of the stress tensor.  For the model in :ref:`Section 2 of Lab 2 <isotropic_biaxial_extension_of_unit_cube>`, which considers an **isotropic cube subject to equi-biaxial deformation**, remind yourself:
 
   - what happened to the components of the stress tensor as the material-fibre axis was rotated? Why?
   
-All of the analyses in the present lab will be based on the equi-biaxial deformation described in :ref:`Section 3 of Lab 2b <isotropic_biaxial_extension_of_unit_cube>`.
+All of the analyses in the present lab will be based on the equi-biaxial deformation described in :ref:`Section 2 of Lab 2 <isotropic_biaxial_extension_of_unit_cube>`.
 
 ===================================================
-Section 2: Deriving components of the stress tensor
+Section 1: Deriving components of the stress tensor
 ===================================================
 
 1. Consider the following exponential constitutive relation, which will be used to describe the distortional mechanical response of the cube considered in this lab:
@@ -73,13 +72,13 @@ Section 2: Deriving components of the stress tensor
 |vspace|
 
 =============================================================
-Section 3: Analysing stresses during equi-biaxial deformation
+Section 2: Analysing stresses during equi-biaxial deformation
 =============================================================
 
 Stresses with respect to the reference axes
 -------------------------------------------
 
-3. Using OpenCMISS, load Lab 2 and run Model 1. (The procedure for running this simulation in OpenCMISS is outlined in :ref:`steps 1-3 in Section 3 of Lab 2a <isotropic_biaxial_extension_of_unit_cube>`).
+3. Using OpenCMISS, load the stress analysis project and run Model 1. (The procedure for running this simulation in OpenCMISS is outlined in :ref:`steps 1-3 in Section 2 of Lab 2 <isotropic_biaxial_extension_of_unit_cube>`).
 
 4. The Model 1 simulation uses the above constitutive equation with the following material constants:
 
@@ -156,7 +155,7 @@ Stresses with respect to rotated material-fibre axes
 |vspace|
 
 ====================
-Section 4: Questions
+Section 3: Questions
 ====================
 
 After you have completed the exercises above, consider the following questions: 

@@ -3,17 +3,17 @@
 
    \vspace{5mm}
 
-.. _lab2a_solutions:
+.. _lab2_solutions:
 
-*****************
-Lab 2a: Solutions
-*****************
+***************************
+Lab 2, Section 2: Solutions
+***************************
 
-.. _lab2a_section2_solutions:
+.. _lab2_section2_step8_solutions:
 
-============================================
-Section 2: Uniaxial extension of a unit cube
-============================================
+=========================================
+Step 8: Uniaxial extension of a unit cube
+=========================================
 
 :math:`\theta=0` degrees:
 
@@ -137,11 +137,11 @@ Section 2: Uniaxial extension of a unit cube
 
 |vspace|
 
-.. _lab2a_section3_solutions:
+.. _lab2_section2_step21_solutions:
 
-================================================
-Section 3: Equi-biaxial extension of a unit cube
-================================================
+==============================================
+Step 21: Equi-biaxial extension of a unit cube
+==============================================
 
 :math:`\theta=45` degrees:
 

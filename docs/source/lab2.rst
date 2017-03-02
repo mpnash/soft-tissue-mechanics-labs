@@ -3,33 +3,86 @@
 
    \vspace{5mm}
 
-.. _lab2b:
+.. _lab2:
 
-******************************************************************
-Lab 2b: Transforming stresses between different coordinate systems
-******************************************************************
+*****************************
+Lab 2: Stress transformations
+*****************************
 
 .. toctree::
    :maxdepth: 2
 
-The objective of this lab is to transform stresses and strains between fibre and reference coordinates. The deformations that will be considered in this lab include uniaxial and equi-biaxial extension of an isotropic unit cube.
+The objective of this lab is to:
 
-===================
-Section 1: Revision
-===================
-Before starting this lab, please be sure to have completed Section 2 of :ref:`Lab 1: Deformation and stress in isotropic materials <lab1>` to familiarise yourself with stress and strain analysis techniques that will be used in this lab.
+      1. transform 2nd Piola-Kirchhoff stresses to Cauchy stresses.
 
-============================================
-Section 2: Uniaxial extension of a unit cube
-============================================
+      2. transform stresses and strains between fibre and reference coordinates.
+
+The deformations that will be considered in this lab include uniaxial and equi-biaxial extension of an isotropic unit cube.
+
+========
+Revision
+========
+
+Before starting this lab, please be sure to have completed :ref:`Lab 1: Analysing deformation in isotropic materials <lab1>`.
+
+===================================================================
+Section 1: Transforming stresses from 2nd Piola-Kirchhoff to Cauchy
+===================================================================
+
+
+1. Start OpenCMISS and load the kinematics analysis project. Select "Model 1 (uniaxial extension of a unit cube)" from the drop down menu and click the "run" button.
+
+|vspace|
+
+2. Using the components of the 2nd Piola-Kirchhoff stress tensor :math:`(\boldsymbol{T})` and your deformation gradient tensor :math:`(\boldsymbol{F})` from step 5, determine the Cauchy components of the stress tensor :math:`(\boldsymbol{\Sigma})` (Don't forget the Jacobian :math:`(J)`).
+
+|vspace|
+
+3. Select "Problem" from the menu bar and repeat step 1-2 for the remaining models in the kinematics analysis project.
+
+|vspace|
+
+Questions
+---------
+
+After you have completed the above exercises, answer the following questions:
+
+a. In model 1, why are :math:`\Sigma_{22}` and :math:`\Sigma_{33}` zero. How do they relate to the deformation seen in the graphical window?
+
+|vspace|
+
+b. In model 3, why is :math:`\Sigma_{33}` negative?
+
+|vspace|
+
+c. In model 3, why are the off-diagonal components of :math:`\boldsymbol{\Sigma}` nonzero?
+
+|vspace|
+
+.. note::
+
+  By the end of section 1 you should be able to:
+
+    - derive the Cauchy stress tensor from the second Piola-Kirchhoff stress tensor.
+
+    - relate the components of the Cauchy stress tensor to the underlying deformation.
+
+
+=====================================================================
+Section 2: Transforming stresses between different coordinate systems
+=====================================================================
+
+Uniaxial extension of a unit cube
+---------------------------------
 
 1. Consider the uniaxial deformation shown in the figure below, where the fibre (material) axes are aligned with the reference axes:
 
   .. image:: images/uniaxial_0_degrees_fibres.png
 
   In the screenshot:
-    - the undeformed (reference) configuration of the unit cube is shown in red, and
-    - the deformed (current) configuration is shown in green
+    - the undeformed (reference) configuration of the unit cube is shown in red;
+    - the deformed (current) configuration is shown in green; and
     - the gold arrows indicate the direction of the fibres in the material. They **do not** indicate the direction of loading.
 
   |vspace|
@@ -38,7 +91,7 @@ Section 2: Uniaxial extension of a unit cube
 
   .. math::
 
-    x_1 &= \frac{3}{2}X_1 ~~~~ x_2 &= \sqrt{\frac{2}{3}}X_2 ~~~~ x_3 &= \sqrt{\frac{2}{3}}X_3
+    x_1 = \frac{3}{2}X_1 ~~~~ x_2 = \sqrt{\frac{2}{3}}X_2 ~~~~ x_3 = \sqrt{\frac{2}{3}}X_3
 
 |vspace|
 
@@ -63,14 +116,14 @@ Section 2: Uniaxial extension of a unit cube
           0      & 0       & 0
         \end{bmatrix}
 
-      While the deformation in Model 1 of Lab 1 is the same as that considered here (i.e. they both describe the same uniaxial deformation), **the stress tensor is different** because Lab 1 and Lab 2 use different constitutive relations to represent the mechanical response of the material.
+      While the deformation in Model 1 of the kinematics analysis project in OpenCMISS is the same as that considered here (i.e. they both describe the same uniaxial deformation), the stress tensor in the simulation results pane **is different** because the kinematics analysis project and the example above use different constitutive relations to represent the mechanical response of the material.
 
 |vspace|
 
 .. _tensor_transformations:
 
 Isotropic deformation with respect to rotated fibre axes
---------------------------------------------------------
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 3. Now consider the same deformation, except that the fibre (material) axes are no longer aligned with the reference axes. They are now rotated anticlockwise by an angle of :math:`\theta=30` degrees from the :math:`X_{1}` axis (in the :math:`X_{1}`-:math:`X_{2}` plane), as shown in the figure below.
 
@@ -156,11 +209,10 @@ Isotropic deformation with respect to rotated fibre axes
 
 .. _isotropic_biaxial_extension_of_unit_cube:
 
-================================================
-Section 3: Equi-biaxial extension of a unit cube
-================================================
+Equi-biaxial extension of a unit cube
+-------------------------------------
 
-9. Start OpenCMISS and load Lab 2 (described in the :ref:`Starting OpenCMISS <starting-OpenCMISS>` section).
+9. Start OpenCMISS and load the stress analysis project (described in the :ref:`Starting OpenCMISS <starting-OpenCMISS>` section).
 
 |vspace|
 
@@ -168,13 +220,13 @@ Section 3: Equi-biaxial extension of a unit cube
 
 |vspace|
 
-11. After a short time, the model should have solved and the simulation results pane will open as shown in the screenshot below.
+11. After a short time, the model should have solved and the simulation results will appear in the 3D graphics window as shown in the screenshot below.
 
   .. image:: images/lab2_model1.png
 
   |vspace|
 
-  The left side of the pane shows the stress and strain tensors associated with the simulation in fibre and reference coordinates. The simulation results are shown in the 3D graphics window on the right side of the pane. In this graphical window:
+  In this graphical window:
 
       - the undeformed (reference) configuration of the unit cube is shown in red, and
       - the deformed (current) configuration is shown in green (:math:`x_{1}`, :math:`x_{2}`, :math:`x_{3}` components of the deformed coordinates are shown at the corners of the model - (note that in the graphical window, these components are labelled x, y, and z, respectively).
@@ -206,7 +258,7 @@ Section 3: Equi-biaxial extension of a unit cube
 |vspace|
 
 Isotropic deformation with respect to rotated fibre axes
---------------------------------------------------------
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 14. Return to the model selection drop down menu and select/run "Model 3 (Equi-biaxial extension of unit cube, isotropic, 30 degree fibre rotation)". This model is similar to the previous models, except that the fibre (material) axes are no longer aligned with the reference (spatial) axes. For this model, the fibre axis is rotated anticlockwise by an angle of :math:`\theta=30` degrees from the :math:`X_{1}` axis (in the :math:`X_{1}`-:math:`X_{2}` plane). When visualising these models, the gold arrows in the graphics window indicate the direction of the fibre axis (along which the first material coordinate is defined), and the :math:`X_{1}`-:math:`X_{2}` plane indicates the orientation of the flat laminar sheet.
 
@@ -217,6 +269,10 @@ Isotropic deformation with respect to rotated fibre axes
 |vspace|
 
 16. Check your answers to Step 15 against the simulation results.
+
+  .. Note::
+
+      Drag the right edge of the 3D graphics window to reveal the stress and strain tensors associated with the simulation in fibre and reference coordinates. See :ref:`this link <opening_simulation_pane>` for an example on how to open this pane.
 
 |vspace|
 
@@ -245,7 +301,7 @@ Isotropic deformation with respect to rotated fibre axes
 |vspace|
 
 ====================
-Section 4: Questions
+Section 3: Questions
 ====================
 
 After you have completed the exercises above, consider the following questions: 
@@ -271,4 +327,4 @@ e. Will the invariants of :math:`\boldsymbol{C}` be the same or different when c
     - analyse stress tensors with respect to spatial or material coordinates for isotropic materials.
 
 
-Here are the :ref:`solutions to Step 8 of Section 2 <lab2a_section2_solutions>` and :ref:`solutions to Step 21 of Section 3 <lab2a_section3_solutions>`.
+Here are the solutions to :ref:`Step 8<lab2_section2_step8_solutions>` and :ref:`Step 21<lab2_section2_step21_solutions>` of Section 2.

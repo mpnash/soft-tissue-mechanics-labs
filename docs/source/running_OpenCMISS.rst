@@ -23,15 +23,11 @@ An OpenCMISS installer for Windows 7 (64-bit) can be downloaded from this `link 
 Starting OpenCMISS
 ==================
 
-Once installed, OpenCMISS can be run from the start menu. When the program starts, you will be prompted to select a lab as shown in the screenshot below.
+Once installed, OpenCMISS can be run from the start menu. When the program starts, you will be prompted to select a project as shown in the screenshot below.
 
-.. image:: images/selecting_a_lab.png
+.. image:: images/selecting_a_project.png
 
-Select a lab and click ok. 
-
-Click View->Problem and a drop down menu will appear listing a series of models that will be analysed during the course of the lab.
-
-.. image:: images/model_drop_down_menu.png
+Select a project and click ok. A drop down menu will appear listing a series of models that will be analysed during the course of the lab.
 
 .. _running-models-in-OpenCMISS:
 
@@ -39,13 +35,12 @@ Click View->Problem and a drop down menu will appear listing a series of models 
 Running models in OpenCMISS
 ===========================
 
-Select a model from the drop down menu and click "Run". 
+Select a model from the drop down menu and click "Run" as shown in the screenshot below.
 
-.. note::
+.. image:: images/running_models.png
 
-    If at any time, the run button is not visible, click View->Problem Editors->Problem Editor to make the button visible, as shown in the following screenshots.
+To run another model, select "Problem" from the menu bar.
 
-      .. image:: images/problem_editor.png
+To open another project, select the new project button on the left hand side of the menu bar.
 
-      .. image:: images/running_models.png
 

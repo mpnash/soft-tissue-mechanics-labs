@@ -24,11 +24,11 @@ Before starting this lab, please read the :ref:`Using OpenCMISS <using-opencmiss
 
 |vspace|
 
-========================
-Solving mechanics models
-========================
+===================================
+Section 1: Solving mechanics models
+===================================
 
-1. Start OpenCMISS and load Lab 1 (described in the :ref:`Starting OpenCMISS <starting-OpenCMISS>` section).
+1. Start OpenCMISS and load the kinematics analysis project (described in the :ref:`Starting OpenCMISS <starting-OpenCMISS>` section).
 
 |vspace|
 
@@ -42,26 +42,26 @@ Solving mechanics models
 
   |vspace|
 
-  The left side of the pane shows the stress and strain tensors associated with the simulation. The simulation results are shown in the 3D graphics window on the right side of the pane. In this graphical window:
+  The simulation results are shown in the 3D graphics window. In this graphical window:
 
-      - the undeformed (reference) configuration of the unit cube is shown in red, and
-      - the deformed (current) configuration is shown in green (:math:`x_{1}`, :math:`x_{2}`, :math:`x_{3}` components of the deformed coordinates are shown at the corners of the model, (note that in the graphical window, these components are labelled x, y, and z, respectively).
+      - the undeformed (reference) configuration of the unit cube is shown in red; and
+      - the deformed (current) configuration is shown in green (:math:`x_{1}`, :math:`x_{2}`, :math:`x_{3}` components of the deformed coordinates are shown at the corners of the model).
 
   The model in the 3D graphics window can be rotated (click-drag-left-mouse button), translated (click-drag-middle-mouse button), or zoomed (click-drag-right-mouse button).
 
 |vspace|
 
-===============
-Strain analysis
-===============
+==========================
+Section 2: Strain analysis
+==========================
 
 4. Write down the coordinate equations that describe this deformation in the form :math:`\boldsymbol{x}=f(\boldsymbol{X})`, i.e.:
 
   .. math::
 
-    x_1 &= aX_1 + bX_2 + cX_3\\
-    x_2 &= dX_1 + eX_2 + fX_3\\
-    x_3 &= gX_1 + hX_2 + iX_3
+    x_1 = aX_1 + bX_2 + cX_3\\
+    x_2 = dX_1 + eX_2 + fX_3\\
+    x_3 = gX_1 + hX_2 + iX_3
 
   where the constants :math:`a` to :math:`i` need to be identified from the undeformed and deformed coordinates of the model shown in the graphics window.
 
@@ -86,13 +86,23 @@ Strain analysis
 
 8. Check your answers to 5-7 against the simulation results.
 
+  .. _opening_simulation_pane:
+
+  .. Note::
+
+      Click and drag on the right hand boundary of the 3D graphics window to view the simulation results as shown in the screenshots below:
+
+      .. image:: images/showing_simulation_results1.png
+
+      .. image:: images/showing_simulation_results2.png
+
   .. Note::
 
       Some of the numbers are not identically=0 due to Round-off error. Assume any number less than 1E-10=0.
 
 |vspace|
 
-9. Select View->Problem from the menu and repeat steps 2-8 for the remaining models in the lab:
+9. Select "Problem" from the menu bar and repeat steps 2-8 for the remaining models in the kinematics analysis project:
 
     - Model 2 (Equibiaxial extension of a unit cube)
     - Model 3 (Simple shear of a unit cube)
@@ -101,8 +111,9 @@ Strain analysis
 
 |vspace|
 
+=========
 Questions
----------
+=========
 
 After you have completed the above exercises, answer the following questions: 
 
