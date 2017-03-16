@@ -65,6 +65,10 @@ Section 2: Strain analysis
 
   where the constants :math:`a` to :math:`i` need to be identified from the undeformed and deformed coordinates of the model shown in the graphics window.
 
+.. note::
+
+   The undeformed (reference) configuration is the unit cube shown in red.
+
 |vspace|
 
 5. Determine the deformation gradient tensor :math:`(\boldsymbol{F}=\frac{\partial\boldsymbol{x}}{\partial\boldsymbol{X}})`.

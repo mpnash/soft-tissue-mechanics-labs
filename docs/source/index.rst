@@ -16,7 +16,7 @@ Contents:
    lab1
    lab2
    lab3
-   improvements
+   .. improvements
 
 Indices and tables
 ==================

@@ -13,14 +13,8 @@ Short term improvements
 
 Change after 321 course finishes
 
-- Set the default view to be the model selection pane (problem viewer)
-- Initialise the problem type string in the simulation results pane (currently defaults to "None" and can only be changed if the user runs a model other than model 1)
-- In the problem view, replace the string "parameters" with "Model selection", and remove the text "boundary condition"
-- Move 3D model window to left of the simulation results pane, and the tensors etc to the right of the pane.
-- Allow the tensors etc  in the simulation results pane to be hidden.
-- Change axes in the 3D model window from x,y,z to x1,x2,x3.
+- Set -0 matrix vales to 0
 - Change model labels to include the type of constitutive relation.
-- Remove the type of material from the model labels ie remove the word isotropic or orthotropic, as we can ask the students to figure this out based on the values of the stress tensor.
 
 ======================
 Long term improvements

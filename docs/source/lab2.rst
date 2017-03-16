@@ -229,7 +229,7 @@ Equi-biaxial extension of a unit cube
   In this graphical window:
 
       - the undeformed (reference) configuration of the unit cube is shown in red, and
-      - the deformed (current) configuration is shown in green (:math:`x_{1}`, :math:`x_{2}`, :math:`x_{3}` components of the deformed coordinates are shown at the corners of the model - (note that in the graphical window, these components are labelled x, y, and z, respectively).
+      - the deformed (current) configuration is shown in green (:math:`x_{1}`, :math:`x_{2}`, :math:`x_{3}` components of the deformed coordinates are shown at the corners of the model.
       - ignore the gold arrows for now - these will be needed later.
 
   The model in the 3D graphics window can be rotated (click-drag-left-mouse button), translated (click-drag-middle-mouse button), or zoomed (click-drag-middle-mouse button).
