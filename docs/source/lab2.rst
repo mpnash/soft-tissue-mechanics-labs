@@ -35,7 +35,7 @@ Section 1: Transforming stresses from 2nd Piola-Kirchhoff to Cauchy
 
 |vspace|
 
-2. Using the components of the 2nd Piola-Kirchhoff stress tensor :math:`(\boldsymbol{T})` and your deformation gradient tensor :math:`(\boldsymbol{F})` from step 5, determine the Cauchy components of the stress tensor :math:`(\boldsymbol{\Sigma})` (Don't forget the Jacobian :math:`(J)`).
+2. Open the simulation results pane and use the components of the 2nd Piola-Kirchhoff stress tensor :math:`(\boldsymbol{T})` and the deformation gradient tensor :math:`(\boldsymbol{F})` to determine the Cauchy components of the stress tensor :math:`(\boldsymbol{\Sigma})` (Don't forget the Jacobian :math:`(J)`). See :ref:`this link <opening_simulation_pane>` for an example on how to open the simulation results pane.
 
 |vspace|
 
@@ -241,7 +241,7 @@ Equi-biaxial extension of a unit cube
 
   .. math::
 
-    x_1 &= \frac{5}{4}X_1 ~~~~ x_2 &= \frac{5}{4}X_2 ~~~~ x_3 &= \frac{16}{25}X_3
+    x_1 = \frac{5}{4}X_1 ~~~~ x_2 = \frac{5}{4}X_2 ~~~~ x_3 = \frac{16}{25}X_3
 
 |vspace|
 
@@ -304,7 +304,7 @@ Isotropic deformation with respect to rotated fibre axes
 Section 3: Questions
 ====================
 
-After you have completed the exercises above, consider the following questions: 
+After you have completed the exercises above, answer the following questions:
 
 a. How do changes in :math:`\boldsymbol{E}_{ref}` for different fibre angles (:math:`\theta`) in the equi-biaxial deformation compare with the changes seen in the uniaxial deformation.
 
