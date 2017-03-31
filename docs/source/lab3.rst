@@ -23,7 +23,7 @@ Before starting this lab, please be sure to have completed:
 
 Section 2 of :ref:`Lab 2<lab2>` demonstrated how rotating the material-fibre axis with respect to the reference axes influences the components of the stress tensor.  For the model in :ref:`Section 2 of Lab 2 <isotropic_biaxial_extension_of_unit_cube>`, which considers an **isotropic cube subject to equi-biaxial deformation**, remind yourself:
 
-  - what happened to the components of the stress tensor as the material-fibre axis was rotated? Why?
+  - What happened to the components of the stress tensor as the material-fibre axis was rotated? Why?
   
 All of the analyses in the present lab will be based on the equi-biaxial deformation described in :ref:`Section 2 of Lab 2 <isotropic_biaxial_extension_of_unit_cube>`.
 
@@ -78,7 +78,7 @@ Section 2: Analysing stresses during equi-biaxial deformation
 Stresses with respect to the reference axes
 -------------------------------------------
 
-3. Using OpenCMISS, load the stress analysis project and run Model 1. (The procedure for running this simulation in OpenCMISS is outlined in :ref:`steps 1-3 in Section 2 of Lab 2 <isotropic_biaxial_extension_of_unit_cube>`).
+3. Using OpenCMISS, load the stress analysis project and run Model 1. (The procedure for running this simulation in OpenCMISS is outlined in :ref:`steps 1-3 in Section 2 of Lab 2 <isotropic_biaxial_extension_of_unit_cube>`). See :ref:`this link <opening_simulation_pane>` for an example on how to open the simulation results pane.
 
 4. The Model 1 simulation uses the above constitutive equation with the following material constants:
 
@@ -91,11 +91,20 @@ Stresses with respect to the reference axes
 
   .. math::
 
-    T_{ref}^{ff\_dist} = T_{ref}^{ss\_dist} = 8.59~kPa ~~~~ (\text{note}~Q=3.74)
+    T_{ref}^{ff\_dist} = T_{ref}^{ss\_dist} = 8.59~kPa
+
+  .. Note::
+
+      - Hint :math:`Q=3.74`.
+
+      - Your calculations for :math:`T_{ref}^{ff\_dist}` and :math:`T_{ref}^{ss\_dist}` could be within :math:`{\pm}0.02~kPa` of the solution stated above due to round off errors.
+
+      - These **distortional components of the second Piola-Kirchhoff stress tensor** (e.g. :math:`T_{ref}^{ff\_dist}`) do not match the stress values shown in the OpenCMISS results panel because the OpenCMISS results show only the **total stress components** (e.g. :math:`T_{ref}^{ff}`).
+
 
 |vspace|
 
-5. Calculate the **total stress components**: :math:`T_{ref}^{ff}` and :math:`T_{ref}^{ss}` using the expressions you wrote down in Step 2 above. This requires use of the **hydrostatic pressure**, :math:`p`, which is provided in the simulation results. Check your total stress values against the simulation results.
+5. Calculate the **total stress components**: :math:`T_{ref}^{ff}` and :math:`T_{ref}^{ss}` using the expressions you wrote down in Step 2 above. This requires use of the **hydrostatic pressure**, :math:`p`, which is provided in the simulation results . Check your total stress values against the simulation results.
 
 |vspace|
 

@@ -37,6 +37,11 @@ Section 1: Transforming stresses from 2nd Piola-Kirchhoff to Cauchy
 
 2. Open the simulation results pane and use the components of the 2nd Piola-Kirchhoff stress tensor :math:`(\boldsymbol{T})` and the deformation gradient tensor :math:`(\boldsymbol{F})` to determine the Cauchy components of the stress tensor :math:`(\boldsymbol{\Sigma})` (Don't forget the Jacobian :math:`(J)`). See :ref:`this link <opening_simulation_pane>` for an example on how to open the simulation results pane.
 
+  .. Note::
+
+      - Hint: See equations in Section 3.1 of `Nash and Hunter (2007) <https://canvas.auckland.ac.nz/courses/14750/files/27954/download?wrap=1>`_.
+
+
 |vspace|
 
 3. Select "Problem" from the menu bar and repeat step 1-2 for the remaining models in the kinematics analysis project.
