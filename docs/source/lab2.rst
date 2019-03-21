@@ -286,9 +286,9 @@ Isotropic deformation with respect to rotated fibre axes
 
 |vspace|
 
-====================
-Section 3: Questions
-====================
+
+Questions
+---------
 
 After you have completed the exercises above, answer the following questions:
 
