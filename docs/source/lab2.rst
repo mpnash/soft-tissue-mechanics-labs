@@ -48,23 +48,6 @@ Section 1: Transforming stresses from 2nd Piola-Kirchhoff to Cauchy
 
 |vspace|
 
-Questions
----------
-
-After you have completed the above exercises, answer the following questions:
-
-a. In model 1, why are :math:`\Sigma_{22}` and :math:`\Sigma_{33}` zero. How do they relate to the deformation seen in the graphical window?
-
-|vspace|
-
-b. In model 3, why is :math:`\Sigma_{33}` negative?
-
-|vspace|
-
-c. In model 3, why are the off-diagonal components of :math:`\boldsymbol{\Sigma}` nonzero?
-
-|vspace|
-
 .. note::
 
   By the end of section 1 you should be able to:
