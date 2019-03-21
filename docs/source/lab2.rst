@@ -54,8 +54,6 @@ Section 1: Transforming stresses from 2nd Piola-Kirchhoff to Cauchy
 
     - derive the Cauchy stress tensor from the second Piola-Kirchhoff stress tensor.
 
-    - relate the components of the Cauchy stress tensor to the underlying deformation.
-
 
 =====================================================================
 Section 2: Transforming stresses between different coordinate systems
