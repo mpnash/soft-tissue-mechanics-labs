@@ -60,7 +60,7 @@ Section 1: Deriving components of the stress tensor
 
 |vspace|
 
-2. Assume that the material is incompressible, and write down analytic expressions for the **total stress components**: :math:`T^{ff}` and :math:`T^{ss}` (see Eqn 38 of `Nash and Hunter (2007) <https://canvas.auckland.ac.nz/courses/14750/files/27954/download?wrap=1>`_, or Eqn 15 of `Nash and Hunter (2000) <http://link.springer.com/article/10.1023%2FA%3A1011084330767>`_).
+2. Assume that the material is incompressible, and write down analytic expressions for the **total stress components**: :math:`T^{ff}` and :math:`T^{ss}` (see Eqn 38 of `Nash and Hunter (2007) <https://github.com/OpenCMISS-Examples/soft-tissue-mechanics-labs/releases/download/v2.0/chapter-heartmech_nash_hunter_2007_wspc_2up.pdf>`_, or Eqn 15 of `Nash and Hunter (2000) <http://link.springer.com/article/10.1023%2FA%3A1011084330767>`_).
 
   .. Note::
 

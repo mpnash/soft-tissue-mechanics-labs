@@ -39,7 +39,7 @@ Section 1: Transforming stresses from 2nd Piola-Kirchhoff to Cauchy
 
   .. Note::
 
-      - Hint: See equations in Section 3.1 of `Nash and Hunter (2007) <https://canvas.auckland.ac.nz/courses/14750/files/27954/download?wrap=1>`_.
+      - Hint: See equations in Section 3.1 of `Nash and Hunter (2007) <https://github.com/OpenCMISS-Examples/soft-tissue-mechanics-labs/releases/download/v2.0/chapter-heartmech_nash_hunter_2007_wspc_2up.pdf>`_.
 
 
 |vspace|
