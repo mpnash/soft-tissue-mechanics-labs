@@ -163,9 +163,9 @@ Stresses with respect to rotated material-fibre axes
 
 |vspace|
 
-====================
-Section 3: Questions
-====================
+
+Questions
+---------
 
 After you have completed the exercises above, consider the following questions: 
 
