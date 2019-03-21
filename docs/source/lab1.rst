@@ -115,9 +115,9 @@ Section 2: Strain analysis
 
 |vspace|
 
-=========
+
 Questions
-=========
+---------
 
 After you have completed the above exercises, answer the following questions: 
 
