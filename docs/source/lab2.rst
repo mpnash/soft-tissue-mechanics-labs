@@ -39,7 +39,7 @@ Section 1: Transforming stresses from 2nd Piola-Kirchhoff to Cauchy
 
   .. Note::
 
-      - Hint: See equations in Section 3.1 of `Nash and Hunter (2007) <https://github.com/OpenCMISS-Examples/soft-tissue-mechanics-labs/releases/download/v2.0/chapter-heartmech_nash_hunter_2007_wspc_2up.pdf>`_.
+      Hint: See equations in Section 3.1 of `Nash and Hunter (2007) <https://github.com/OpenCMISS-Examples/soft-tissue-mechanics-labs/releases/download/v2.0/chapter-heartmech_nash_hunter_2007_wspc_2up.pdf>`_.
 
 
 |vspace|
@@ -50,7 +50,7 @@ Section 1: Transforming stresses from 2nd Piola-Kirchhoff to Cauchy
 
 .. note::
 
-  By the end of section 1 you should be able to:
+    By the end of this section you should be able to:
 
     - derive the Cauchy stress tensor from the second Piola-Kirchhoff stress tensor.
 
@@ -79,7 +79,9 @@ Uniaxial extension of a unit cube
 
     x_1 = \frac{3}{2}X_1 ~~~~ x_2 = \sqrt{\frac{2}{3}}X_2 ~~~~ x_3 = \sqrt{\frac{2}{3}}X_3
 
-  Note that in all figures, :math:`x` represents :math:`X_1` and :math:`x_1`, :math:`y` represents :math:`X_2` and :math:`x_2`, and :math:`z` represents :math:`X_3` and :math:`x_3`. 
+  .. note::
+
+  In all figures, :math:`x` represents :math:`X_1` and :math:`x_1`, :math:`y` represents :math:`X_2` and :math:`x_2`, and :math:`z` represents :math:`X_3` and :math:`x_3`. 
 
 |vspace|
 
