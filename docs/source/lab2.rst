@@ -265,7 +265,7 @@ Equi-biaxial deformation with respect to rotated material fibre axes
 
 |vspace|
 
-16. Check your answers to Step 15 against the simulation results.
+16. Check your answers to Step 15 against the simulation results from OpenCMISS.
 
   .. Note::
 
