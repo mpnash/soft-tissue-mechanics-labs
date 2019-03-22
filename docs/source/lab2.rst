@@ -79,7 +79,7 @@ Uniaxial extension of a unit cube
 
     x_1 = \frac{3}{2}X_1 ~~~~ x_2 = \sqrt{\frac{2}{3}}X_2 ~~~~ x_3 = \sqrt{\frac{2}{3}}X_3
 
-Note that in all figures, :math:`x` represents :math:`X_1` and :math:`x_1`, :math:`y` represents :math:`X_2` and :math:`x_2`, and :math:`z` represents :math:`X_3` and :math:`x_3`. 
+  Note that in all figures, :math:`x` represents :math:`X_1` and :math:`x_1`, :math:`y` represents :math:`X_2` and :math:`x_2`, and :math:`z` represents :math:`X_3` and :math:`x_3`. 
 
 |vspace|
 
@@ -152,7 +152,7 @@ Uniaxial deformation with respect to rotated material axes
 
     \boldsymbol{T}_{fib} = \boldsymbol{Q}^{T} \boldsymbol{T}_{ref} \boldsymbol{Q}
 
-Invert this equation, and then calculate the second Piola-Kirchhoff stress components with respect to the reference axes (:math:`\boldsymbol{T}_{ref}`) from the following components of the second Piola-Kirchhoff stress tensor with respect to the material fibre axes (:math:`\boldsymbol{T}_{fib}`):
+  Invert this equation, and then calculate the second Piola-Kirchhoff stress components with respect to the reference axes (:math:`\boldsymbol{T}_{ref}`) from the following components of the second Piola-Kirchhoff stress tensor with respect to the material fibre axes (:math:`\boldsymbol{T}_{fib}`):
 
   .. math::
 
