@@ -162,16 +162,16 @@ Stresses with respect to rotated material-fibre axes
 |vspace|
 
 
-Questions
----------
+Extra discussion points for experts
+-----------------------------------
 
-After you have completed the exercises above, consider the following questions: 
+If you have completed the exercises above, you may like to consider the following questions: 
 
-a. What do you notice about the stress tensors, :math:`\boldsymbol{T}_{fib}` and :math:`\boldsymbol{T}_{ref}`, from the above analyses for the isotropic (Model 1) and anisotropic (Models 2,5,6) materials subject to equi-biaxial deformations? Why?
+a. What do you notice about the stress tensors, :math:`\boldsymbol{T}_{fib}` and :math:`\boldsymbol{T}_{ref}`, from the above analyses for the isotropic (Model 1) and anisotropic (Models 2,5,6) materials subject to equi-biaxial deformations? Explain this observation.
 
-b. What would you expect if you compared the maximum principal stresses for each of the anisotropic cases (Models 2,5,6)?
+b. Model 1 considers equi-biaxial deformation, and there were similarities in some of the stress components. If, instead, a uniaxial stretch was applied along the :math:`X_{1}` direction, predict what would happed to the components of stress.
 
-c. For what types of deformations would you expect the stress tensors to be different?
+c. What would you expect if you compared the maximum principal stresses for each of the anisotropic cases (Models 2,5,6)? Justify your amswer.
 
 |vspace|
 
