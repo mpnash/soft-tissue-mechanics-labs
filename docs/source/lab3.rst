@@ -122,11 +122,11 @@ Stresses with respect to the reference axes
     c_{fn} &= 6.05 ~~~~
     c_{ns} &= 4.93
 
-  Re-use your analytical expressions from Step 1 above to calculate, for this new model, the distortional second Piola-Kirchhoff stress tensor components: :math:`T_{ref}^{ff\_dist}` and :math:`T_{ref}^{ss\_dist}`
+  Re-use your analytical expressions from Step 1 above to calculate, using this new (anisotropic) constitutive model, the distortional second Piola-Kirchhoff stress tensor components: :math:`T_{ref}^{ff\_dist}` and :math:`T_{ref}^{ss\_dist}`
 
 |vspace|
 
-8.  Re-use your analytical expressions from Step 4 above to calculate, for this new model, the total stress components: :math:`T_{ref}^{ff}` and :math:`T_{ref}^{ss}` (use the hydrostatic pressure value, :math:`p`, from the simulation results). Check your answers against the simulation results.
+8.  Re-use your analytical expressions from Step 4 above to calculate, for this new model, the total stress components: :math:`T_{ref}^{ff}` and :math:`T_{ref}^{ss}` (use the new hydrostatic pressure value, :math:`p`, from the simulation results). Check your answers against the simulation results.
 
 |vspace|
 
