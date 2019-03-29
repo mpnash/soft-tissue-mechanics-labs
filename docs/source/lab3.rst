@@ -76,7 +76,7 @@ Stresses with respect to the reference axes
     c_{1} &= 0.0475~kPa \\
     c_{ff} = c_{ss} = c_{nn} &= c_{fs} = c_{fn} = c_{ns} = 15.25 \\
 
-  Substitute the Green-Lagrange strain components (:math:`\boldsymbol{E}_{ref}`) for this equi-biaxial deformation into your analytic expressions from Step 1 of this lab to determine values for the **distortional components of the second Piola-Kirchhoff stress tensor**. Verify that these distortional stresses are:
+  Substitute the Green-Lagrange strain components (:math:`\boldsymbol{E}_{ref}`) for this equi-biaxial deformation into your analytical expressions from Step 1 of this lab to determine values for the **distortional components of the second Piola-Kirchhoff stress tensor**. Verify that these distortional stresses are:
 
   .. math::
 
@@ -88,11 +88,11 @@ Stresses with respect to the reference axes
 
       - Your calculations for :math:`T_{ref}^{ff\_dist}` and :math:`T_{ref}^{ss\_dist}` could be within :math:`{\pm}0.02~kPa` of the solution stated above due to round off errors.
 
-      - These **distortional components of the second Piola-Kirchhoff stress tensor** (e.g. :math:`T_{ref}^{ff\_dist}`) do not match the stress values shown in the OpenCMISS results panel because the OpenCMISS results show only the **total stress components** (e.g. :math:`T_{ref}^{ff}`).
+      - These **distortional components of the second Piola-Kirchhoff stress tensor** (e.g. :math:`T_{ref}^{ff\_dist}`) do not match the stress values shown in the OpenCMISS results panel because the OpenCMISS results show only the **total stress components**, which are considered int eh next steps.
 
 |vspace|
 
-4. Assume that the material is incompressible, and write down analytical expressions for the **total stress components**: :math:`T^{ff}` and :math:`T^{ss}` (see Eqn 38 of `Nash and Hunter (2007) <https://github.com/OpenCMISS-Examples/soft-tissue-mechanics-labs/releases/download/v2.0/chapter-heartmech_nash_hunter_2007_wspc_2up.pdf>`_, or Eqn 15 of `Nash and Hunter (2000) <http://link.springer.com/article/10.1023%2FA%3A1011084330767>`_).
+4. Now assume that the material is incompressible, and write down analytical expressions for the **total stress components**: :math:`T^{ff}` and :math:`T^{ss}` (see Eqn 38 of `Nash and Hunter (2007) <https://github.com/OpenCMISS-Examples/soft-tissue-mechanics-labs/releases/download/v2.0/chapter-heartmech_nash_hunter_2007_wspc_2up.pdf>`_, or Eqn 15 of `Nash and Hunter (2000) <http://link.springer.com/article/10.1023%2FA%3A1011084330767>`_).
 
 |vspace|
 
@@ -122,11 +122,11 @@ Stresses with respect to the reference axes
     c_{fn} &= 6.05 ~~~~
     c_{ns} &= 4.93
 
-  Re-use your analytic expressions from Step 1 above to calculate, for this new model, the distortional second Piola-Kirchhoff stress tensor components: :math:`T_{ref}^{ff\_dist}` and :math:`T_{ref}^{ss\_dist}`
+  Re-use your analytical expressions from Step 1 above to calculate, for this new model, the distortional second Piola-Kirchhoff stress tensor components: :math:`T_{ref}^{ff\_dist}` and :math:`T_{ref}^{ss\_dist}`
 
 |vspace|
 
-8.  Re-use your analytic expressions from Step 4 above to calculate, for this new model, the total stress components: :math:`T_{ref}^{ff}` and :math:`T_{ref}^{ss}` (use the hydrostatic pressure value, :math:`p`, from the simulation results). Check your answers against the simulation results.
+8.  Re-use your analytical expressions from Step 4 above to calculate, for this new model, the total stress components: :math:`T_{ref}^{ff}` and :math:`T_{ref}^{ss}` (use the hydrostatic pressure value, :math:`p`, from the simulation results). Check your answers against the simulation results.
 
 |vspace|
 
