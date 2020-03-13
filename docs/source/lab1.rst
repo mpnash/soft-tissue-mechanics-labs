@@ -102,7 +102,7 @@ Section 2: Strain analysis
 
   .. Note::
 
-      Some of the numbers are not identically=0 due to Round-off error. Assume any number less than 1E-10=0.
+      In some cases, an apparent zero may be preceded by a negative sign. This value should still be treated as zero (i.e. ignore the negative sign).
 
 |vspace|
 
@@ -121,15 +121,15 @@ Questions
 
 After you have completed the above exercises, answer the following questions: 
 
-a. What do the off-diagonal components of :math:`\boldsymbol{F}` mean?
+a. What do the off-diagonal components of :math:`\boldsymbol{F}` represent?
 
 |vspace|
 
-b. In model 1, why are :math:`E_{22}` and :math:`E_{33}` negative?
+b. In model 1, why are :math:`E_{22}` and :math:`E_{33}` negative?  What does this represent?
 
 |vspace|
 
-c. In model 4, why are :math:`F_{11}` and :math:`F_{33}` the same (what does it represent)? Why is :math:`F_{22}` less than 1.
+c. In model 4, what does the equality of :math:`F_{11}` and :math:`F_{33}` represent? Why is :math:`F_{22}` less than 1.
 
 |vspace|
 
