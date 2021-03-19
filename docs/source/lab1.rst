@@ -12,13 +12,13 @@ Lab 1: Analysing deformation in isotropic materials
 .. toctree::
    :maxdepth: 2
 
-The objective of this lab is to analyse large deformation kinematics with respect to reference coordinates in isotropic materials. The deformations you will be analysing include:
+The objective of this lab is to analyse large deformation kinematics with respect to reference coordinates in isotropic materials, for with the stiffness properties are the same in all directions. The deformations you will be analysing include:
 
-  - Model 1 (Uniaxial extension of a unit cube)
-  - Model 2 (Equibiaxial extension of a unit cube)
-  - Model 3 (Simple shear of a unit cube)
-  - Model 4 (Shear of a unit cube)
-  - Model 5 (Extension and shear of a unit cube)
+  - Model 1 (Uniaxial extension of unit cube)
+  - Model 2 (Equibiaxial extension of unit cube)
+  - Model 3 (Simple shear of unit cube)
+  - Model 4 (Shear of unit cube)
+  - Model 5 (Extension and shear of unit cube)
 
 Before starting this lab, please read the :ref:`Using OpenCMISS <using-opencmiss>` section to familiarise yourself with the software used in this lab.
 
@@ -28,15 +28,15 @@ Before starting this lab, please read the :ref:`Using OpenCMISS <using-opencmiss
 Section 1: Solving mechanics models
 ===================================
 
-1. Start OpenCMISS and load the kinematics analysis project (described in the :ref:`Starting OpenCMISS <starting-OpenCMISS>` section).
+1. Start OpenCMISS and load the "Kinematics analysis" project (described in the :ref:`Starting OpenCMISS <starting-OpenCMISS>` section).
 
 |vspace|
 
-2. Select "Model 1 (uniaxial extension of a unit cube)" from the drop down menu and click the "run" button (screenshots of this procedure are shown in the :ref:`Running models in OpenCMISS <running-models-in-OpenCMISS>` section).
+2. Select "Model 1 (uniaxial extension of unit cube)" from the drop down menu and click the "Run" button (screenshots of this procedure are shown in the :ref:`Running models in OpenCMISS <running-models-in-OpenCMISS>` section).
 
 |vspace|
 
-3. After a short time, the model should have solved and the simulation results pane will open as shown in the screenshot below.
+3. After a short time, the model should have solved and the simulation results pane will open, as shown in the screenshot below.
 
   .. image:: images/lab1_model1.png
 
@@ -108,38 +108,38 @@ Section 2: Strain analysis
 
 9. Select "Problem" from the menu bar and repeat steps 2-8 for the remaining models in the kinematics analysis project:
 
-    - Model 2 (Equibiaxial extension of a unit cube)
-    - Model 3 (Simple shear of a unit cube)
-    - Model 4 (Shear of a unit cube)
-    - Model 5 (Extension and shear of a unit cube)
+    - Model 2 (Equibiaxial extension of unit cube)
+    - Model 3 (Simple shear of unit cube)
+    - Model 4 (Shear of unit cube)
+    - Model 5 (Extension and shear of unit cube)
 
 |vspace|
 
 
-Questions
----------
+Questions to consider
+---------------------
 
-After you have completed the above exercises, answer the following questions: 
+After you have completed the above exercises, consider the following questions: 
 
 a. What do the off-diagonal components of :math:`\boldsymbol{F}` represent?
 
 |vspace|
 
-b. In model 1, why are :math:`E_{22}` and :math:`E_{33}` negative?  What does this represent?
+b. In Model 1, why are :math:`E_{22}` and :math:`E_{33}` negative?  What does this represent?
 
 |vspace|
 
-c. In model 4, what does the equality of :math:`F_{11}` and :math:`F_{33}` represent? Why is :math:`F_{22}` less than 1.
+c. In Model 4, what does the equality of :math:`F_{11}` and :math:`F_{33}` represent? Why is :math:`F_{22}` less than 1.
 
 |vspace|
 
 .. note::
 
-  By the end of section 1 you should be able to:
+  By the end of this lab you should be able to:
 
     - analyse large deformation kinematics with respect to reference coordinates, i.e. by determining :math:`\boldsymbol{F}`, :math:`\boldsymbol{C}`, invariants of :math:`\boldsymbol{C}`, and :math:`\boldsymbol{E}`.
 
     - relate the components of the deformation gradient tensor to the underlying deformation.
 
-    - determine if a material is incompressible.
+    - determine if a deformation is incompressible.
 
