@@ -26,12 +26,12 @@ Revision
 
 Before starting this lab, please be sure to have completed :ref:`Lab 1: Analysing deformation in isotropic materials <lab1>`.
 
-===================================================================
-Section 1: Transforming stresses from 2nd Piola-Kirchhoff to Cauchy
-===================================================================
+===================================================================================
+Section 1: Transforming from 2nd Piola-Kirchhoff to Cauchy stress tensor components
+===================================================================================
 
 
-1. Start OpenCMISS and load the kinematics analysis project. Select "Model 1 (uniaxial extension of a unit cube)" from the drop down menu and click the "run" button.
+1. Start OpenCMISS and load the "Kinematics analysis" project. Select "Model 1 (Uniaxial extension of unit cube)" from the drop down menu and click the "Run" button.
 
 |vspace|
 
@@ -52,24 +52,24 @@ Section 1: Transforming stresses from 2nd Piola-Kirchhoff to Cauchy
 
     By the end of this section you should be able to:
 
-    - derive the Cauchy stress tensor from the second Piola-Kirchhoff stress tensor.
+    - derive the Cauchy stress tensor components from the second Piola-Kirchhoff stress tensor components using the deformation gradient tensor.
 
 
-=====================================================================
-Section 2: Transforming stresses between different coordinate systems
-=====================================================================
+===================================================================
+Section 2: Transforming stresses between rotated coordinate systems
+===================================================================
 
 Uniaxial extension of a unit cube
 ---------------------------------
 
-1. Consider the uniaxial deformation shown in the figure below, where a set of material axae are aligned with the spatial reference axes. In the following figure, the gold arrows represent the first material axis (perhaps a microstructural fibre orientation in the tissue):
+1. Consider the uniaxial deformation shown in the figure below, where a set of material axes are aligned with the spatial reference axes. In the following figure, the gold arrows represent the first material axis (for example, this might be a the orientation of a collagen fibre within tissue):
 
   .. image:: images/uniaxial_0_degrees_fibres.png
 
   In the screenshot:
     - the undeformed (reference) configuration of the object (a unit cube) is shown in red;
     - the deformed (current) configuration of the object is shown in green; and
-    - the gold arrows indicate the direction of the first material (fibre) axis in the object. In general, the microstructural fibres **are not necessarily parallel** the direction of loading.
+    - the gold arrows indicate the direction of the first material (fibre) axis in the object. In general, the microstructural fibres **are not necessarily parallel** to the direction of stretch or load.
 
   |vspace|
 
@@ -89,13 +89,13 @@ Uniaxial extension of a unit cube
 
   - the deformation gradient tensor, :math:`\boldsymbol{F}=\frac{\partial\boldsymbol{x}}{\partial\boldsymbol{X}}`
   - the right Cauchy-Green deformation tensor, :math:`\boldsymbol{C}` and
-  - the Green-Lagrange strain tensor. Label this as :math:`\boldsymbol{E}_{ref}` (to indicate that it is defined with respect to the spatial reference coordinates).
+  - the Green-Lagrange strain tensor. Label this as :math:`\boldsymbol{E}_{ref}` (to indicate that it is defined with respect to the reference spatial coordinates).
 
   .. Note::
 
       This is the same deformation used in Model 1 in :ref:`Lab 1 <lab1>`, so you should not need to re-do these calculations.
 
-      For this model, the second Piola-Kirchhoff stress tensor with respect to both the reference and material fibre axes is:
+      For this particular model, the second Piola-Kirchhoff stress tensors with respect to both the reference spatial, and material fibre axes, are:
 
       .. math::
 
@@ -106,7 +106,7 @@ Uniaxial extension of a unit cube
           0      & 0       & 0
         \end{bmatrix}
 
-      **Note:** While the uniaxial deformation in Model 1 of :ref:`Lab 1 <lab1>` is the same as that considered here, the **stress tensors are different between the labs** because different constitutive relations have been used in these labs.
+      (**Note:** While the uniaxial deformation in Model 1 of :ref:`Lab 1 <lab1>` is the same as that considered here, the **stress tensors are different between thse two labs** because different stress-strain constitutive relations have been used - this difference will be covered in :ref:`Lab 3 <lab3>`).
 
 |vspace|
 
@@ -115,19 +115,19 @@ Uniaxial extension of a unit cube
 Uniaxial deformation with respect to rotated material axes
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-3. Now consider the same deformation, except that the material fibre axes are no longer aligned with the reference axes. They are now rotated anticlockwise by an angle of :math:`\theta=30` degrees from the :math:`X_{1}` axis (in the :math:`X_{1}`-:math:`X_{2}` plane), as shown in the figure below.
+3. Now consider the same deformation, except that the material fibre axes are no longer aligned with the reference spatial axes. They are now rotated anti-clockwise by an angle of :math:`\theta=30` degrees from the :math:`X_{1}` axis (in the :math:`X_{1}`-:math:`X_{2}` plane), as shown in the figure below.
 
   .. image:: images/uniaxial_30_degrees_fibres.png
 
 |vspace|
 
-  For the following exercises, you are asked to transform strain and stress tensors between the reference coordinates and the material fibre coordinate systems using the generalised rotational transform given by:
+  For the following exercises, you are asked to transform strain and stress tensors between the reference spatial coordinates and the material fibre coordinate systems using the generalised rotational transform given by:
 
   .. math::
 
     \boldsymbol{E}_{fib} = \boldsymbol{Q}^{T} \boldsymbol{E}_{ref} \boldsymbol{Q}
 
-  where :math:`\boldsymbol{E}_{ref}` and :math:`\boldsymbol{E}_{fib}` are  Green-Lagrange strain tensors defined with respect to the reference and material fibre axes, respectively, and :math:`\boldsymbol{Q}` is the orthogonal rotation matrix, which for this example is defined by:
+  where :math:`\boldsymbol{E}_{ref}` and :math:`\boldsymbol{E}_{fib}` are  Green-Lagrange strain tensors defined with respect to the reference spatial and material fibre axes, respectively, and :math:`\boldsymbol{Q}` is the orthogonal rotation matrix, which for this example is defined by:
 
   .. math::
 
@@ -148,13 +148,13 @@ Uniaxial deformation with respect to rotated material axes
 
 |vspace|
 
-6. The relationship between second Piola-Kirchhoff stress tensors defined with respect to reference and material fibre coordinates is (note the similarity to Step 3):
+6. The relationship between second Piola-Kirchhoff stress tensors defined with respect to reference spatial and material fibre coordinates is (note the similarity to Step 3):
 
   .. math::
 
     \boldsymbol{T}_{fib} = \boldsymbol{Q}^{T} \boldsymbol{T}_{ref} \boldsymbol{Q}
 
-  Invert this equation, and then calculate the second Piola-Kirchhoff stress components with respect to the reference axes (:math:`\boldsymbol{T}_{ref}`) from the following components of the second Piola-Kirchhoff stress tensor with respect to the material fibre axes (:math:`\boldsymbol{T}_{fib}`):
+  Invert this equation, and then calculate the second Piola-Kirchhoff stress components with respect to the reference spatial axes (:math:`\boldsymbol{T}_{ref}`) from the following components of the second Piola-Kirchhoff stress tensor with respect to the material fibre axes (:math:`\boldsymbol{T}_{fib}`):
 
   .. math::
 
@@ -213,7 +213,7 @@ Equi-biaxial extension of a unit cube
 
 |vspace|
 
-10. Select "Model 1 (Equi-biaxial extension of unit cube, isotropic, 0 degree fibre rotation)" from the drop down menu and click the "run" button (screenshots of this procedure are shown in the :ref:`Running models in OpenCMISS <running-models-in-OpenCMISS>` section).
+10. Select "Model 1 (Equi-biaxial extension of unit cube, 0 degree fibre rotation)" from the drop down menu and click the "Run" button (screenshots of this procedure are shown in the :ref:`Running models in OpenCMISS <running-models-in-OpenCMISS>` section).
 
 |vspace|
 
@@ -257,7 +257,7 @@ Equi-biaxial extension of a unit cube
 Equi-biaxial deformation with respect to rotated material fibre axes
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-14. Return to the model selection drop down menu and select/run "Model 3 (Equi-biaxial extension of unit cube, isotropic, 30 degree fibre rotation)". This model is similar to the previous models, except that the material fibre axes are no longer aligned with the reference (spatial) axes. For this model, the material fibre axis is rotated anticlockwise by an angle of :math:`\theta=30` degrees from the :math:`X_{1}` axis (in the :math:`X_{1}`-:math:`X_{2}` plane). When visualising these models, the gold arrows in the graphics window indicate the direction of the fibre axis (along which the first material coordinate is defined), and the :math:`X_{1}`-:math:`X_{2}` plane indicates the orientation of the flat laminar sheet.
+14. Return to the model selection drop down menu and select/run "Model 3 (Equi-biaxial extension of unit cube, 30 degree fibre rotation)". This model is similar to the previous models, except that the material fibre axes are no longer aligned with the reference (spatial) axes. For this model, the material fibre axis is rotated anti-clockwise by an angle of :math:`\theta=30` degrees from the :math:`X_{1}` axis (in the :math:`X_{1}`-:math:`X_{2}` plane). When visualising these models, the gold arrows in the graphics window indicate the direction of the first material fibre axis (along which the first material coordinate is defined), and the second material fibre axis (not shown) is perpendicular to the gold arrow but lies within :math:`X_{1}`-:math:`X_{2}` plane.
 
 |vspace|
 
@@ -269,7 +269,7 @@ Equi-biaxial deformation with respect to rotated material fibre axes
 
   .. Note::
 
-      Drag the right edge of the 3D graphics window to reveal the stress and strain tensors associated with the simulation in fibre and reference coordinates. See :ref:`this link <opening_simulation_pane>` for an example on how to open this pane.
+      Drag the right edge of the 3D graphics window to reveal the stress and strain tensor components associated with the simulation in material fibre and reference spatial coordinates. See :ref:`this link <opening_simulation_pane>` for an example on how to open this pane.
 
 |vspace|
 
@@ -277,7 +277,7 @@ Equi-biaxial deformation with respect to rotated material fibre axes
 
 |vspace|
 
-18. From the solution output, write down  :math:`\boldsymbol{T}_{fib}` (the second Piola-Kirchhoff stress tensor with respect to the material fibre axes). Use this to determine the second Piola-Kirchhoff stress components with respect to the reference coordinate axes (:math:`\boldsymbol{T}_{ref}`) via the approach Section 2.
+18. From the solution output, write down  :math:`\boldsymbol{T}_{fib}` (the second Piola-Kirchhoff stress tensor with respect to the material fibre axes). Use this to determine the second Piola-Kirchhoff stress components with respect to the reference spatial coordinate axes (:math:`\boldsymbol{T}_{ref}`) via the approach Section 2.
 
 |vspace|
 
@@ -289,19 +289,19 @@ Equi-biaxial deformation with respect to rotated material fibre axes
 
 |vspace|
 
-21. What would you expect from the analysis in steps 15-20 if the fibre angle was changed from :math:`\theta=30` degrees to :math:`\theta=45` degrees, or to :math:`\theta=90` degrees for this equi-biaxial deformation model?  Explain the differences/similarities between the two strain, and (separately) between the two stress tensors for this model.
+21. What would you expect from the analysis in steps 15-20 if the fibre angle was changed from :math:`\theta=30` degrees to :math:`\theta=45` degrees, or to :math:`\theta=90` degrees for this equi-biaxial deformation model?  Explain the differences/similarities between the two strain tensors for this model.  Then explain the differences/similarities between the two stress tensors for this model.
 
   .. note::
 
-    You should not need to do any calculations to answer this questions, but if you need the extra practice, perform steps 15-20 with :math:`\theta=45` degrees by selecting the Model 4 from the "run" menu.
+    You should not need to do any calculations to answer this questions. It is fine to do so if you would like some extra practice - just perform steps 15-20 with :math:`\theta=45` degrees by selecting the Model 4 then Model 6 from the "Run" menu.
 
 |vspace|
 
 Here are the :ref:`solutions to Step 21 <lab2_section2_step21_solutions>`.
 
 
-Questions
----------
+Questions to think about:
+-------------------------
 
 After you have completed the exercises above, consider the following questions:
 
@@ -313,7 +313,7 @@ c. How do changes in :math:`\boldsymbol{T}_{ref}` for different fibre angles (:m
 
 d. How do changes in :math:`\boldsymbol{T}_{fib}` for different fibre angles (:math:`\theta`) in the equi-biaxial deformation compare with the changes seen in the uniaxial deformation.
 
-e. Will the invariants of :math:`\boldsymbol{C}` be the same or different when calculated with respect to reference or material fibre coordinates?
+e. Will the invariants of :math:`\boldsymbol{C}` be the same or different when calculated with respect to reference spatial or material fibre coordinates?
 
 |vspace|
 
@@ -321,8 +321,10 @@ e. Will the invariants of :math:`\boldsymbol{C}` be the same or different when c
 
   By completing this lab, you should be able to:
 
-    - analyse large deformation kinematics with respect to reference or rotated material coordinates, and convert between them.
+    - convert between 2nd Piola-Kirchhoff and Cauchy stress tensors.
 
-    - analyse stress tensors with respect to spatial or rotated material coordinates, and convert between them.
+    - analyse large deformation kinematics with respect to reference spatial or rotated material fibre coordinates, and convert between them.
+
+    - analyse stress tensors with respect to reference spatial or rotated material fibre coordinates, and convert between them.
 
 
